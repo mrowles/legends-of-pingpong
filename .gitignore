@@ -28,3 +28,9 @@ node_modules
 
 # Optional REPL history
 .node_repl_history
+
+#Intellij
+.idea
+
+legends-of-pingpong.iml
+double-dragon.iml
