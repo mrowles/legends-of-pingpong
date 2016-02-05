@@ -1,16 +1,16 @@
 import {Component} from 'angular2/core'
 import {NgForm} from 'angular2/common';
 import {BaseRequestOptions, Http, HTTP_PROVIDERS} from 'angular2/http';
-import {User} from '../../model/user/user.model';
+import {Player} from '../../model/player/player.model';
 
 @Component({
     selector: 'add-player-form',
     viewProviders: [HTTP_PROVIDERS],
-    templateUrl: '/app/components/addPlayer/addPlayer.html'
+    templateUrl: '/client/components/addPlayer/addPlayer.html'
 })
 
 export class AddPlayerComponent {
-    model = new User(1, 'John', 'john@gmail.com');
+    model = new Player(1, 'John', 'john@gmail.com');
     submitted = false;
     response = {};
     http:Http;

@@ -1,18 +1,18 @@
 System.register([], function(exports_1) {
-    var User;
+    var Player;
     return {
         setters:[],
         execute: function() {
-            User = (function () {
-                function User(id, name, email) {
+            Player = (function () {
+                function Player(id, name, email) {
                     this.id = id;
                     this.name = name;
                     this.email = email;
                 }
-                return User;
+                return Player;
             })();
-            exports_1("User", User);
+            exports_1("Player", Player);
         }
     }
 });
-//# sourceMappingURL=user.model.js.map
+//# sourceMappingURL=player.model.js.map

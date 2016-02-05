@@ -1,4 +1,4 @@
-System.register(['angular2/core', 'angular2/http', '../../model/user/user.model'], function(exports_1) {
+System.register(['angular2/core', 'angular2/http', '../../model/player/player.model'], function(exports_1) {
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -8,7 +8,7 @@ System.register(['angular2/core', 'angular2/http', '../../model/user/user.model'
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, http_1, user_model_1;
+    var core_1, http_1, player_model_1;
     var AddPlayerComponent;
     return {
         setters:[
@@ -18,13 +18,13 @@ System.register(['angular2/core', 'angular2/http', '../../model/user/user.model'
             function (http_1_1) {
                 http_1 = http_1_1;
             },
-            function (user_model_1_1) {
-                user_model_1 = user_model_1_1;
+            function (player_model_1_1) {
+                player_model_1 = player_model_1_1;
             }],
         execute: function() {
             AddPlayerComponent = (function () {
                 function AddPlayerComponent(http) {
-                    this.model = new user_model_1.User(1, 'John', 'john@gmail.com');
+                    this.model = new player_model_1.Player(1, 'John', 'john@gmail.com');
                     this.submitted = false;
                     this.response = {};
                     this.http = http;
@@ -47,7 +47,7 @@ System.register(['angular2/core', 'angular2/http', '../../model/user/user.model'
                     core_1.Component({
                         selector: 'add-player-form',
                         viewProviders: [http_1.HTTP_PROVIDERS],
-                        templateUrl: '/app/components/addPlayer/addPlayer.html'
+                        templateUrl: '/client/components/addPlayer/addPlayer.html'
                     }), 
                     __metadata('design:paramtypes', [http_1.Http])
                 ], AddPlayerComponent);
