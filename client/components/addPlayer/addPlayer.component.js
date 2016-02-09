@@ -1,4 +1,4 @@
-System.register(['angular2/core', 'angular2/http', '../../model/player/player.model'], function(exports_1) {
+System.register(['angular2/core', 'angular2/http', '../../model/player/player.model', 'rxjs/Rx'], function(exports_1) {
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -20,33 +20,31 @@ System.register(['angular2/core', 'angular2/http', '../../model/player/player.mo
             },
             function (player_model_1_1) {
                 player_model_1 = player_model_1_1;
-            }],
+            },
+            function (_1) {}],
         execute: function() {
             AddPlayerComponent = (function () {
                 function AddPlayerComponent(http) {
-                    this.model = new player_model_1.Player(1, 'John', 'john@gmail.com');
+                    this.model = new player_model_1.Player(1, 'John', 'Test', 'john@gmail.com');
                     this.submitted = false;
                     this.response = {};
                     this.http = http;
                 }
                 AddPlayerComponent.prototype.onSubmit = function () {
                     var _this = this;
-                    this.http.get('/players/all')
-                        .subscribe(function (response) { return _this.response = response; });
-                    this.submitted = true;
+                    console.log('Submit', this.model);
+                    var json = JSON.stringify(this.model);
+                    console.log('Submit json', json);
+                    var headers = new http_1.Headers();
+                    headers.append('Content-Type', 'application/json');
+                    this.http.post('/player', json, {
+                        headers: headers
+                    }).map(function (res) { return res.json(); }).subscribe(function (res) { return console.log('in subscribe submitted', res); }, function (res) { return _this.postResponse = res.json(); }, function () { return _this.submitted = true; });
                 };
-                Object.defineProperty(AddPlayerComponent.prototype, "diagnostic", {
-                    get: function () {
-                        console.log(2, this.response);
-                        return JSON.stringify(this.response);
-                    },
-                    enumerable: true,
-                    configurable: true
-                });
                 AddPlayerComponent = __decorate([
                     core_1.Component({
                         selector: 'add-player-form',
-                        viewProviders: [http_1.HTTP_PROVIDERS],
+                        providers: [http_1.HTTP_PROVIDERS],
                         templateUrl: '/client/components/addPlayer/addPlayer.html'
                     }), 
                     __metadata('design:paramtypes', [http_1.Http])

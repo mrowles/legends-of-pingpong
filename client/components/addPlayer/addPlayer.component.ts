@@ -1,18 +1,20 @@
 import {Component} from 'angular2/core'
 import {NgForm} from 'angular2/common';
-import {BaseRequestOptions, Http, HTTP_PROVIDERS} from 'angular2/http';
+import {BaseRequestOptions, Http, HTTP_PROVIDERS, Headers} from 'angular2/http';
 import {Player} from '../../model/player/player.model';
+import 'rxjs/Rx';
 
 @Component({
     selector: 'add-player-form',
-    viewProviders: [HTTP_PROVIDERS],
+    providers: [HTTP_PROVIDERS],
     templateUrl: '/client/components/addPlayer/addPlayer.html'
 })
 
 export class AddPlayerComponent {
-    model = new Player(1, 'John', 'john@gmail.com');
+    model = new Player(1, 'John', 'Test', 'john@gmail.com');
     submitted = false;
     response = {};
+  postResponse;
     http:Http;
 
     constructor(http:Http) {
@@ -21,17 +23,22 @@ export class AddPlayerComponent {
 
     onSubmit() {
 
-        //this.http.get('/api/users')
-        this.http.get('/players/all')
-            .subscribe(response => this.response = response);
+      console.log('Submit', this.model);
 
-        this.submitted = true;
-    }
+      var json = JSON.stringify(this.model);
+      console.log('Submit json', json);
 
-    get diagnostic() {
-        console.log(2, this.response);
-        return JSON.stringify(this.response);
+      let headers = new Headers();
+      headers.append('Content-Type', 'application/json');
+      this.http.post('/player', json, {
+        headers: headers
+      }).map(res => res.json()).subscribe(
+        res => console.log('in subscribe submitted', res),
+        res => this.postResponse = res.json(),
+        () => this.submitted = true
+      );
 
-    }
-
+      //this.http.get('/player/all')
+      //  .subscribe(response => this.response = response.json());
+  }
 }
