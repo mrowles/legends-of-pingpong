@@ -35,7 +35,7 @@ System.register(['angular2/core', 'angular2/http', '../../model/player/player.mo
                     var json = JSON.stringify(this.model);
                     var headers = new http_1.Headers();
                     headers.append('Content-Type', 'application/json');
-                    this.http.post('/player', json, {
+                    this.http.post('/api/player', json, {
                         headers: headers
                     }).map(function (res) { return res.json(); }).subscribe(function (res) { return _this.postResponse = res; });
                 };

@@ -9,7 +9,7 @@ app.use(bodyParser.json());
 
 app.use('/', express.static(__dirname + '/'));
 
-app.use('/player', players);
+app.use('/api/player', players);
 
 app.listen(8765, function () {
   console.log('Legends of Pong app listening on port 8765!');

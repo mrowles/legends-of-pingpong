@@ -27,7 +27,7 @@ export class AddPlayerComponent {
 
     headers.append('Content-Type', 'application/json');
 
-    this.http.post('/player', json, {
+    this.http.post('/api/player', json, {
       headers: headers
     }).map(res => res.json()).subscribe(
       res => this.postResponse = res
