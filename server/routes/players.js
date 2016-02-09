@@ -5,11 +5,8 @@ var Player = require('../model/player');
 router.post('', function (req, res) {
 
   var player = new Player();
-
-  console.log('Saving', req.body);
+  player.name = req.body.name;
   player.email = req.body.email;
-  player.firstname = req.body.firstname;
-  player.lastname = req.body.lastname;
 
   player.save(function (err) {
     if (err) {
@@ -21,10 +18,7 @@ router.post('', function (req, res) {
 
 });
 
-
 router.get('/all', function (req, res) {
-
-  console.log('Listing');
 
   Player.find({}, function (err, players) {
 
