@@ -1,16 +1,26 @@
 var express = require('express');
-var users = require('./server/routes/users');
-var app = express();
+var path = require('path');
 var db = require('./server/model/db');
-var players = require('./server/routes/players');
 var bodyParser = require('body-parser');
 
-app.use(bodyParser.json());
+var index = require('./server/routes/index');
+var players = require('./server/routes/players');
 
-app.use('/', express.static(__dirname + '/'));
+var app = express();
+
+app.set('views', path.join(__dirname, '/'));
+app.set('view engine', 'ejs');
+app.engine('html', require('ejs').renderFile);
+
+app.use(bodyParser.json());
+app.use(express.static(path.join(__dirname, '/')));
 
 app.use('/api/player', players);
 
-app.listen(8765, function () {
+app.use('/*', index);
+
+var server = app.listen(8765, function () {
   console.log('Legends of Pong app listening on port 8765!');
 });
+
+module.exports = app;

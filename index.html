@@ -1,41 +1,43 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Legends of Pong</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <base href="/"/>
 
-    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="public/css/styles.css">
+  <title>Legends of Pong</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- 1. Load libraries -->
-    <script src="/node_modules/es6-shim/es6-shim.js"></script>
-    <script src="/node_modules/systemjs/dist/system-polyfills.js"></script>
+  <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/public/css/styles.css">
 
-    <script src="/node_modules/angular2/bundles/angular2-polyfills.js"></script>
-    <script src="/node_modules/systemjs/dist/system.src.js"></script>
+  <script src="/node_modules/es6-shim/es6-shim.js"></script>
+  <script src="/node_modules/systemjs/dist/system-polyfills.js"></script>
 
-    <script src="/node_modules/rxjs/bundles/Rx.js"></script>
-    <script src="/node_modules/angular2/bundles/angular2.dev.js"></script>
+  <script src="/node_modules/angular2/bundles/angular2-polyfills.js"></script>
+  <script src="/node_modules/systemjs/dist/system.src.js"></script>
 
-    <script src="/node_modules/angular2/bundles/http.dev.js"></script>
+  <script src="/node_modules/rxjs/bundles/Rx.js"></script>
+  <script src="/node_modules/angular2/bundles/angular2.dev.js"></script>
 
-    <!-- 2. Configure SystemJS -->
-    <script>
-        System.config({
-            packages: {
-                client: {
-                    format: 'register',
-                    defaultExtension: 'js'
-                }
-            }
-        });
-        System.import('client/main')
-                .then(null, console.error.bind(console));
-    </script>
+  <script src="/node_modules/angular2/bundles/router.dev.js"></script>
+  <script src="/node_modules/angular2/bundles/http.dev.js"></script>
+
+  <script>
+    System.config({
+      packages: {
+        client: {
+          format: 'register',
+          defaultExtension: 'js'
+        }
+      }
+    });
+    System.import('client/main')
+      .then(null, console.error.bind(console));
+  </script>
 
 </head>
 <body>
-    <!-- 3. Display the application -->
-    <lopp-app>Loading...</lopp-app>
+
+<lopp-app>Loading...</lopp-app>
+
 </body>
 </html>

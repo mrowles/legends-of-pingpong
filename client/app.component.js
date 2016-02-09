@@ -1,4 +1,4 @@
-System.register(['angular2/core', '../client/components/addPlayer/addPlayer.component', '../client/components/selectPlayers/selectPlayers.component'], function(exports_1) {
+System.register(['angular2/core', 'angular2/router', '../client/components/addPlayer/addPlayer.component', '../client/components/homepage/homepage.component'], function(exports_1) {
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -8,18 +8,21 @@ System.register(['angular2/core', '../client/components/addPlayer/addPlayer.comp
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, addPlayer_component_1, selectPlayers_component_1;
+    var core_1, router_1, addPlayer_component_1, homepage_component_1;
     var AppComponent;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
             },
+            function (router_1_1) {
+                router_1 = router_1_1;
+            },
             function (addPlayer_component_1_1) {
                 addPlayer_component_1 = addPlayer_component_1_1;
             },
-            function (selectPlayers_component_1_1) {
-                selectPlayers_component_1 = selectPlayers_component_1_1;
+            function (homepage_component_1_1) {
+                homepage_component_1 = homepage_component_1_1;
             }],
         execute: function() {
             AppComponent = (function () {
@@ -29,8 +32,19 @@ System.register(['angular2/core', '../client/components/addPlayer/addPlayer.comp
                     core_1.Component({
                         selector: 'lopp-app',
                         templateUrl: './client/app.html',
-                        directives: [addPlayer_component_1.AddPlayerComponent, selectPlayers_component_1.SelectPlayersComponent]
-                    }), 
+                        directives: [router_1.ROUTER_DIRECTIVES]
+                    }),
+                    router_1.RouteConfig([
+                        {
+                            path: '/',
+                            name: 'Home',
+                            component: homepage_component_1.HomepageComponent
+                        }, {
+                            path: '/players/add/',
+                            name: 'PlayerAdd',
+                            component: addPlayer_component_1.AddPlayerComponent
+                        }
+                    ]), 
                     __metadata('design:paramtypes', [])
                 ], AppComponent);
                 return AppComponent;
