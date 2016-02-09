@@ -21,7 +21,8 @@ export class AddPlayerComponent {
 
     onSubmit() {
 
-        this.http.get('/api/users')
+        //this.http.get('/api/users')
+        this.http.get('/players/all')
             .subscribe(response => this.response = response);
 
         this.submitted = true;

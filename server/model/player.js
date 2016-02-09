@@ -9,3 +9,5 @@ var playerSchema = new Schema({
     }
 });
 var Player = mongoose.model('Player', playerSchema);
+
+module.exports = Player;
