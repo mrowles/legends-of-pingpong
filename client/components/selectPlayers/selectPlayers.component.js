@@ -9,7 +9,7 @@ System.register(['angular2/core', 'angular2/http', '../../model/player/player.mo
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
     var core_1, http_1, player_model_1;
-    var AddPlayerComponent;
+    var SelectPlayersComponent;
     return {
         setters:[
             function (core_1_1) {
@@ -23,41 +23,36 @@ System.register(['angular2/core', 'angular2/http', '../../model/player/player.mo
             },
             function (_1) {}],
         execute: function() {
-            AddPlayerComponent = (function () {
-                function AddPlayerComponent(http) {
+            SelectPlayersComponent = (function () {
+                function SelectPlayersComponent(http) {
                     this.model = new player_model_1.Player(1, '', '');
                     this.submitted = false;
                     this.response = {};
+                    this.playerList = [];
+                    this.selectedPlayers = [];
                     this.http = http;
                 }
-                AddPlayerComponent.prototype.onSubmit = function () {
+                SelectPlayersComponent.prototype.ngOnInit = function () {
                     var _this = this;
-                    var json = JSON.stringify(this.model);
-                    var headers = new http_1.Headers();
-                    headers.append('Content-Type', 'application/json');
-                    this.http.post('/player', json, {
-                        headers: headers
-                    }).map(function (res) { return res.json(); }).subscribe(function (res) { return _this.postResponse = res; });
+                    this.http.get('/player/all').map(function (res) { return res.json(); })
+                        .subscribe(function (res) { return _this.playerList = res; });
                 };
-                Object.defineProperty(AddPlayerComponent.prototype, "message", {
-                    get: function () {
-                        return JSON.stringify(this.postResponse);
-                    },
-                    enumerable: true,
-                    configurable: true
-                });
-                AddPlayerComponent = __decorate([
+                SelectPlayersComponent.prototype.onSubmit = function () {
+                    console.log('OnSubmit');
+                    console.log('Player List', this.playerList);
+                };
+                SelectPlayersComponent = __decorate([
                     core_1.Component({
-                        selector: 'add-player-form',
+                        selector: 'select-players-form',
                         providers: [http_1.HTTP_PROVIDERS],
-                        templateUrl: '/client/components/addPlayer/addPlayer.html'
+                        templateUrl: '/client/components/selectPlayers/selectPlayers.html'
                     }), 
                     __metadata('design:paramtypes', [http_1.Http])
-                ], AddPlayerComponent);
-                return AddPlayerComponent;
+                ], SelectPlayersComponent);
+                return SelectPlayersComponent;
             })();
-            exports_1("AddPlayerComponent", AddPlayerComponent);
+            exports_1("SelectPlayersComponent", SelectPlayersComponent);
         }
     }
 });
-//# sourceMappingURL=addPlayer.component.js.map
+//# sourceMappingURL=selectPlayers.component.js.map

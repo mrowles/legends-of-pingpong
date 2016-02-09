@@ -12,6 +12,7 @@ import 'rxjs/Rx';
 
 export class AddPlayerComponent {
   model = new Player(1, '', '');
+  submitted = false;
   response = {};
   postResponse;
   http:Http;
