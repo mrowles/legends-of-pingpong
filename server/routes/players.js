@@ -1,32 +1,41 @@
 var express = require('express');
 var router = express.Router();
-//var mongoose = require('mongoose'); //mongo connection
-//var bodyParser = require('body-parser'); //parses information from POST
-//var methodOverride = require('method-override'); //used to manipulate POST
 var Player = require('../model/player');
 
-router.post('/:username', function (req, res, next) {
+router.post('', function (req, res) {
 
-  console.log(req);
-  req.get();
+  var player = new Player();
+  player.email = req.body.email;
+  player.firstname = req.body.firstname;
+  player.lastname = req.body.lastname;
 
-  res.send('respond for ' + req.params.username);
+  player.save(function (err) {
+    if (err) {
+      res.send(err);
+    }
+
+    res.json({message: 'player created'});
+  });
+
 });
 
 
-router.get('/all', function (req, res, next) {
-
-  console.log('test');
+router.get('/all', function (req, res) {
 
   Player.find({}, function (err, players) {
-    var playersList = {};
+
+    if (err) {
+      res.send(err);
+    }
+
+    var playersList = [];
 
     players.forEach(function (player) {
-      playersList[player._id] = player;
+      playersList.push(player);
     });
+
     res.send(playersList);
   });
-  res.send('respond for ' + req.params.username);
 
 });
 

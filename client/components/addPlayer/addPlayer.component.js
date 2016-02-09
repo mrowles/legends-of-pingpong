@@ -31,7 +31,6 @@ System.register(['angular2/core', 'angular2/http', '../../model/player/player.mo
                 }
                 AddPlayerComponent.prototype.onSubmit = function () {
                     var _this = this;
-                    //this.http.get('/api/users')
                     this.http.get('/players/all')
                         .subscribe(function (response) { return _this.response = response; });
                     this.submitted = true;
