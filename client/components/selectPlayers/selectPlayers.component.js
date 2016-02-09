@@ -34,7 +34,7 @@ System.register(['angular2/core', 'angular2/http', '../../model/player/player.mo
                 }
                 SelectPlayersComponent.prototype.ngOnInit = function () {
                     var _this = this;
-                    this.http.get('/player/all').map(function (res) { return res.json(); })
+                    this.http.get('/api/player/all').map(function (res) { return res.json(); })
                         .subscribe(function (res) { return _this.playerList = res; });
                 };
                 SelectPlayersComponent.prototype.onSubmit = function () {

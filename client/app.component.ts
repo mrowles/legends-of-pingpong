@@ -16,9 +16,13 @@ import {SelectPlayersComponent} from '../client/components/selectPlayers/selectP
     name: 'Home',
     component: HomepageComponent
   }, {
-    path: '/players/add/',
+    path: '/players/add',
     name: 'PlayerAdd',
     component: AddPlayerComponent
+  }, {
+    path: '/players',
+    name: 'Players',
+    component: SelectPlayersComponent
   }
 ])
 

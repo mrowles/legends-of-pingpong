@@ -21,7 +21,7 @@ export class SelectPlayersComponent implements OnInit {
   selectedPlayers = [];
 
   ngOnInit() {
-    this.http.get('/player/all').map(res => res.json())
+    this.http.get('/api/player/all').map(res => res.json())
       .subscribe(
         res => this.playerList = res
       );
