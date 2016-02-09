@@ -31,3 +31,12 @@ node_modules
 
 #Intellij
 .idea
+
+public
+
+# OS Specific
+.DS_Store
+
+# Ignore CSS & Map File
+*.css
+*.map
