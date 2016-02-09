@@ -1,13 +1,12 @@
 <div class="container">
   <h1>Select Players</h1>
 
-  <form (ngSubmit)="onSubmit()" #selectPlayerForm="ngForm">
+  <form #selectPlayerForm="ngForm">
 
     <div *ngFor="#player of playerList">
       <h2>{{ player.name }} {{player.email}}</h2>
     </div>
-    <button type="submit" class="btn btn-default">Submit
-    </button>
+
   </form>
 
 

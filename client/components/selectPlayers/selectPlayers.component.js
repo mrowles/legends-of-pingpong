@@ -1,4 +1,4 @@
-System.register(['angular2/core', 'angular2/http', '../../model/player/player.model', 'rxjs/Rx'], function(exports_1) {
+System.register(['angular2/core', 'angular2/http', 'angular2/router', '../../model/player/player.model', 'rxjs/Rx'], function(exports_1) {
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -8,7 +8,7 @@ System.register(['angular2/core', 'angular2/http', '../../model/player/player.mo
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, http_1, player_model_1;
+    var core_1, http_1, router_1, player_model_1;
     var SelectPlayersComponent;
     return {
         setters:[
@@ -17,6 +17,9 @@ System.register(['angular2/core', 'angular2/http', '../../model/player/player.mo
             },
             function (http_1_1) {
                 http_1 = http_1_1;
+            },
+            function (router_1_1) {
+                router_1 = router_1_1;
             },
             function (player_model_1_1) {
                 player_model_1 = player_model_1_1;
@@ -44,7 +47,7 @@ System.register(['angular2/core', 'angular2/http', '../../model/player/player.mo
                 SelectPlayersComponent = __decorate([
                     core_1.Component({
                         selector: 'select-players-form',
-                        providers: [http_1.HTTP_PROVIDERS],
+                        providers: [http_1.HTTP_PROVIDERS, router_1.ROUTER_DIRECTIVES],
                         templateUrl: '/client/components/selectPlayers/selectPlayers.html'
                     }), 
                     __metadata('design:paramtypes', [http_1.Http])

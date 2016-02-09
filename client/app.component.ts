@@ -25,6 +25,5 @@ import {SelectPlayersComponent} from '../client/components/selectPlayers/selectP
     component: SelectPlayersComponent
   }
 ])
-
 export class AppComponent {
 }
