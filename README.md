@@ -12,7 +12,7 @@
  
 #### Create database:
 
-```use <db name>```
+```use lop-dev```
 
 #### Create user:
 
@@ -20,7 +20,7 @@
 
 #### Insert row:
 
-```db.player.insert({"firstname":"vrum", "surname":"vrum"});```
+```db.players.insert({"firstname":"vrum", "lastname":"vrum", "email":"vrum@vrum.com"});```
 
 ### Node
 
