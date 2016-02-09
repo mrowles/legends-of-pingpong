@@ -40,3 +40,6 @@ public
 # Ignore CSS & Map File
 *.css
 *.map
+
+legends-of-pingpong.iml
+double-dragon.iml
