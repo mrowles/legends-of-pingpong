@@ -9,8 +9,10 @@ router.post('', function (req, res) {
   player.email = req.body.email;
 
   player.save(function (err) {
+
     if (err) {
-      res.send(err);
+      res.json(err);
+      return;
     }
 
     res.json({message: 'player created'});
@@ -23,7 +25,8 @@ router.get('/all', function (req, res) {
   Player.find({}, function (err, players) {
 
     if (err) {
-      res.send(err);
+      res.json(err);
+      return;
     }
 
     var playersList = [];
@@ -32,7 +35,7 @@ router.get('/all', function (req, res) {
       playersList.push(player);
     });
 
-    res.send(playersList);
+    res.json(playersList);
   });
 
 });

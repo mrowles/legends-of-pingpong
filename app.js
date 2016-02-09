@@ -5,7 +5,6 @@ var db = require('./server/model/db');
 var players = require('./server/routes/players');
 var bodyParser = require('body-parser');
 
-// parse application/x-www-form-urlencoded
 app.use(bodyParser.json());
 
 app.use('/', express.static(__dirname + '/'));
