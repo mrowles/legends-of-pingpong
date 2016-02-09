@@ -1,11 +1,11 @@
 {
-  "name": "double-dragon",
+  "name": "legends-of-pong",
   "version": "1.0.0-alpha.1",
   "scripts": {
     "tsc": "tsc",
     "tsc:w": "tsc -w",
     "build-css": "node-sass --include-path scss client/index.scss public/css/styles.css",
-    "start": "concurrent \"npm run tsc:w\" \"node app.js\" "
+    "start": "concurrent \"npm run build-css\" \"npm run tsc:w\" \"node app.js\" "
   },
   "license": "ISC",
   "dependencies": {

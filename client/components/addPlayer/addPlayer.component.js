@@ -25,22 +25,26 @@ System.register(['angular2/core', 'angular2/http', '../../model/player/player.mo
         execute: function() {
             AddPlayerComponent = (function () {
                 function AddPlayerComponent(http) {
-                    this.model = new player_model_1.Player(1, 'John', 'Test', 'john@gmail.com');
-                    this.submitted = false;
+                    this.model = new player_model_1.Player(1, '', '');
                     this.response = {};
                     this.http = http;
                 }
                 AddPlayerComponent.prototype.onSubmit = function () {
                     var _this = this;
-                    console.log('Submit', this.model);
                     var json = JSON.stringify(this.model);
-                    console.log('Submit json', json);
                     var headers = new http_1.Headers();
                     headers.append('Content-Type', 'application/json');
                     this.http.post('/player', json, {
                         headers: headers
-                    }).map(function (res) { return res.json(); }).subscribe(function (res) { return console.log('in subscribe submitted', res); }, function (res) { return _this.postResponse = res.json(); }, function () { return _this.submitted = true; });
+                    }).map(function (res) { return res.json(); }).subscribe(function (res) { return _this.postResponse = res; });
                 };
+                Object.defineProperty(AddPlayerComponent.prototype, "message", {
+                    get: function () {
+                        return JSON.stringify(this.postResponse);
+                    },
+                    enumerable: true,
+                    configurable: true
+                });
                 AddPlayerComponent = __decorate([
                     core_1.Component({
                         selector: 'add-player-form',

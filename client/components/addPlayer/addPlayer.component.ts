@@ -5,40 +5,35 @@ import {Player} from '../../model/player/player.model';
 import 'rxjs/Rx';
 
 @Component({
-    selector: 'add-player-form',
-    providers: [HTTP_PROVIDERS],
-    templateUrl: '/client/components/addPlayer/addPlayer.html'
+  selector: 'add-player-form',
+  providers: [HTTP_PROVIDERS],
+  templateUrl: '/client/components/addPlayer/addPlayer.html'
 })
 
 export class AddPlayerComponent {
-    model = new Player(1, 'John', 'Test', 'john@gmail.com');
-    submitted = false;
-    response = {};
+  model = new Player(1, '', '');
+  response = {};
   postResponse;
-    http:Http;
+  http:Http;
 
-    constructor(http:Http) {
-        this.http = http;
-    }
+  constructor(http:Http) {
+    this.http = http;
+  }
 
-    onSubmit() {
+  onSubmit() {
+    let json = JSON.stringify(this.model);
+    let headers = new Headers();
 
-      console.log('Submit', this.model);
+    headers.append('Content-Type', 'application/json');
 
-      var json = JSON.stringify(this.model);
-      console.log('Submit json', json);
+    this.http.post('/player', json, {
+      headers: headers
+    }).map(res => res.json()).subscribe(
+      res => this.postResponse = res
+    );
+  }
 
-      let headers = new Headers();
-      headers.append('Content-Type', 'application/json');
-      this.http.post('/player', json, {
-        headers: headers
-      }).map(res => res.json()).subscribe(
-        res => console.log('in subscribe submitted', res),
-        res => this.postResponse = res.json(),
-        () => this.submitted = true
-      );
-
-      //this.http.get('/player/all')
-      //  .subscribe(response => this.response = response.json());
+  get message() {
+    return JSON.stringify(this.postResponse);
   }
 }

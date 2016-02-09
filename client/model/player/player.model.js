@@ -4,10 +4,9 @@ System.register([], function(exports_1) {
         setters:[],
         execute: function() {
             Player = (function () {
-                function Player(id, firstname, lastname, email) {
+                function Player(id, name, email) {
                     this.id = id;
-                    this.firstname = firstname;
-                    this.lastname = lastname;
+                    this.name = name;
                     this.email = email;
                 }
                 return Player;
