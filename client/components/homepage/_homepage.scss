@@ -1,0 +1,24 @@
+.homepage {
+
+  .title {
+    width: 300px;
+    height: 100px;
+    background-color: #000;
+    color: #fff;
+    text-transform: uppercase;
+    margin: 0 auto;
+    padding: 20px;
+
+    .upper, .lower {
+      display: block;
+      text-align: center;
+    }
+    .upper {
+      font-size: 16px
+    }
+
+    .lower {
+      font-size: 48px
+    }
+  }
+}
