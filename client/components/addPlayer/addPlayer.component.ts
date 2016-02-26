@@ -43,7 +43,7 @@ export class AddPlayerComponent {
 
     this.http.post('/api/player', json, {
       headers: headers
-    }).map(res => res.status).subscribe(
+    }).subscribe(
       res => this.postResponse = res,
       () => console.log(),
       () => redirect(this.postResponse, this.router)
@@ -59,7 +59,7 @@ export class AddPlayerComponent {
 }
 
 function redirect(res, router) {
-  if(res === 201){
+  if(res.status === 201){
     router.navigate(['Players']);
   }
 }

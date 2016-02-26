@@ -1,4 +1,6 @@
-System.register(['angular2/core', 'angular2/http', '../../model/player/player.model', 'rxjs/Rx', 'angular2/router'], function(exports_1) {
+System.register(['angular2/core', 'angular2/http', '../../model/player/player.model', 'rxjs/Rx', 'angular2/router'], function(exports_1, context_1) {
+    "use strict";
+    var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -11,7 +13,7 @@ System.register(['angular2/core', 'angular2/http', '../../model/player/player.mo
     var core_1, http_1, player_model_1, router_1;
     var AddPlayerComponent;
     function redirect(res, router) {
-        if (res === 201) {
+        if (res.status === 201) {
             router.navigate(['Players']);
         }
     }
@@ -46,7 +48,7 @@ System.register(['angular2/core', 'angular2/http', '../../model/player/player.mo
                     headers.append('Content-Type', 'application/json');
                     this.http.post('/api/player', json, {
                         headers: headers
-                    }).map(function (res) { return res.status; }).subscribe(function (res) { return _this.postResponse = res; }, function () { return console.log(); }, function () { return redirect(_this.postResponse, _this.router); });
+                    }).subscribe(function (res) { return _this.postResponse = res; }, function () { return console.log(); }, function () { return redirect(_this.postResponse, _this.router); });
                 };
                 Object.defineProperty(AddPlayerComponent.prototype, "message", {
                     get: function () {
@@ -64,7 +66,7 @@ System.register(['angular2/core', 'angular2/http', '../../model/player/player.mo
                     __metadata('design:paramtypes', [http_1.Http, router_1.Router])
                 ], AddPlayerComponent);
                 return AddPlayerComponent;
-            })();
+            }());
             exports_1("AddPlayerComponent", AddPlayerComponent);
         }
     }
