@@ -10,6 +10,15 @@
 
 [Guide](https://docs.mongodb.org/manual/tutorial/install-mongodb-on-os-x/)
  
+ 
+if you see the this error
+ 
+```Failed to connect to 127.0.0.1:27017, reason: errno:61 Connection refused```
+
+run
+
+```brew services start mongodb```
+
 #### Create database:
 
 ```use lop-dev```
