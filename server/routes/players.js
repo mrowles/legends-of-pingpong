@@ -11,11 +11,12 @@ router.post('', function (req, res) {
   player.save(function (err) {
 
     if (err) {
-      res.json(err);
+      res.status(504).json(err);
       return;
     }
 
-    res.json({message: 'player created'});
+    res.status(201).json({message: 'player created'});
+
   });
 
 });

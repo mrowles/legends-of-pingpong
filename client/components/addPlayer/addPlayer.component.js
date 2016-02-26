@@ -1,4 +1,4 @@
-System.register(['angular2/core', 'angular2/http', '../../model/player/player.model', 'rxjs/Rx'], function(exports_1) {
+System.register(['angular2/core', 'angular2/http', '../../model/player/player.model', 'rxjs/Rx', 'angular2/router'], function(exports_1) {
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -8,8 +8,13 @@ System.register(['angular2/core', 'angular2/http', '../../model/player/player.mo
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, http_1, player_model_1;
+    var core_1, http_1, player_model_1, router_1;
     var AddPlayerComponent;
+    function redirect(res, router) {
+        if (res === 201) {
+            router.navigate(['Players']);
+        }
+    }
     return {
         setters:[
             function (core_1_1) {
@@ -21,14 +26,18 @@ System.register(['angular2/core', 'angular2/http', '../../model/player/player.mo
             function (player_model_1_1) {
                 player_model_1 = player_model_1_1;
             },
-            function (_1) {}],
+            function (_1) {},
+            function (router_1_1) {
+                router_1 = router_1_1;
+            }],
         execute: function() {
             AddPlayerComponent = (function () {
-                function AddPlayerComponent(http) {
+                function AddPlayerComponent(http, router) {
                     this.model = new player_model_1.Player(1, '', '');
                     this.submitted = false;
                     this.response = {};
                     this.http = http;
+                    this.router = router;
                 }
                 AddPlayerComponent.prototype.onSubmit = function () {
                     var _this = this;
@@ -37,7 +46,7 @@ System.register(['angular2/core', 'angular2/http', '../../model/player/player.mo
                     headers.append('Content-Type', 'application/json');
                     this.http.post('/api/player', json, {
                         headers: headers
-                    }).map(function (res) { return res.json(); }).subscribe(function (res) { return _this.postResponse = res; });
+                    }).map(function (res) { return res.status; }).subscribe(function (res) { return _this.postResponse = res; }, function () { return console.log(); }, function () { return redirect(_this.postResponse, _this.router); });
                 };
                 Object.defineProperty(AddPlayerComponent.prototype, "message", {
                     get: function () {
@@ -52,7 +61,7 @@ System.register(['angular2/core', 'angular2/http', '../../model/player/player.mo
                         providers: [http_1.HTTP_PROVIDERS],
                         templateUrl: '/client/components/addPlayer/addPlayer.html'
                     }), 
-                    __metadata('design:paramtypes', [http_1.Http])
+                    __metadata('design:paramtypes', [http_1.Http, router_1.Router])
                 ], AddPlayerComponent);
                 return AddPlayerComponent;
             })();
