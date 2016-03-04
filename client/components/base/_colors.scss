@@ -1,3 +1,12 @@
-$color-background-default: #fff;
+$colors: (
+  white-1: #fff,
+  black-1: #000,
+  grey-1: #bbb
+);
 
-$color-text-body-primary: #000;
+@function color($color) {
+  @return map-get($colors, $color);
+}
+
+$color-background-default: color(white-1);
+$color-text-body-primary: color(black-1);

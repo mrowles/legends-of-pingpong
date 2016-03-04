@@ -2,7 +2,7 @@ import {Component}         from 'angular2/core';
 import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
 import {AddPlayerComponent} from '../client/components/addPlayer/addPlayer.component';
 import {HomepageComponent} from '../client/components/homepage/homepage.component';
-import {SelectPlayersComponent} from '../client/components/selectPlayers/selectPlayers.component';
+import {NewMatchPage} from '../client/components/newMatch/newMatch.component';
 
 @Component({
   selector: 'lopp-app',
@@ -20,9 +20,9 @@ import {SelectPlayersComponent} from '../client/components/selectPlayers/selectP
     name: 'PlayerAdd',
     component: AddPlayerComponent
   }, {
-    path: '/players',
-    name: 'Players',
-    component: SelectPlayersComponent
+    path: '/newMatch',
+    name: 'StartNewMatch',
+    component: NewMatchPage
   }
 ])
 export class AppComponent {

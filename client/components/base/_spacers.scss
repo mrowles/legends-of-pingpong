@@ -1,15 +1,119 @@
-.p-top-sm {
-  padding-top: 10px;
+$spaces: (
+  xs: 5,
+  sm: 10,
+  md: 15,
+  lg: 30,
+  xl: 45,
+  xxl: 60,
+  xxxl: 90,
+  xxxxl: 150
+);
+
+$directions: (
+  top,
+  right,
+  bottom,
+  left
+);
+
+/* Responsive stepped percentages */
+$xs-percentage: 0.55;
+$sm-percentage: $xs-percentage / 3 + $xs-percentage;
+$md-percentage: $sm-percentage / 3 + $sm-percentage;
+
+@mixin spaces {
+  @each $direction in $directions {
+    @each $name, $space in $spaces {
+
+      /* Margin on specific edge */
+      .m-#{$direction}-#{$name} {
+        margin-#{$direction}: rem($space * $xs-percentage);
+
+        @include breakpoint(sm) {
+          margin-#{$direction}: rem($space * $sm-percentage);
+        }
+
+        @include breakpoint(md) {
+          margin-#{$direction}: rem($space * $md-percentage);
+        }
+
+        @include breakpoint(lg) {
+          margin-#{$direction}: rem($space);
+        }
+      }
+
+      /* Rigid margin on specific edge */
+      .m-rigid-#{$direction}-#{$name} {
+        margin-#{$direction}: rem($space);
+      }
+
+      /* Margin on all edges */
+      .m-all-#{$name} {
+        margin: rem($space * $xs-percentage);
+
+        @include breakpoint(sm) {
+          margin: rem($space * $sm-percentage);
+        }
+
+        @include breakpoint(md) {
+          margin: rem($space * $md-percentage);
+        }
+
+        @include breakpoint(lg) {
+          margin: rem($space);
+        }
+      }
+
+      /* Rigid margin on all edge */
+      .m-all-rigid-#{$direction}-#{$name} {
+        margin: rem($space);
+      }
+
+      /* Padding on soecific edge */
+      .p-#{$direction}-#{$name} {
+        padding-#{$direction}: rem($space * $xs-percentage);
+
+        @include breakpoint(sm) {
+          padding-#{$direction}: rem($space * $sm-percentage);
+        }
+
+        @include breakpoint(md) {
+          padding-#{$direction}: rem($space * $md-percentage);
+        }
+
+        @include breakpoint(lg) {
+          padding-#{$direction}: rem($space);
+        }
+      }
+
+      /* Rigid padding on specific edge */
+      .p-rigid-#{$direction}-#{$name} {
+        padding-#{$direction}: rem($space);
+      }
+
+      /* Padding on all edges */
+      .p-all-#{$name} {
+        padding: rem($space * $xs-percentage);
+
+        @include breakpoint(sm) {
+          padding: rem($space * $sm-percentage);
+        }
+
+        @include breakpoint(md) {
+          padding: rem($space * $md-percentage);
+        }
+
+        @include breakpoint(lg) {
+          padding: rem($space);
+        }
+      }
+
+      /* Rigid padding on all edges */
+      .p-all-rigid-#{$name} {
+        padding: rem($space);
+      }
+    }
+  }
 }
 
-.p-top-md {
-  padding-top: 20px;
-}
-
-.p-top-lg {
-  padding-top: 40px;
-}
-
-.p-top-xlg {
-  padding-top: 80px;
-}
+@include spaces;

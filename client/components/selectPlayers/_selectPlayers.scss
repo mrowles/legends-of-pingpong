@@ -1,19 +1,16 @@
 .player {
-  a {
-    color: #000;
-  }
 
   .player-icon {
     width: rem(60);
     height: rem(60);
     margin: 0 auto;
     border-radius: 50%;
-    border: 1px solid grey;
+    border: 1px solid color(grey-1);
   }
 
   .player-name {
     font-size: rem(16);
-    margin: 10px 0;
+    margin: rem(10) 0;
     text-align: center;
   }
 }
