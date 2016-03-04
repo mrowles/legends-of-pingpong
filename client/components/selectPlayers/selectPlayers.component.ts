@@ -1,13 +1,12 @@
 import {Component, OnInit} from 'angular2/core'
 import {NgForm} from 'angular2/common';
 import {BaseRequestOptions, Http, HTTP_PROVIDERS, Headers} from 'angular2/http';
-import {ROUTER_DIRECTIVES} from 'angular2/router';
 import {Player} from '../../model/player/player.model';
 import 'rxjs/Rx';
 
 @Component({
   selector: 'select-players-form',
-  providers: [HTTP_PROVIDERS, ROUTER_DIRECTIVES],
+  providers: [HTTP_PROVIDERS],
   templateUrl: '/client/components/selectPlayers/selectPlayers.html'
 })
 
