@@ -1,10 +1,15 @@
 <div class="container">
-  <h1>Select Players</h1>
-
   <form #selectPlayerForm="ngForm">
 
-    <div *ngFor="#player of playerList">
-      <h2>{{ player.name }} {{player.email}}</h2>
+    <div class="row">
+      <div class="col-xs-12 col-md-6 col-lg-3 player" *ngFor="#player of playerList">
+        <a href="#">
+          <div class="player-icon"></div>
+          <p class="player-name">
+            {{player.name}}
+          </p>
+        </a>
+      </div>
     </div>
 
   </form>

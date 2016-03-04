@@ -1,7 +1,19 @@
-.ng-valid[required] {
-  border-left: 5px solid #42A948;
-}
+.player {
+  a {
+    color: #000;
+  }
 
-.ng-invalid {
-  border-left: 5px solid #a94442;
+  .player-icon {
+    width: rem(60);
+    height: rem(60);
+    margin: 0 auto;
+    border-radius: 50%;
+    border: 1px solid grey;
+  }
+
+  .player-name {
+    font-size: rem(16);
+    margin: 10px 0;
+    text-align: center;
+  }
 }

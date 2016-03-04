@@ -9,19 +9,21 @@
 }
 
 html {
-  font-size: 16px;
-  -webkit-tap-highlight-color: #cc0000;
+  font-size: #{$default-font-size-base}px;
+  -webkit-tap-highlight-color: $default-color-highlight;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
 
 body {
   margin: 0;
-  background-color: #fff;
-  color: #cc0000;
-  font-family: Arial, sans-serif;
-  font-size: 16px;
-  line-height: 18px;
+  background-color: $color-background-default;
+  color: $color-text-body-primary;
+  font-family: $default-font-family, Arial, sans-serif;
+  font-size: #{$default-font-size-text}px;
+  line-height: rem($default-line-height);
+  text-rendering: optimizeSpeed;
+  font-variant-ligatures: none;
 }
 
 article,

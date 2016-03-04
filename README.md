@@ -35,8 +35,14 @@ run
 
 ```npm install```
 
-### Run
+### Start App
 
 ```npm start```
 
 This will start the application on [http://localhost:8765/](http://localhost:8765/)
+
+### Run Tasks
+
+```npm run [command]```
+
+i.e., ```npm run build-css```
