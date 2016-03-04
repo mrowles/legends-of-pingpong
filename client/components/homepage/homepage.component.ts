@@ -1,12 +1,9 @@
 import {Component} from 'angular2/core';
-import {NgForm} from 'angular2/common';
-import {BaseRequestOptions, Http, HTTP_PROVIDERS, Headers} from 'angular2/http';
+import {ROUTER_DIRECTIVES} from 'angular2/router';
 
 @Component({
-  providers: [HTTP_PROVIDERS],
+  directives: [ROUTER_DIRECTIVES],
   templateUrl: '/client/components/homepage/homepage.html'
 })
 
-export class HomepageComponent {
-
-}
+export class HomepageComponent {}

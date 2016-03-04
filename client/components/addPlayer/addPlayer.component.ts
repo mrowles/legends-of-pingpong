@@ -3,14 +3,7 @@ import {NgForm} from 'angular2/common';
 import {BaseRequestOptions, Http, HTTP_PROVIDERS, Headers} from 'angular2/http';
 import {Player} from '../../model/player/player.model';
 import 'rxjs/Rx';
-import {Router} from 'angular2/router';
-import {AppComponent} from '../../app.component';
-import {RouterLink} from "angular2/router";
-import {routerOnActivate} from "angular2/src/router/lifecycle_annotations_impl";
-
-//export class AddDisplay {
-//  constructor(private router: Router)
-//}
+import {Router, RouterLink} from 'angular2/router';
 
 @Component({
   selector: 'add-player-form',
@@ -44,9 +37,8 @@ export class AddPlayerComponent {
     this.http.post('/api/player', json, {
       headers: headers
     }).subscribe(
-      res => this.postResponse = res,
-      () => console.log(),
-      () => redirect(this.postResponse, this.router)
+      res => redirect(this.router),
+      res => this.postResponse = res.json()
     );
 
   }
@@ -58,18 +50,6 @@ export class AddPlayerComponent {
 
 }
 
-function redirect(res, router) {
-  if(res.status === 201){
+function redirect(router) {
     router.navigate(['Players']);
-  }
 }
-
-
-/*
-
- this.http.post('/api/player', json, {
- headers: headers
- }).map(res => res.json()).subscribe(
- res => this.postResponse = res
- );
- console.log(this.postResponse);*/

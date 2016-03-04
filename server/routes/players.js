@@ -15,7 +15,7 @@ router.post('', function (req, res) {
       return;
     }
 
-    res.status(201).json({message: 'player created'});
+    res.status(202).json({message: 'player created'});
 
   });
 

@@ -1,9 +1,8 @@
-import {Component} from 'angular2/core'
+import {Component, OnInit} from 'angular2/core'
 import {NgForm} from 'angular2/common';
 import {BaseRequestOptions, Http, HTTP_PROVIDERS, Headers} from 'angular2/http';
 import {ROUTER_DIRECTIVES} from 'angular2/router';
 import {Player} from '../../model/player/player.model';
-import {OnInit} from 'angular2/core'
 import 'rxjs/Rx';
 
 @Component({
@@ -11,6 +10,7 @@ import 'rxjs/Rx';
   providers: [HTTP_PROVIDERS, ROUTER_DIRECTIVES],
   templateUrl: '/client/components/selectPlayers/selectPlayers.html'
 })
+
 export class SelectPlayersComponent implements OnInit {
 
   model = new Player(1, '', '');
@@ -26,7 +26,6 @@ export class SelectPlayersComponent implements OnInit {
         res => this.playerList = res
       );
   }
-
 
   constructor(http:Http) {
     this.http = http;
