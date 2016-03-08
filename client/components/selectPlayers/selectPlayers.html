@@ -5,12 +5,12 @@
 
     <div class="row">
       <div class="col-xs-12 col-md-6 col-lg-3 player" *ngFor="#player of playerList">
-        <a href="#">
+        <span (click)="addPlayerToMatch(player)">
           <div class="player-icon"></div>
           <p class="player-name">
             {{player.name}}
           </p>
-        </a>
+        </span>
       </div>
     </div>
 
