@@ -1,12 +1,7 @@
 <div class="new-match">
-
-  <div class="row" *ngIf="getLastAddedPlayer() != undefined">
-    <div class="col-xs-12">
-      <div class="new-player">
-        <p class="added-player">
-          <span class="player-icon"></span> {{getLastAddedPlayer().name}} was added successfully
-        </p>
-      </div>
+  <div class="row" *ngIf="lastAddedPlayer != undefined">
+    <div class="new-player">
+      <p class="added-player"><span class="player-icon"></span> {{lastAddedPlayer.name}} was added successfully</p>
     </div>
   </div>
 

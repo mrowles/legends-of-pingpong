@@ -21,16 +21,12 @@ export class SelectPlayersComponent implements OnInit {
   http:Http;
   selectedPlayers = [];
 
-  constructor(http: Http, private _playerService: PlayerService, private _matchService: MatchService) {
+  constructor(http: Http, private _matchService: MatchService) {
     this.http = http;
   }
 
   addPlayerToMatch(player) {
     this._matchService.addPlayer(player);
-  }
-
-  getLastAddedPlayer() {
-    this.lastAddedPlayer = this._playerService.getLastAddedPlayer();
   }
 
   ngOnInit() {
