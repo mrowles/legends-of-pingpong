@@ -1,4 +1,4 @@
-import {Component} from 'angular2/core';
+import {Component, OnInit} from 'angular2/core';
 import {SelectPlayersComponent} from '../selectPlayers/selectPlayers.component';
 import {PlayerService} from '../../service/player.service';
 import {Player} from '../../model/player/player.model';
@@ -9,13 +9,13 @@ import {MatchedPlayersComponent} from '../matchedPlayers/matchedPlayers.componen
   directives: [SelectPlayersComponent, MatchedPlayersComponent, ROUTER_DIRECTIVES],
   templateUrl: '/client/components/newMatch/newMatch.html'
 })
-export class NewMatchPage {
+export class NewMatchPage implements OnInit {
   lastAddedPlayer : Player;
 
   constructor(private _playerService: PlayerService) {}
 
-  getLastAddedPlayer() {
+  ngOnInit() {
     this.lastAddedPlayer = this._playerService.getLastAddedPlayer();
-    return this.lastAddedPlayer;
+    this._playerService.clearLastAddedPlayer();
   }
 }

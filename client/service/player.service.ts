@@ -14,4 +14,8 @@ export class PlayerService {
   setLastAddedPlayer(player: Player) {
     this.player = player;
   }
+
+  clearLastAddedPlayer() {
+    this.player =  null;
+  }
 }
