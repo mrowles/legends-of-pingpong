@@ -5,6 +5,7 @@ var bodyParser = require('body-parser');
 
 var index = require('./server/routes/index');
 var players = require('./server/routes/players');
+var matches = require('./server/routes/matches');
 
 var app = express();
 
@@ -16,6 +17,7 @@ app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, '/')));
 
 app.use('/api/player', players);
+app.use('/api/match', matches);
 
 app.use('/*', index);
 
