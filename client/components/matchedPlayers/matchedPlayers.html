@@ -1,21 +1,33 @@
-<div>
-  <div [ngSwitch]="" class="player-a">
+<div class="matched-players">
+
+  <div [ngSwitch]="" class="player m-right-lg">
     <span *ngSwitchWhen=match.playerA>
-      Please select player 1
+      <div class="player-icon unselected"></div>
     </span>
     <span *ngSwitchDefault>
-      player A: {{match.playerA.name}}
+      <div class="player-icon"></div>
+      <p class="player-name">
+        {{match.playerA.name}}
+      </p>
     </span>
   </div>
-  <div [ngSwitch]="" class="player-a">
+
+    <div class="versus">
+      <p>
+        VS
+      </p>
+    </div>
+
+  <div [ngSwitch]="" class="player m-left-lg">
     <span *ngSwitchWhen=match.playerB>
-      Please select player 2
+      <div class="player-icon unselected"></div>
     </span>
     <span *ngSwitchDefault>
-      player B: {{match.playerB.name}}
+      <div class="player-icon"></div>
+      <p class="player-name">
+        {{match.playerB.name}}
+      </p>
     </span>
   </div>
-  <div *ngIf="match.playerA && match.playerB">
-    <a class="button">Fight</a>
-  </div>
+
 </div>

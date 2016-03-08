@@ -1,0 +1,30 @@
+.matched-players {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+
+  .player {
+    text-align: center;
+
+    .player-icon {
+      @extend %player-icon;
+
+      width: rem(130);
+      height: rem(130);
+
+      &.unselected {
+        border-style: dashed;
+      }
+    }
+
+    .player-name {
+      margin-top: rem(20);
+      font-size: rem(40);
+      text-transform: uppercase;
+    }
+  }
+
+  .versus {
+    font-size: rem(100);
+  }
+}

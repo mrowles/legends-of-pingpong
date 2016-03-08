@@ -1,17 +1,18 @@
-.player-icon {
-  width: rem(60);
-  height: rem(60);
-  display: inline-block;
-  margin: auto rem(5);
-  border-radius: 50%;
-  border: 1px solid color(grey-1);
-}
+.select-players {
+  .player {
+    width: rem(120);
+    margin: 0 auto;
+    text-align: center;
+    cursor: pointer;
 
-.player {
+    .player-icon {
+      @extend %player-icon;
+    }
 
-  .player-name {
-    font-size: rem(16);
-    margin: rem(10) 0;
-    text-align: left;
+    .player-name {
+      font-size: rem(16);
+      margin: rem(10) 0;
+      text-transform: uppercase;
+    }
   }
 }

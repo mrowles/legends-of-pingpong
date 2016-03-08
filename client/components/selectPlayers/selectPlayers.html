@@ -1,18 +1,14 @@
-<div class="container">
-  <form #selectPlayerForm="ngForm">
+<div class="select-players container">
 
-    <div class="row">
-      <div class="col-xs-12 col-md-6 col-lg-3 player" *ngFor="#player of playerList">
-        <span (click)="addPlayerToMatch(player)">
-          <div class="player-icon"></div>
-          <p class="player-name">
-            {{player.name}}
-          </p>
-        </span>
+  <div class="row">
+    <div class="col-xs-6 col-lg-3" *ngFor="#player of playerList">
+      <div class="player" (click)="addPlayerToMatch(player)">
+        <div class="player-icon"></div>
+        <p class="player-name">
+          {{player.name}}
+        </p>
       </div>
     </div>
-
-  </form>
-
+  </div>
 
 </div>

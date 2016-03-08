@@ -24,4 +24,8 @@ export class MatchService {
     return this.match;
   }
 
+  isMatchReady() {
+    return this.match.playerA !== undefined && this.match.playerB !== undefined;
+  }
+
 }
