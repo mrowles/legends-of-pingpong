@@ -1,0 +1,21 @@
+<div>
+  <div [ngSwitch]="" class="player-a">
+    <span *ngSwitchWhen=match.playerA>
+      Please select player 1
+    </span>
+    <span *ngSwitchDefault>
+      player A: {{match.playerA.name}}
+    </span>
+  </div>
+  <div [ngSwitch]="" class="player-a">
+    <span *ngSwitchWhen=match.playerB>
+      Please select player 2
+    </span>
+    <span *ngSwitchDefault>
+      player B: {{match.playerB.name}}
+    </span>
+  </div>
+  <div *ngIf="match.playerA && match.playerB">
+    <a class="button">Fight</a>
+  </div>
+</div>

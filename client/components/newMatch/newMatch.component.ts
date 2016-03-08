@@ -3,11 +3,11 @@ import {SelectPlayersComponent} from '../selectPlayers/selectPlayers.component';
 import {PlayerService} from '../../service/player.service';
 import {Player} from '../../model/player/player.model';
 import {ROUTER_DIRECTIVES} from 'angular2/router';
+import {MatchedPlayersComponent} from '../matchedPlayers/matchedPlayers.component';
 
 @Component({
-  directives: [SelectPlayersComponent, ROUTER_DIRECTIVES],
+  directives: [SelectPlayersComponent, MatchedPlayersComponent, ROUTER_DIRECTIVES],
   templateUrl: '/client/components/newMatch/newMatch.html'
-
 })
 export class NewMatchPage {
   lastAddedPlayer : Player;

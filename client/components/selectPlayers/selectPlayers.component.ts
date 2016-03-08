@@ -3,6 +3,8 @@ import {NgForm} from 'angular2/common';
 import {BaseRequestOptions, Http, HTTP_PROVIDERS, Headers} from 'angular2/http';
 import {ROUTER_DIRECTIVES} from 'angular2/router';
 import {Player} from '../../model/player/player.model';
+import {PlayerService} from '../../service/player.service';
+import {MatchService} from '../../service/match.service';
 
 import 'rxjs/Rx';
 
@@ -19,8 +21,16 @@ export class SelectPlayersComponent implements OnInit {
   http:Http;
   selectedPlayers = [];
 
-  constructor(http: Http) {
+  constructor(http: Http, private _playerService: PlayerService, private _matchService: MatchService) {
     this.http = http;
+  }
+
+  addPlayerToMatch(player) {
+    this._matchService.addPlayer(player);
+  }
+
+  getLastAddedPlayer() {
+    this.lastAddedPlayer = this._playerService.getLastAddedPlayer();
   }
 
   ngOnInit() {
