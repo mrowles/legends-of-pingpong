@@ -1,6 +1,13 @@
 <div class="new-match">
+
+  <div class="row" *ngIf="getLastAddedPlayer() != undefined">
+    <div class="new-player">
+      <p class="added-player"><span class="player-icon"></span> {{getLastAddedPlayer().name}} was added successfully</p>
+    </div>
+  </div>
+  <a class="button add-player-button" [routerLink]="['PlayerAdd']">+ Add new player</a>
   <div class="row">
-    <div clas="col-xs-12">
+    <div>
       <select-players-form></select-players-form>
       <a class="button">Fight</a>
     </div>

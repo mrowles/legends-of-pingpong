@@ -1,7 +1,8 @@
 $colors: (
   white-1: #fff,
   black-1: #000,
-  grey-1: #bbb
+  grey-1: #bbb,
+  green-1: #7bb593
 );
 
 @function color($color) {
@@ -10,3 +11,4 @@ $colors: (
 
 $color-background-default: color(white-1);
 $color-text-body-primary: color(black-1);
+$color-valid: color(green-1);

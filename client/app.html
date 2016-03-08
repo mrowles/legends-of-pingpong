@@ -1,17 +1,10 @@
 <div class="container">
-
-  <nav>
-    <a [routerLink]="['Home']">Home</a>
-    <a [routerLink]="['StartNewMatch']">StartNewMatch</a>
-    <a [routerLink]="['PlayerAdd']">PlayerAdd</a>
-  </nav>
-
-  <div class="banner">
+  <div class="banner button" [routerLink]="['Home']">
     <h1>
       <span class="upper">Legends of</span> <span class="lower">pong</span>
     </h1>
   </div>
 
   <router-outlet></router-outlet>
-  
+
 </div>

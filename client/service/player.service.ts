@@ -7,10 +7,6 @@ export class PlayerService {
 
   player: Player;
 
-  constructor() {
-    this.player = new Player(1, 'John', 'john@k.com');
-  }
-
   getLastAddedPlayer() {
     return this.player;
   }
@@ -18,5 +14,4 @@ export class PlayerService {
   setLastAddedPlayer(player: Player) {
     this.player = player;
   }
-
 }
