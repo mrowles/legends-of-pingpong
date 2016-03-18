@@ -3,7 +3,7 @@ import {Http, HTTP_PROVIDERS} from 'angular2/http';
 import {ROUTER_DIRECTIVES} from 'angular2/router';
 import {Player} from '../../model/player/player.model';
 import {MatchService} from '../../service/match.service';
-
+import {Response} from 'angular2/http';
 import 'rxjs/Rx';
 
 @Component({
@@ -27,9 +27,9 @@ export class SelectPlayersComponent implements OnInit {
   }
 
   public ngOnInit(): void {
-    this.http.get('/api/player/all').map(response => response.json())
+    this.http.get('/api/player/all').map((response: Response) => response.json())
       .subscribe(
-        response => this.playerList = response
+        (playerList: Array<Player>) => this.playerList = playerList
       );
   }
 

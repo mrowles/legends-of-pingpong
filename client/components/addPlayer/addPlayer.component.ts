@@ -2,8 +2,9 @@ import {Component} from 'angular2/core';
 import {Http, HTTP_PROVIDERS, Headers} from 'angular2/http';
 import {Player} from '../../model/player/player.model';
 import {PlayerService} from '../../service/player.service';
-import 'rxjs/Rx';
 import {Router} from 'angular2/router';
+import {Response} from 'angular2/http';
+import 'rxjs/Rx';
 
 @Component({
   providers: [HTTP_PROVIDERS],
@@ -13,7 +14,7 @@ import {Router} from 'angular2/router';
 
 export class AddPlayerComponent {
   private model: Player = new Player(1, '', '');
-  private postResponse: Object;
+  private postResponse: Response;
   private http: Http;
   private router: Router;
   private playerService: PlayerService;
@@ -33,8 +34,8 @@ export class AddPlayerComponent {
     this.http.post('/api/player', json, {
       headers: headers,
     }).subscribe(
-      res => this.onSuccess(),
-      res => this.postResponse = res.json()
+      (response: Response) => this.onSuccess(),
+      (response: Response) => this.postResponse = response.json()
     );
 
   }
