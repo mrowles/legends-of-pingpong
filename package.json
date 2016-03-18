@@ -4,13 +4,14 @@
   "scripts": {
     "tsc": "tsc",
     "tsc:w": "tsc -w",
+    "tslint": "tslint client/**/*.ts -s node_modules/tslint-stylish -t stylish",
     "build-css": "node-sass --include-path scss client/index.scss public/css/styles.css",
     "watch-css": "nodemon -e scss -x \"npm run build-css\"",
     "start": "concurrent \"npm run watch-css\"  \"npm run tsc:w\" \"node app.js\" "
   },
   "license": "ISC",
   "dependencies": {
-    "angular2": "^2.0.0-beta.8",
+    "angular2": "^2.0.0-beta.10",
     "body-parser": "^1.14.2",
     "bootstrap": "^3.3.6",
     "cookie-parser": "~1.3.5",
@@ -28,7 +29,7 @@
     "rxjs": "5.0.0-beta.2",
     "serve-favicon": "~2.3.0",
     "systemjs": "0.19.6",
-    "zone.js": "0.5.15"
+    "zone.js": "0.6.4"
   },
   "devDependencies": {
     "concurrently": "^1.0.0",
@@ -37,6 +38,7 @@
     "node-sass": "^3.4.2",
     "nodemon": "^1.9.1",
     "tsd": "^0.6.5",
+    "tslint-stylish": "^2.1.0-beta",
     "typescript": "^1.8.2"
   }
 }

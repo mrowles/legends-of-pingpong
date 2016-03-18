@@ -1,21 +1,20 @@
 import {Injectable} from 'angular2/core';
 import {Player} from '../model/player/player.model';
 
-
 @Injectable()
 export class PlayerService {
 
-  player: Player;
+  private player: Player;
 
-  getLastAddedPlayer() {
+  public getLastAddedPlayer():Player {
     return this.player;
   }
 
-  setLastAddedPlayer(player: Player) {
+  public setLastAddedPlayer(player: Player):void {
     this.player = player;
   }
 
-  clearLastAddedPlayer() {
-    this.player =  null;
+  public clearLastAddedPlayer():void {
+    this.player =  undefined;
   }
 }

@@ -31,9 +31,13 @@ run
 
 ```db.players.insert({"firstname":"vrum", "lastname":"vrum", "email":"vrum@vrum.com"});```
 
-### Node
+### Setup App Dependencies
 
 ```npm install```
+
+### TSLint
+
+```npm install -g tslint typescript```
 
 ### Start App
 

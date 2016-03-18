@@ -1,30 +1,29 @@
 import {Injectable} from 'angular2/core';
-import {Player} from '../model/player/player.model';
 import {Match} from '../model/player/match.model';
+import {Player} from '../model/player/player.model';
 
 @Injectable()
 export class MatchService {
 
-  match:Match;
+  private match:Match;
 
   constructor() {
     this.match = new Match(1, undefined, undefined);
   }
 
-  addPlayer(player) {
+  public addPlayer(player:Player):void {
     if (this.match.playerA === undefined) {
       this.match.playerA = player;
-    }
-    else if (this.match.playerB === undefined) {
+    } else if (this.match.playerB === undefined) {
       this.match.playerB = player;
     }
   }
 
-  getMatch() {
+  public getMatch():Match {
     return this.match;
   }
 
-  isMatchReady() {
+  public isMatchReady():Boolean {
     return this.match.playerA !== undefined && this.match.playerB !== undefined;
   }
 

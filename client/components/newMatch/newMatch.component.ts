@@ -11,13 +11,17 @@ import {MatchedPlayersComponent} from '../matchedPlayers/matchedPlayers.componen
   templateUrl: '/client/components/newMatch/newMatch.html'
 })
 export class NewMatchPage implements OnInit {
-  lastAddedPlayer : Player;
+  private lastAddedPlayer:Player;
+  private playerService:PlayerService;
+  private matchService:MatchService;
 
-  constructor(private _playerService:PlayerService, private _matchService:MatchService) {
+  constructor(playerService:PlayerService, matchService:MatchService) {
+    this.playerService = playerService;
+    this.matchService = matchService;
   }
 
-  ngOnInit() {
-    this.lastAddedPlayer = this._playerService.getLastAddedPlayer();
-    this._playerService.clearLastAddedPlayer();
+  public ngOnInit():void {
+    this.lastAddedPlayer = this.playerService.getLastAddedPlayer();
+    this.playerService.clearLastAddedPlayer();
   }
 }

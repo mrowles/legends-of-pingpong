@@ -1,20 +1,19 @@
-import {Component, OnInit} from 'angular2/core';
-import {NgSwitch, NgSwitchWhen, NgSwitchDefault} from 'angular2/src/common/directives';
-import {Player} from '../../model/player/player.model';
+import {Component} from 'angular2/core';
 import {Match} from '../../model/player/match.model';
 import {MatchService} from '../../service/match.service';
 
 @Component({
   selector: 'matched-players',
-  templateUrl: '/client/components/matchedPlayers/matchedPlayers.html'
-
+  templateUrl: '/client/components/matchedPlayers/matchedPlayers.html',
 })
 
 export class MatchedPlayersComponent {
-  match:Match;
+  private match:Match;
+  private matchService:MatchService;
 
-  constructor(private _matchService:MatchService) {
-    this.match = this._matchService.getMatch();
+  constructor(matchService:MatchService) {
+    this.matchService = matchService;
+    this.match = this.matchService.getMatch();
   }
 
 }

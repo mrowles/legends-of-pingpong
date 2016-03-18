@@ -5,25 +5,26 @@ import {HomepageComponent} from '../client/components/homepage/homepage.componen
 import {NewMatchPage} from '../client/components/newMatch/newMatch.component';
 
 @Component({
+  directives: [ROUTER_DIRECTIVES],
   selector: 'lopp-app',
   templateUrl: './client/app.html',
-  directives: [ROUTER_DIRECTIVES]
 })
 
 @RouteConfig([
   {
-    path: '/',
+    component: HomepageComponent,
     name: 'Home',
-    component: HomepageComponent
+    path: '/',
   }, {
-    path: '/players/add',
+    component: AddPlayerComponent,
     name: 'PlayerAdd',
-    component: AddPlayerComponent
+    path: '/players/add',
   }, {
-    path: '/newMatch',
+    component: NewMatchPage,
     name: 'StartNewMatch',
-    component: NewMatchPage
-  }
+    path: '/newMatch',
+  },
 ])
+
 export class AppComponent {
 }
