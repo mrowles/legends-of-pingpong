@@ -1,6 +1,7 @@
 {
   "name": "legends-of-pong",
   "version": "1.0.0-alpha.1",
+  "engine": "node 4.4.0",
   "scripts": {
     "tsc": "tsc",
     "tsc:w": "tsc -w",
