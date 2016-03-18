@@ -34,10 +34,8 @@ run
 ### Setup App Dependencies
 
 ```npm install```
-
-### TSLint
-
 ```npm install -g tslint typescript```
+```npm install -g eslint```
 
 ### Start App
 
@@ -50,3 +48,14 @@ This will start the application on [http://localhost:8765/](http://localhost:876
 ```npm run [command]```
 
 i.e., ```npm run build-css```
+
+#### Linting
+
+Client: 
+
+```tslint client/**/*.ts -s node_modules/tslint-stylish -t stylish```
+
+Server:
+
+```eslint server/**/*.js```
+

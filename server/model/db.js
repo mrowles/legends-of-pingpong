@@ -2,9 +2,9 @@ var mongoose = require('mongoose');
 
 var db = mongoose.connection;
 
-db.on('error', console.error);
+db.on('error', console.error('Mongodb failed to start'));
 db.once('open', function () {
-  console.log('Mongoose db started');
+  console.log('Mongodb started');
 });
 
 mongoose.connect('mongodb://localhost/lop-dev');

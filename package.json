@@ -4,6 +4,7 @@
   "scripts": {
     "tsc": "tsc",
     "tsc:w": "tsc -w",
+    "eslint": "eslint server/**/*.js",
     "tslint": "tslint client/**/*.ts -s node_modules/tslint-stylish -t stylish",
     "build-css": "node-sass --include-path scss client/index.scss public/css/styles.css",
     "watch-css": "nodemon -e scss -x \"npm run build-css\"",
