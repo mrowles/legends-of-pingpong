@@ -8,19 +8,19 @@ import {MatchedPlayersComponent} from '../matchedPlayers/matchedPlayers.componen
 
 @Component({
   directives: [SelectPlayersComponent, MatchedPlayersComponent, ROUTER_DIRECTIVES],
-  templateUrl: '/client/components/newMatch/newMatch.html'
+  templateUrl: '/client/components/newMatch/newMatch.html',
 })
 export class NewMatchPage implements OnInit {
-  private lastAddedPlayer:Player;
-  private playerService:PlayerService;
-  private matchService:MatchService;
+  private lastAddedPlayer: Player;
+  private playerService: PlayerService;
+  private matchService: MatchService;
 
-  constructor(playerService:PlayerService, matchService:MatchService) {
+  constructor(playerService: PlayerService, matchService: MatchService) {
     this.playerService = playerService;
     this.matchService = matchService;
   }
 
-  public ngOnInit():void {
+  public ngOnInit(): void {
     this.lastAddedPlayer = this.playerService.getLastAddedPlayer();
     this.playerService.clearLastAddedPlayer();
   }

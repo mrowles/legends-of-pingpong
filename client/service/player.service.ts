@@ -6,15 +6,15 @@ export class PlayerService {
 
   private player: Player;
 
-  public getLastAddedPlayer():Player {
+  public getLastAddedPlayer(): Player {
     return this.player;
   }
 
-  public setLastAddedPlayer(player: Player):void {
+  public setLastAddedPlayer(player: Player): void {
     this.player = player;
   }
 
-  public clearLastAddedPlayer():void {
-    this.player =  undefined;
+  public clearLastAddedPlayer(): void {
+    this.player = undefined;
   }
 }

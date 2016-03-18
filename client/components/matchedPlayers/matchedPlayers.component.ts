@@ -8,10 +8,10 @@ import {MatchService} from '../../service/match.service';
 })
 
 export class MatchedPlayersComponent {
-  private match:Match;
-  private matchService:MatchService;
+  private match: Match;
+  private matchService: MatchService;
 
-  constructor(matchService:MatchService) {
+  constructor(matchService: MatchService) {
     this.matchService = matchService;
     this.match = this.matchService.getMatch();
   }

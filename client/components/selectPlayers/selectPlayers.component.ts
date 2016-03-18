@@ -13,27 +13,27 @@ import 'rxjs/Rx';
 })
 
 export class SelectPlayersComponent implements OnInit {
-  private playerList:Array<Player> = [];
-  private http:Http;
-  private matchService:MatchService;
+  private playerList: Array<Player> = [];
+  private http: Http;
+  private matchService: MatchService;
 
-  constructor(http:Http, matchService:MatchService) {
+  constructor(http: Http, matchService: MatchService) {
     this.http = http;
     this.matchService = matchService;
   }
 
-  public addPlayerToMatch(player:Player):void {
+  public addPlayerToMatch(player: Player): void {
     this.matchService.addPlayer(player);
   }
 
-  public ngOnInit():void {
-      this.http.get('/api/player/all').map(response => response.json())
+  public ngOnInit(): void {
+    this.http.get('/api/player/all').map(response => response.json())
       .subscribe(
         response => this.playerList = response
       );
   }
 
-  public onSubmit():void {
+  public onSubmit(): void {
     console.log('OnSubmit');
     console.log('Player List', this.playerList);
   }

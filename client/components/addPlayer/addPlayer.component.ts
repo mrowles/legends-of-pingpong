@@ -12,21 +12,21 @@ import {Router} from 'angular2/router';
 })
 
 export class AddPlayerComponent {
-  private model:Player = new Player(1, '', '');
-  private postResponse:Object;
-  private http:Http;
-  private router:Router;
-  private playerService:PlayerService;
+  private model: Player = new Player(1, '', '');
+  private postResponse: Object;
+  private http: Http;
+  private router: Router;
+  private playerService: PlayerService;
 
-  constructor(http:Http, router:Router, playerService:PlayerService) {
+  constructor(http: Http, router: Router, playerService: PlayerService) {
     this.http = http;
     this.router = router;
     this.playerService = playerService;
   }
 
-  public onSubmit():void {
-    let json:string = JSON.stringify(this.model);
-    let headers:Headers = new Headers();
+  public onSubmit(): void {
+    let json: string = JSON.stringify(this.model);
+    let headers: Headers = new Headers();
 
     headers.append('Content-Type', 'application/json');
 
@@ -39,7 +39,7 @@ export class AddPlayerComponent {
 
   }
 
-  public onSuccess():void {
+  public onSuccess(): void {
     this.playerService.setLastAddedPlayer(this.model);
     this.router.navigate(['StartNewMatch']);
   }

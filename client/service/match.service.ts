@@ -5,13 +5,13 @@ import {Player} from '../model/player/player.model';
 @Injectable()
 export class MatchService {
 
-  private match:Match;
+  private match: Match;
 
   constructor() {
     this.match = new Match(1, undefined, undefined);
   }
 
-  public addPlayer(player:Player):void {
+  public addPlayer(player: Player): void {
     if (this.match.playerA === undefined) {
       this.match.playerA = player;
     } else if (this.match.playerB === undefined) {
@@ -19,11 +19,11 @@ export class MatchService {
     }
   }
 
-  public getMatch():Match {
+  public getMatch(): Match {
     return this.match;
   }
 
-  public isMatchReady():Boolean {
+  public isMatchReady(): Boolean {
     return this.match.playerA !== undefined && this.match.playerB !== undefined;
   }
 
