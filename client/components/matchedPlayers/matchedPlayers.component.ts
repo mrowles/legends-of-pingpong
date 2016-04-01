@@ -1,5 +1,5 @@
 import {Component} from 'angular2/core';
-import {Match} from '../../model/player/match.model';
+import {Match} from '../../model/match/match.model';
 import {MatchService} from '../../service/match.service';
 
 @Component({

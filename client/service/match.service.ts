@@ -1,5 +1,5 @@
 import {Injectable} from 'angular2/core';
-import {Match} from '../model/player/match.model';
+import {Match} from '../model/match/match.model';
 import {Player} from '../model/player/player.model';
 
 @Injectable()
@@ -8,23 +8,19 @@ export class MatchService {
   private match: Match;
 
   constructor() {
-    this.match = new Match(1, undefined, undefined);
-  }
-
-  public addPlayer(player: Player): void {
-    if (this.match.player1 === undefined) {
-      this.match.player1 = player;
-    } else if (this.match.player2 === undefined) {
-      this.match.player2 = player;
-    }
+    this.match = new Match([], false, []);
   }
 
   public getMatch(): Match {
     return this.match;
   }
 
+  public addPlayer(player: Player): void {
+    this.match.addPlayer(player);
+  }
+
   public isMatchReady(): Boolean {
-    return this.match.player1 !== undefined && this.match.player2 !== undefined;
+    return this.match.getPlayer(0) !== undefined && this.match.getPlayer(1) !== undefined;
   }
 
 }
