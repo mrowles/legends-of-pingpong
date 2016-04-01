@@ -1,13 +1,15 @@
 import {Player} from '../../model/player/player.model';
 
 export class Match {
-  private id: Number;
-  private playerA: Player;
-  private playerB: Player;
 
-  constructor(id: number, playerA: Player, playerB: Player) {
+  public player1: Player;
+  public player2: Player;
+
+  private id: Number;
+
+  constructor(id: number, player1: Player, player2: Player) {
     this.id = id;
-    this.playerA = playerA;
-    this.playerB = playerB;
+    this.player1 = player1;
+    this.player2 = player2;
   }
 }

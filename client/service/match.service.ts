@@ -12,10 +12,10 @@ export class MatchService {
   }
 
   public addPlayer(player: Player): void {
-    if (this.match.playerA === undefined) {
-      this.match.playerA = player;
-    } else if (this.match.playerB === undefined) {
-      this.match.playerB = player;
+    if (this.match.player1 === undefined) {
+      this.match.player1 = player;
+    } else if (this.match.player2 === undefined) {
+      this.match.player2 = player;
     }
   }
 
@@ -24,7 +24,7 @@ export class MatchService {
   }
 
   public isMatchReady(): Boolean {
-    return this.match.playerA !== undefined && this.match.playerB !== undefined;
+    return this.match.player1 !== undefined && this.match.player2 !== undefined;
   }
 
 }
