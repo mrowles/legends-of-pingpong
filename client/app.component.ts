@@ -2,7 +2,8 @@ import {Component}         from 'angular2/core';
 import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
 import {AddPlayerComponent} from '../client/components/addPlayer/addPlayer.component';
 import {HomepageComponent} from '../client/components/homepage/homepage.component';
-import {NewMatchPage} from '../client/components/newMatch/newMatch.component';
+import {CreateMatchPage} from '../client/components/createMatch/createMatch.component';
+import {MatchPage} from '../client/components/matchPage/matchPage.component';
 
 @Component({
   directives: [ROUTER_DIRECTIVES],
@@ -20,9 +21,13 @@ import {NewMatchPage} from '../client/components/newMatch/newMatch.component';
     name: 'PlayerAdd',
     path: '/players/add',
   }, {
-    component: NewMatchPage,
-    name: 'StartNewMatch',
-    path: '/newMatch',
+    component: CreateMatchPage,
+    name: 'CreateMatch',
+    path: '/createMatch',
+  }, {
+    component: MatchPage,
+    name: 'MatchPage',
+    path: '/match',
   },
 ])
 

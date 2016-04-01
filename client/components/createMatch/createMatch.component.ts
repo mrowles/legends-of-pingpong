@@ -8,9 +8,9 @@ import {MatchedPlayersComponent} from '../matchedPlayers/matchedPlayers.componen
 
 @Component({
   directives: [SelectPlayersComponent, MatchedPlayersComponent, ROUTER_DIRECTIVES],
-  templateUrl: '/client/components/newMatch/newMatch.html',
+  templateUrl: '/client/components/createMatch/createMatch.html',
 })
-export class NewMatchPage implements OnInit {
+export class CreateMatchPage implements OnInit {
   private lastAddedPlayer: Player;
   private playerService: PlayerService;
   private matchService: MatchService;
