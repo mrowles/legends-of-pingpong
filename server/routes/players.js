@@ -7,6 +7,7 @@ router.post('', function (req, res) {
   var player = new Player();
   player.name = req.body.name;
   player.email = req.body.email;
+  player.playerStats = req.body.playerStats;
 
   player.save(function (err) {
 

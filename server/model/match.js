@@ -13,7 +13,7 @@ var matchSchema = new Schema({
       type: Boolean,
       required: true
     },
-    set: [{
+    sets: [{
       score: {
         type: Number,
         required: true
