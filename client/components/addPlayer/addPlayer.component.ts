@@ -42,7 +42,7 @@ export class AddPlayerComponent {
 
   public onSuccess(): void {
     this.playerService.setLastAddedPlayer(this.model);
-    this.router.navigate(['StartNewMatch']);
+    this.router.navigate(['CreateMatch']);
   }
 
 }

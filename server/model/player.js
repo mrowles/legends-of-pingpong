@@ -16,6 +16,13 @@ var playerSchema = new Schema({
     index: {
       unique: true
     }
+  },
+  playerStats: {
+    win: Number,
+    loss: Number,
+    forfeit: Number,
+    for: Number,
+    against: Number
   }
 });
 
