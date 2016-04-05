@@ -60,7 +60,7 @@ router.get('/leaderboard', function (req, res) {
     res.json(playersList);
   };
 
-  Player.find({}).sort('-playerStats.win').exec(callback);
+  Player.find({}).sort([['playerStats.win', -1], ['name', 1]]).exec(callback);
 
 
 });

@@ -3,32 +3,34 @@
   <h1>Leaderboard</h1>
   <div class="row">
     <table class="scoreboard">
-    <thead>
-    <tr>
-    <th class="cell">Rank</th>
-    <th class="cell-icon">Icon</th>
-    <th class="cell-name">Name</th>
-    <th class="cell">Win</th>
-    <th class="cell">Loss</th>
-    <th class="cell">Forfeit</th>
-    <th class="cell">Total</th>
-    <th class="cell-games">For</th>
-    <th class="cell-games">Against</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr *ngFor="#player of players; #index = index">
-    <td class="cell">{{index + 1}}</td>
-    <td class="cell-icon"><div class="player-icon"></div></td>
-    <td class="cell-name">{{player.name}}</td>
-    <td class="cell">{{player.playerStats.win}}</td>
-    <td class="cell">{{player.playerStats.loss}}</td>
-    <td class="cell"><p>{{player.playerStats.forfeit}}</p></td>
-    <td class="cell">{{player.playerStats.win + player.playerStats.loss + player.playerStats.forfeit}}</td>
-    <td class="cell-games">{{player.playerStats.for}}</td>
-    <td class="cell-games">{{player.playerStats.against}}</td>
-    </tr>
-    </tbody>
+      <thead>
+      <tr>
+        <th class="cell">Rank</th>
+        <th class="cell-icon"></th>
+        <th class="cell-name">Name</th>
+        <th class="cell">Win</th>
+        <th class="cell">Loss</th>
+        <th class="cell">Total</th>
+        <th class="cell-games">For</th>
+        <th class="cell-games">Against</th>
+        <th class="cell">%</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="#player of players; #index = index">
+        <td class="cell">{{index + 1}}</td>
+        <td class="cell-icon">
+          <div class="player-icon"></div>
+        </td>
+        <td class="cell-name">{{player.name}}</td>
+        <td class="cell">{{player.playerStats.win}}</td>
+        <td class="cell">{{player.playerStats.loss}}</td>
+        <td class="cell">{{player.playerStats.win + player.playerStats.loss + player.playerStats.forfeit}}</td>
+        <td class="cell-games">{{player.playerStats.for}}</td>
+        <td class="cell-games">{{player.playerStats.against}}</td>
+        <td class="cell"><p>{{(player.playerStats.for / player.playerStats.against) | percent:'.2-2' }}</p></td>
+      </tr>
+      </tbody>
     </table>
 
     <button class="button">Show all</button>
