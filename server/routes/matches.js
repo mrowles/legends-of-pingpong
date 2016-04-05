@@ -5,7 +5,6 @@ var Match = require('../model/match');
 router.post('', function (req, res) {
 
   var match = new Match(req.body);
-  match.players = req.body.players;
 
   match.save(function (err) {
 

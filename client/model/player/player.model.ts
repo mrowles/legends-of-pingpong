@@ -6,7 +6,6 @@ export class Player {
   private email: string;
   private playerStats: PlayerStats;
 
-
   constructor(id: number, name: string, email: string) {
     this.id = id;
     this.name = name;

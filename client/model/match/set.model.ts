@@ -1,9 +1,17 @@
 export class Set {
-  private score: Number;
-  private won: Boolean;
+  private score: number;
+  private won: boolean;
 
-  constructor(score: Number, won: Boolean) {
+  constructor(score: number, won: boolean) {
     this.score = score;
+    this.won = won;
+  }
+
+  public getScore(): number {
+    return this.score;
+  }
+
+  public setWon(won: boolean): void {
     this.won = won;
   }
 }

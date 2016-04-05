@@ -23,7 +23,7 @@ export class SelectPlayersComponent implements OnInit {
   }
 
   public addPlayerToMatch(player: Player): void {
-    this.matchService.addPlayer(player);
+    this.matchService.addOpponent(player);
   }
 
   public ngOnInit(): void {

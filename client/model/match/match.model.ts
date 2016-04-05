@@ -1,26 +1,33 @@
-import {Player} from '../../model/player/player.model';
-import {Set} from '../../model/match/set.model';
+import {Opponent} from '../../model/match/opponent.model';
 
 export class Match {
-  private players: Array<Player>;
+  private opponent: Array<Opponent>;
   private won: boolean;
-  private sets: Array<Set>;
 
-  constructor(players: Array<Player>, won: boolean, sets: Array<Set>) {
-    this.players = players;
-    this.won = won;
-    this.sets = sets;
+  constructor(opponent: Array<Opponent>) {
+    this.opponent = opponent;
+    this.won = false;
   }
 
-  public getPlayer(index: number): Player {
-    return this.players[index];
-  }
-
-  public addPlayer(player: Player): void {
-    if (this.players.length > 1) {
+  public addOpponent(opponent: Opponent): void {
+    if (this.size() > 1) {
+      console.log('Cannot add more than two players');
       return;
     }
 
-    this.players.push(player);
+    if (this.size() > 0 && this.opponent[0].getPlayer() === opponent.getPlayer()) {
+      console.log('Cannot add same player twice');
+      return;
+    }
+
+    this.opponent.push(opponent);
+  }
+
+  public getOpponent(index: number): Opponent {
+    return this.opponent[index];
+  }
+
+  private size(): number {
+    return this.opponent.length;
   }
 }

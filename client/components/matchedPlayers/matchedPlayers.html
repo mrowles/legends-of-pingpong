@@ -1,13 +1,13 @@
 <div class="matched-players">
 
   <div [ngSwitch]="" class="player m-right-lg">
-    <span *ngSwitchWhen=match.players[0]>
+    <span *ngSwitchWhen=match.getOpponent(0)>
       <div class="player-icon unselected"></div>
     </span>
     <span *ngSwitchDefault>
       <div class="player-icon"></div>
       <p class="player-name">
-        {{match.players[0].name}}
+        {{match.getOpponent(0).getPlayer().name}}
       </p>
     </span>
   </div>
@@ -19,13 +19,13 @@
     </div>
 
   <div [ngSwitch]="" class="player m-left-lg">
-    <span *ngSwitchWhen=match.players[1]>
+    <span *ngSwitchWhen=match.getOpponent(1)>
       <div class="player-icon unselected"></div>
     </span>
     <span *ngSwitchDefault>
       <div class="player-icon"></div>
       <p class="player-name">
-        {{match.players[1].name}}
+        {{match.getOpponent(1).getPlayer().name}}
       </p>
     </span>
   </div>
