@@ -1,18 +1,43 @@
-.select-players {
-  .player {
-    width: rem(120);
-    margin: 0 auto;
+.leaderboard {
+
+  h1 {
     text-align: center;
-    cursor: pointer;
+  }
+
+  td{
+    width:rem(100);
+    text-align: center;
+  }
+
+  .scoreboard {
+    justify-content: space-between;
+    border-width: 1px solid #000;
+    text-align: center;
+    margin: 0 auto;
 
     .player-icon {
       @extend %player-icon;
     }
 
-    .player-name {
-      font-size: rem(16);
-      margin: rem(10) 0;
-      text-transform: uppercase;
+    .cell-name {
+      width: rem(1000);
+      text-align: center;
     }
+
+    .cell {
+      width: rem(90);
+      text-align: center;
+    }
+
+    .cell-games {
+      width: rem(150);
+      text-align: center;
+    }
+
+    .cell-icon {
+      width: rem(65);
+      text-align: center;
+    }
+
   }
 }

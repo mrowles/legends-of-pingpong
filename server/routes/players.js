@@ -42,4 +42,27 @@ router.get('/all', function (req, res) {
 
 });
 
+router.get('/leaderboard', function (req, res) {
+
+  callback = function(err, players) {
+
+    if (err) {
+      res.json(err);
+      return;
+    }
+
+    var playersList = [];
+
+    players.forEach(function (player) {
+      playersList.push(player);
+    });
+
+    res.json(playersList);
+  };
+
+  Player.find({}).sort('-playerStats.win').exec(callback);
+
+
+});
+
 module.exports = router;

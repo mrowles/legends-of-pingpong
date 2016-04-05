@@ -1,39 +1,37 @@
 <div class="leaderboard container">
+
+  <h1>Leaderboard</h1>
   <div class="row">
-
-    <h1>Leaderboard</h1>
-
-    <table>
-      <thead>
-      <tr>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th>Win</th>
-        <th>Loss</th>
-        <th>Forfeit</th>
-        <th>Total</th>
-        <th>For</th>
-        <th>Against</th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr *ngFor="#player of players; #index = index">
-        <td>{{index + 1}}</td>
-        <td class="player-icon"></td>
-        <td>{{player.name}}</td>
-        <td>{{player.playerStats.win}}</td>
-        <td>{{player.playerStats.loss}}</td>
-        <td>{{player.playerStats.forfeit}}</td>
-        <td>INSERT TOTAL</td>
-        <td>{{player.playerStats.for}}</td>
-        <td>{{player.playerStats.against}}</td>
-      </tr>
-      </tbody>
+    <table class="scoreboard">
+    <thead>
+    <tr>
+    <th class="cell">Rank</th>
+    <th class="cell-icon">Icon</th>
+    <th class="cell-name">Name</th>
+    <th class="cell">Win</th>
+    <th class="cell">Loss</th>
+    <th class="cell">Forfeit</th>
+    <th class="cell">Total</th>
+    <th class="cell-games">For</th>
+    <th class="cell-games">Against</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="#player of players; #index = index">
+    <td class="cell">{{index + 1}}</td>
+    <td class="cell-icon"><div class="player-icon"></div></td>
+    <td class="cell-name">{{player.name}}</td>
+    <td class="cell">{{player.playerStats.win}}</td>
+    <td class="cell">{{player.playerStats.loss}}</td>
+    <td class="cell"><p>{{player.playerStats.forfeit}}</p></td>
+    <td class="cell">{{player.playerStats.win + player.playerStats.loss + player.playerStats.forfeit}}</td>
+    <td class="cell-games">{{player.playerStats.for}}</td>
+    <td class="cell-games">{{player.playerStats.against}}</td>
+    </tr>
+    </tbody>
     </table>
 
     <button class="button">Show all</button>
 
   </div>
-
 </div>

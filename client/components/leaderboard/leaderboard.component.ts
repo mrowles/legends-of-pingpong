@@ -22,7 +22,7 @@ export class LeaderboardComponent implements OnInit {
     let headers: Headers = new Headers();
 
     headers.append('Content-Type', 'application/json');
-    this.http.get('/api/player/all')
+    this.http.get('/api/player/leaderboard')
       .subscribe(
       (response: Response) => this.players = response.json(),
       (response: Response) => this.getResponse = response.json()
