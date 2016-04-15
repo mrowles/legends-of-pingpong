@@ -1,5 +1,4 @@
 var mongoose = require('mongoose');
-
 var db = mongoose.connection;
 
 db.on('error', function (err) {
@@ -10,4 +9,6 @@ db.once('open', function () {
   console.log('Mongodb started');
 });
 
-mongoose.connect('mongodb://localhost/lop-dev');
+var env = process.env.MONGODB_URI;
+
+mongoose.connect(env);

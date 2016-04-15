@@ -10,7 +10,13 @@
 
 ### Database
 
+Install Mongo:
+
 ```brew install mongodb```
+
+Set environment variable (.zshrc, .bash_profile etc.):
+
+```export MONGODB_URI="mongodb://localhost/lop-dev"```
 
 #### Setup Guide
 
