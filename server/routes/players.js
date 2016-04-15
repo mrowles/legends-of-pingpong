@@ -7,7 +7,6 @@ router.post('', function (req, res) {
   var player = new Player();
   player.name = req.body.name;
   player.email = req.body.email;
-  player.playerStats = req.body.playerStats;
 
   player.save(function (err) {
 
@@ -48,7 +47,7 @@ router.get('/leaderboard', function (req, res) {
 
   Player.find({})
     .select('name playerStats')
-    .sort([['playerStats.win', -1], ['name', 1]])
+    .sort([['playerStats.matchWon', -1], ['playerStats.setsWon', -1], ['playerStats.pointsFor', -1], ['name', 1]])
     .then(function (err, players) {
 
       if (err) {

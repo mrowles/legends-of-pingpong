@@ -18,11 +18,30 @@ var playerSchema = new Schema({
     }
   },
   playerStats: {
-    win: Number,
-    loss: Number,
-    forfeit: Number,
-    for: Number,
-    against: Number
+    matchWon: {
+      type: Number,
+      default: 0
+    },
+    matchLost: {
+      type: Number,
+      default: 0
+    },
+    setsWon: {
+      type: Number,
+      default: 0
+    },
+    setsLost: {
+      type: Number,
+      default: 0
+    },
+    pointsFor: {
+      type: Number,
+      default: 0
+    },
+    pointsAgainst: {
+      type: Number,
+      default: 0
+    }
   }
 });
 
