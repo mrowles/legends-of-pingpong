@@ -23,8 +23,16 @@ app.use('/*', index);
 
 var port = process.env.PORT || 8765;
 
-var server = app.listen(port, function () {
-  console.log('Legends of Pong app listening on port 8765!');
-});
+app.listen(port);
+app.on('error', onError);
+app.on('listening', onListening);
+
+function onListening() {
+  console.log('Legends of Pong app listening on port ' + port + '!');
+}
+
+function onError(err) {
+  console.error('Failed to listen on port ' + port, err);
+}
 
 module.exports = app;
