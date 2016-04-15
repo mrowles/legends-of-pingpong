@@ -33,14 +33,14 @@ export class Opponent {
   }
 
   public getWins(): number {
-    let won: number = 0;
+    let numberOfWins: number = 0;
 
     for (let set of this.sets) {
-      if (set.won) {
-        won++;
+      if (set.isWon()) {
+        numberOfWins++;
       }
     }
 
-    return won;
+    return numberOfWins;
   }
 }

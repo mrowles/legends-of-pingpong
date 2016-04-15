@@ -14,4 +14,8 @@ export class Set {
   public setWon(won: boolean): void {
     this.won = won;
   }
+
+  public isWon(): boolean {
+    return this.won;
+  }
 }
