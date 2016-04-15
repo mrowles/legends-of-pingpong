@@ -1,5 +1,10 @@
 # Double Dragon (Legends of Ping Pong)
 
+## Requirements
+
+* mongo
+* node 4.4.0
+
 ## Setup
 
 ### Database
@@ -9,7 +14,6 @@
 #### Setup Guide
 
 [Guide](https://docs.mongodb.org/manual/tutorial/install-mongodb-on-os-x/)
- 
  
 if you see the this error
  
