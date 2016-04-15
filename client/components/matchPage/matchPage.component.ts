@@ -108,6 +108,7 @@ export class MatchPage {
   }
 
   public onSuccess(): void {
+    this.router.navigate(['Home']);
     console.log('SUCCESS');
   }
 }
