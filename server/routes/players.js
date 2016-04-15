@@ -24,44 +24,46 @@ router.post('', function (req, res) {
 
 router.get('/all', function (req, res) {
 
-  Player.find({}, function (err, players) {
+  Player.find({})
+    .select('_id name')
+    .then(function (err, players) {
 
-    if (err) {
-      res.json(err);
-      return;
-    }
+      if (err) {
+        res.json(err);
+        return;
+      }
 
-    var playersList = [];
+      var playersList = [];
 
-    players.forEach(function (player) {
-      playersList.push(player);
+      players.forEach(function (player) {
+        playersList.push(player);
+      });
+
+      res.json(playersList);
     });
-
-    res.json(playersList);
-  });
 
 });
 
 router.get('/leaderboard', function (req, res) {
 
-  callback = function(err, players) {
+  Player.find({})
+    .select('name playerStats')
+    .sort([['playerStats.win', -1], ['name', 1]])
+    .then(function (err, players) {
 
-    if (err) {
-      res.json(err);
-      return;
-    }
+      if (err) {
+        res.json(err);
+        return;
+      }
 
-    var playersList = [];
+      var playersList = [];
 
-    players.forEach(function (player) {
-      playersList.push(player);
+      players.forEach(function (player) {
+        playersList.push(player);
+      });
+
+      res.json(playersList);
     });
-
-    res.json(playersList);
-  };
-
-  Player.find({}).sort([['playerStats.win', -1], ['name', 1]]).exec(callback);
-
 
 });
 
