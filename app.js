@@ -21,7 +21,9 @@ app.use('/api/match', matches);
 
 app.use('/*', index);
 
-var server = app.listen(8765, function () {
+var port = process.env.PORT || 8765;
+
+var server = app.listen(port, function () {
   console.log('Legends of Pong app listening on port 8765!');
 });
 
