@@ -1,5 +1,11 @@
 # Double Dragon (Legends of Ping Pong)
 
+## Requirements
+
+* mongo
+* node 4.4.0
+* heroku cli
+
 ## Setup
 
 ### Database
@@ -9,7 +15,6 @@
 #### Setup Guide
 
 [Guide](https://docs.mongodb.org/manual/tutorial/install-mongodb-on-os-x/)
- 
  
 if you see the this error
  
@@ -59,3 +64,6 @@ Server:
 
 ```eslint server/**/*.js```
 
+## Prod release
+
+`git push heroku master`
