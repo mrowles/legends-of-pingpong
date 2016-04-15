@@ -4,6 +4,7 @@
 
 * mongo
 * node 4.4.0
+* heroku cli
 
 ## Setup
 
@@ -63,3 +64,6 @@ Server:
 
 ```eslint server/**/*.js```
 
+## Prod release
+
+`git push heroku master`
