@@ -1,4 +1,5 @@
 import {Component} from 'angular2/core';
+import {Error} from '../../model/error/error';
 import {Http, HTTP_PROVIDERS, Headers} from 'angular2/http';
 import {Player} from '../../model/player/player.model';
 import {PlayerService} from '../../service/player.service';
@@ -14,7 +15,7 @@ import 'rxjs/Rx';
 
 export class AddPlayerComponent {
   private model: Player = new Player(1, '', '');
-  private postResponse: Response;
+  public error: Error = new Error('');
   private http: Http;
   private router: Router;
   private playerService: PlayerService;
@@ -35,7 +36,7 @@ export class AddPlayerComponent {
       headers: headers,
     }).subscribe(
       (response: Response) => this.onSuccess(),
-      (response: Response) => this.postResponse = response.json()
+      (response: Response) => this.onError(response)
     );
 
   }
@@ -43,6 +44,10 @@ export class AddPlayerComponent {
   public onSuccess(): void {
     this.playerService.setLastAddedPlayer(this.model);
     this.router.navigate(['CreateMatch']);
+  }
+
+  public onError(response: Response): void {
+    this.error.message =  JSON.stringify(response.json().errors);
   }
 
 }

@@ -27,4 +27,7 @@
             [disabled]="!addPlayerForm.form.valid">Submit
     </button>
   </form>
+  <div class="alert alert-danger" [hidden]="!error.message">
+    {{error.message}}
+  </div>
 </div>
