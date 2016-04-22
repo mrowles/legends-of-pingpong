@@ -1,6 +1,11 @@
-.ng-valid[required] {
-  border-left: 5px solid $color-valid; }
+.add-player {
+  @extend %content-background;
 
-.ng-invalid {
-  border-left: 5px solid $color-invalid;
+  .ng-valid[required] {
+    border-left: 5px solid $color-valid;
+  }
+
+  .ng-invalid {
+    border-left: 5px solid $color-invalid;
+  }
 }

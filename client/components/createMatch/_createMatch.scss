@@ -1,16 +1,19 @@
-.added-player {
-  width: 100%;
-  height: rem(100);
-  margin: 0 auto;
-  border: 1px solid $color-valid;
-  color: $color-valid;
+.create-match {
+  @extend %content-background;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  .added-player {
+    width: 100%;
+    height: rem(100);
+    margin: 0 auto;
+    border: 1px solid $color-valid;
+    color: $color-valid;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .add-player-button {
+    margin: 0 auto;
+  }
 }
-
-.add-player-button {
-  margin: rem(10) 0 ;
-}
-
