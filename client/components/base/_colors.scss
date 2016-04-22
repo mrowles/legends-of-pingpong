@@ -3,7 +3,8 @@ $colors: (
   black-1: #000,
   grey-1: #bbb,
   green-1: #7bb593,
-  red-1: #a94442
+  red-1: #C8473A,
+  red-2: #a94442
 );
 
 @function color($color) {
@@ -13,4 +14,4 @@ $colors: (
 $color-background-default: color(white-1);
 $color-text-body-primary: color(black-1);
 $color-valid: color(green-1);
-$color-invalid: color(red-1);
+$color-invalid: color(red-2);
