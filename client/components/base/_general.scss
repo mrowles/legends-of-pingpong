@@ -1,4 +1,11 @@
 .bg {
   height: 100vh;
   background-image: url('/public/assets/images/bg.jpg');
+  background-position: center;
+}
+
+.logo {
+  padding-top: rem(10);
+  cursor: pointer;
+  text-align: center;
 }

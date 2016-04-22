@@ -1,17 +1,17 @@
 .leaderboard {
+  @extend %content-background;
 
   h1 {
     text-align: center;
   }
 
-  td{
-    width:rem(100);
+  td {
+    width: rem(100);
     text-align: center;
   }
 
   .scoreboard {
     justify-content: space-between;
-    border-width: 1px solid #000;
     text-align: center;
     margin: 0 auto;
 
