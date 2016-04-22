@@ -25,5 +25,4 @@ export class MatchService {
   public isMatchReady(): Boolean {
     return this.match.getOpponent(0) !== undefined && this.match.getOpponent(1) !== undefined;
   }
-
 }

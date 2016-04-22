@@ -16,4 +16,7 @@ export class MatchedPlayersComponent {
     this.match = this.matchService.getMatch();
   }
 
+  public removeOpponent(opponentNumber: number): void {
+    this.match.removeOpponent(opponentNumber);
+  }
 }
