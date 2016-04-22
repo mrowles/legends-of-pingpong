@@ -2,9 +2,10 @@
 
 ## Requirements
 
+* brew
 * mongo
 * node 4.4.0
-* heroku cli
+* heroku toolkit
 
 ## Setup
 
