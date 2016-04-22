@@ -10,10 +10,8 @@
     "tslint": "tslint client/**/*.ts -s node_modules/tslint-stylish -t stylish",
     "build-css": "node-sass --include-path scss client/index.scss public/css/styles.css",
     "watch-css": "nodemon -e scss -x \"npm run build-css\"",
-    "move-assets": "cp -R client/assets/ public/assets",
-    "move-html": "cp -R client/**/*.html public/",
-    "move-js": "cp -R client/**/*.js public/",
-    "start": "concurrent \"npm run watch-css\" \"npm run move-assets\" \"npm run tsc:w\" \"node app.js\""
+    "copy": "cp -R client/ public/",
+    "start": "concurrent \"npm run watch-css\" \"npm run copy\" \"npm run tsc:w\" \"node app.js\""
   },
   "license": "ISC",
   "dependencies": {
