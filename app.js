@@ -19,8 +19,8 @@ app.use(express.static(path.join(__dirname, '/')));
 app.use('/api/player', players);
 app.use('/api/match', matches);
 
-app.use(express.static('client'));
-
+app.use(express.static('./public'));
+app.use(express.static('./client'));
 app.use('/*', index);
 
 var port = process.env.PORT || 8765;
