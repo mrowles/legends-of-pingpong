@@ -49,6 +49,7 @@
     "nodemon": "^1.9.1",
     "recursive-copy": "^2.0.3",
     "tsd": "^0.6.5",
+    "tslint": "^3.8.1",
     "tslint-stylish": "^2.1.0-beta",
     "typescript": "^1.8.2"
   }
