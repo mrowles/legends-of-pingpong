@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
 
   <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="/public/css/styles.css">
+  <link rel="stylesheet" href="/css/styles.css">
 
   <script src="/node_modules/es6-shim/es6-shim.js"></script>
   <script src="/node_modules/systemjs/dist/system-polyfills.js"></script>
@@ -24,13 +24,13 @@
   <script>
     System.config({
       packages: {
-        client: {
+        js: {
           format: 'register',
           defaultExtension: 'js'
         }
       }
     });
-    System.import('/client/main')
+    System.import('js/main')
       .then(null, console.error.bind(console));
   </script>
 

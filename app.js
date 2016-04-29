@@ -9,13 +9,11 @@ var matches = require('./server/routes/matches');
 
 var app = express();
 
-app.set('views', path.join(__dirname, '/'));
+app.set('views', path.join(__dirname, '/public'));
 app.set('view engine', 'ejs');
 app.engine('html', require('ejs').renderFile);
 
-
-app.use(express.static('client'));
-app.use(express.static(path.join(__dirname, '/')));
+app.use(express.static('public'));
 
 app.use(bodyParser.json());
 

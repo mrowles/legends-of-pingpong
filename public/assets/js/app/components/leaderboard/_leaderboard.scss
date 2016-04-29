@@ -1,0 +1,43 @@
+.leaderboard {
+  @extend %content-background;
+
+  h1 {
+    text-align: center;
+  }
+
+  td {
+    width: rem(100);
+    text-align: center;
+  }
+
+  .scoreboard {
+    justify-content: space-between;
+    text-align: center;
+    margin: 0 auto;
+
+    .player-icon {
+      @extend %player-icon;
+    }
+
+    .cell-name {
+      width: rem(1000);
+      text-align: center;
+    }
+
+    .cell {
+      width: rem(90);
+      text-align: center;
+    }
+
+    .cell-games {
+      width: rem(150);
+      text-align: center;
+    }
+
+    .cell-icon {
+      width: rem(65);
+      text-align: center;
+    }
+
+  }
+}

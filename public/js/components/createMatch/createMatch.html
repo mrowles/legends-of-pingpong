@@ -1,0 +1,30 @@
+<div class="create-match">
+  <div class="row" *ngIf="lastAddedPlayer != undefined">
+    <div class="new-player">
+      <p class="added-player"><span class="player-icon"></span> {{lastAddedPlayer.name}} was added successfully</p>
+    </div>
+  </div>
+
+  <div class="row m-top-lg">
+    <div class="col-xs-12">
+      <a class="button add-player-button" [routerLink]="['PlayerAdd']">+ Add new player</a>
+    </div>
+  </div>
+
+  <div class="row m-top-lg">
+    <div class="col-xs-12">
+      <select-players-form></select-players-form>
+    </div>
+  </div>
+
+  <div class="row m-top-lg">
+    <div class="col-xs-12">
+      <matched-players></matched-players>
+    </div>
+  </div>
+
+  <div class="row m-top-lg" *ngIf="matchService.isMatchReady()">
+    <a class="button" [routerLink]="['MatchPage']">Fight</a>
+  </div>
+
+</div>

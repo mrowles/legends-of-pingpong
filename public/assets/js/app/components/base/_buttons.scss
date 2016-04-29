@@ -1,0 +1,19 @@
+.button {
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  background-color: color(red-1);
+  color: color(white-1);
+  width: rem(570);
+  height: rem(70);
+  text-transform: uppercase;
+  text-align: center;
+  box-shadow: 4px 4px 0 0 color(maroon-1);
+  justify-content: center;
+
+  &:hover {
+    color: color(white-1);
+    background-color: color(maroon-1);
+    cursor: pointer;
+  }
+}

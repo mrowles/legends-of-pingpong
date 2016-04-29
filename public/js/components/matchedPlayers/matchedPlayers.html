@@ -1,0 +1,33 @@
+<div class="matched-players">
+
+  <div [ngSwitch]="" class="player m-right-lg">
+    <span *ngSwitchWhen=match.getOpponent(0)>
+      <div class="player-icon unselected"></div>
+    </span>
+    <span *ngSwitchDefault>
+      <div class="player-icon"></div>
+      <p class="player-name">
+        {{match.getOpponent(0).getPlayer().name}}
+      </p>
+    </span>
+  </div>
+
+    <div class="versus">
+      <p>
+        VS
+      </p>
+    </div>
+
+  <div [ngSwitch]="" class="player m-left-lg">
+    <span *ngSwitchWhen=match.getOpponent(1)>
+      <div class="player-icon unselected"></div>
+    </span>
+    <span *ngSwitchDefault>
+      <div class="player-icon"></div>
+      <p class="player-name">
+        {{match.getOpponent(1).getPlayer().name}}
+      </p>
+    </span>
+  </div>
+
+</div>
