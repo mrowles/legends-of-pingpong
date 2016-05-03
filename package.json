@@ -14,7 +14,7 @@
     "move-html": "cp -R client/**/*.html public/",
     "move-js": "cp -R client/**/*.js public/",
     "start-dev": "concurrent \"npm run watch-css\" \"npm run move-assets\" \"npm run tsc:w\" \"node app.js\"",
-    "start": "node app.js"
+    "start": "npm run tsc; node app.js"
   },
   "license": "ISC",
   "dependencies": {
