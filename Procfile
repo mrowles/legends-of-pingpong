@@ -1,2 +1,2 @@
-web: npm install
-web: npm start
+web: npm run move-assets
+web: node server.js
