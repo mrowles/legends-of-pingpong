@@ -1,3 +1,63 @@
 .match-page{
   @extend %content-background;
+  font-size: 36px;
+
+  .enter-score {
+    padding-top: rem(20);
+  }
+
+  .score-enter-row{
+    padding-top: rem(20);
+  }
+
+  .set-number-display{
+    z-index:1;
+
+    .set-number-background {
+      background-color: color(orange-1);
+      width: rem(80);
+      height: rem(80);
+      transform: rotate(45deg);
+      margin: auto;
+      justify-content: center;
+
+      .set-number{
+        color: color(white-1);
+        text-align: center;
+        font-family: $font-family-arcade-classic;
+        transform: rotate(-45deg);
+        padding: rem(24) rem(23) 0 0;
+      }
+
+    }
+
+    .set-number-background:after {
+      display: block;
+    }
+  }
+
+  .form-control {
+    width: 100%;
+    height: 70px;
+    margin-top: -13px;
+  }
+
+  .form-group {
+    margin:auto;
+    text-align: center;
+  }
+
+  .button {
+    font-size: 20px;
+  }
+
+  input {
+    font-size: 36px;
+    text-align: center;
+    background: color(grey-2);
+  }
+
+  .wins-alignment {
+    text-align: center;
+  }
 }
