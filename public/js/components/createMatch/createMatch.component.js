@@ -6,9 +6,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 var core_1 = require('@angular/core');
-var selectPlayers_component_1 = require('../selectPlayers/selectPlayers.component');
-var router_1 = require('@angular/router');
-var matchedPlayers_component_1 = require('../matchedPlayers/matchedPlayers.component');
+var router_deprecated_1 = require('@angular/router-deprecated');
+var selectPlayers_component_1 = require('js/components/selectPlayers/selectPlayers.component');
+var matchedPlayers_component_1 = require('js/components/matchedPlayers/matchedPlayers.component');
 var CreateMatchPage = (function () {
     function CreateMatchPage(playerService, matchService) {
         this.playerService = playerService;
@@ -21,8 +21,8 @@ var CreateMatchPage = (function () {
     };
     CreateMatchPage = __decorate([
         core_1.Component({
-            directives: [selectPlayers_component_1.SelectPlayersComponent, matchedPlayers_component_1.MatchedPlayersComponent, router_1.ROUTER_DIRECTIVES],
-            templateUrl: './createMatch.html'
+            directives: [selectPlayers_component_1.SelectPlayersComponent, matchedPlayers_component_1.MatchedPlayersComponent, router_deprecated_1.ROUTER_DIRECTIVES],
+            templateUrl: 'js/components/createMatch/createMatch.html'
         })
     ], CreateMatchPage);
     return CreateMatchPage;

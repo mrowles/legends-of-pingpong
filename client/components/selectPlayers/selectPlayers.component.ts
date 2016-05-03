@@ -1,14 +1,16 @@
 import {Component, OnInit} from '@angular/core';
 import {Http, HTTP_PROVIDERS, Response} from '@angular/http';
-import {ROUTER_DIRECTIVES} from '@angular/router';
-import {Player} from '../../model/player/player.model';
-import {MatchService} from '../../service/match.service';
+import {ROUTER_DIRECTIVES}  from '@angular/router-deprecated';
+
+import {Player} from 'js/model/player/player.model';
+import {MatchService} from 'js/service/match.service';
+
 import 'rxjs/Rx';
 
 @Component({
   providers: [HTTP_PROVIDERS, ROUTER_DIRECTIVES],
   selector: 'select-players-form',
-  templateUrl: '/client/components/selectPlayers/selectPlayers.html',
+  templateUrl: 'js/components/selectPlayers/selectPlayers.html',
 })
 
 export class SelectPlayersComponent implements OnInit {

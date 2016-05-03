@@ -6,7 +6,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 var core_1 = require('@angular/core');
-var router_1 = require('@angular/router');
+var router_deprecated_1 = require('@angular/router-deprecated');
 var http_1 = require('@angular/http');
 var LeaderboardComponent = (function () {
     function LeaderboardComponent(http) {
@@ -21,9 +21,9 @@ var LeaderboardComponent = (function () {
     };
     LeaderboardComponent = __decorate([
         core_1.Component({
-            providers: [router_1.ROUTER_DIRECTIVES, http_1.HTTP_PROVIDERS],
+            providers: [router_deprecated_1.ROUTER_DIRECTIVES, http_1.HTTP_PROVIDERS],
             selector: 'leaderboard',
-            templateUrl: '/client/components/leaderboard/leaderboard.html'
+            templateUrl: 'js/components/leaderboard/leaderboard.html'
         })
     ], LeaderboardComponent);
     return LeaderboardComponent;

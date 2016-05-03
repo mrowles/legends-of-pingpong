@@ -6,9 +6,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 var core_1 = require('@angular/core');
-var router_1 = require('@angular/router');
+var router_deprecated_1 = require('@angular/router-deprecated');
 var http_1 = require('@angular/http');
-var matchedPlayers_component_1 = require('../matchedPlayers/matchedPlayers.component');
+var matchedPlayers_component_1 = require('js/components/matchedPlayers/matchedPlayers.component');
 require('rxjs/Rx');
 var MatchPage = (function () {
     function MatchPage(playerService, matchService, http, router) {
@@ -78,9 +78,9 @@ var MatchPage = (function () {
     };
     MatchPage = __decorate([
         core_1.Component({
-            directives: [matchedPlayers_component_1.MatchedPlayersComponent, router_1.ROUTER_DIRECTIVES],
+            directives: [matchedPlayers_component_1.MatchedPlayersComponent, router_deprecated_1.ROUTER_DIRECTIVES],
             providers: [http_1.HTTP_PROVIDERS],
-            templateUrl: '/client/components/matchPage/matchPage.html'
+            templateUrl: 'js/components/matchPage/matchPage.html'
         })
     ], MatchPage);
     return MatchPage;

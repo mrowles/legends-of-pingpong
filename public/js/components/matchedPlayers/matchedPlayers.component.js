@@ -17,7 +17,7 @@ var MatchedPlayersComponent = (function () {
     MatchedPlayersComponent = __decorate([
         core_1.Component({
             selector: 'matched-players',
-            templateUrl: '/client/components/matchedPlayers/matchedPlayers.html'
+            templateUrl: 'js/components/matchedPlayers/matchedPlayers.html'
         })
     ], MatchedPlayersComponent);
     return MatchedPlayersComponent;

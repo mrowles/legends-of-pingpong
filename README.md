@@ -46,8 +46,7 @@ run
 ### Setup App Dependencies
 
 ```npm install```
-```npm install -g tslint typescript```
-```npm install -g tslint ntypescript```
+```npm install -g tslint typescript ntypescript```
 ```npm install -g eslint```
 ```npm install -g typings```
 

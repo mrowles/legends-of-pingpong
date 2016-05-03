@@ -7,7 +7,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 var core_1 = require('@angular/core');
 var http_1 = require('@angular/http');
-var router_1 = require('@angular/router');
+var router_deprecated_1 = require('@angular/router-deprecated');
 require('rxjs/Rx');
 var SelectPlayersComponent = (function () {
     function SelectPlayersComponent(http, matchService) {
@@ -29,9 +29,9 @@ var SelectPlayersComponent = (function () {
     };
     SelectPlayersComponent = __decorate([
         core_1.Component({
-            providers: [http_1.HTTP_PROVIDERS, router_1.ROUTER_DIRECTIVES],
+            providers: [http_1.HTTP_PROVIDERS, router_deprecated_1.ROUTER_DIRECTIVES],
             selector: 'select-players-form',
-            templateUrl: '/client/components/selectPlayers/selectPlayers.html'
+            templateUrl: 'js/components/selectPlayers/selectPlayers.html'
         })
     ], SelectPlayersComponent);
     return SelectPlayersComponent;

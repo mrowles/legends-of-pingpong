@@ -6,9 +6,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 var core_1 = require('@angular/core');
-var error_1 = require('../../model/error/error');
 var http_1 = require('@angular/http');
-var player_model_1 = require('../../model/player/player.model');
+var error_1 = require('js/model/error/error');
+var player_model_1 = require('js/model/player/player.model');
 require('rxjs/Rx');
 var AddPlayerComponent = (function () {
     function AddPlayerComponent(http, router, playerService) {
@@ -38,7 +38,7 @@ var AddPlayerComponent = (function () {
         core_1.Component({
             providers: [http_1.HTTP_PROVIDERS],
             selector: 'add-player-form',
-            templateUrl: '/client/components/addPlayer/addPlayer.html'
+            templateUrl: '/js/components/addPlayer/addPlayer.html'
         })
     ], AddPlayerComponent);
     return AddPlayerComponent;

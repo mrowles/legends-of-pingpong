@@ -1,5 +1,5 @@
-import {Player} from '../../model/player/player.model';
-import {Set} from '../../model/match/set.model';
+import {Player} from 'js/model/player/player.model';
+import {Set} from 'js/model/match/set.model';
 
 export class Opponent {
   private player: Player;

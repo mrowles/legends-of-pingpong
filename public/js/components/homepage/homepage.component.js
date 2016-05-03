@@ -7,7 +7,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 var core_1 = require('@angular/core');
 var router_deprecated_1 = require('@angular/router-deprecated');
-var leaderboard_component_1 = require('../leaderboard/leaderboard.component');
+var leaderboard_component_1 = require('js/components/leaderboard/leaderboard.component');
 var HomepageComponent = (function () {
     function HomepageComponent() {
     }

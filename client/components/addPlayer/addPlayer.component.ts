@@ -1,16 +1,16 @@
 import {Component} from '@angular/core';
-import {Error} from '../../model/error/error';
-import {Http, HTTP_PROVIDERS, Headers} from '@angular/http';
-import {Player} from '../../model/player/player.model';
-import {PlayerService} from '../../service/player.service';
-import {Router} from '@angular/router';
-import {Response} from '@angular/http';
+import {Http, HTTP_PROVIDERS, Headers, Response} from '@angular/http';
+import {Router}  from '@angular/router-deprecated';
+
+import {Error} from 'js/model/error/error';
+import {Player} from 'js/model/player/player.model';
+import {PlayerService} from 'js/service/player.service';
 import 'rxjs/Rx';
 
 @Component({
   providers: [HTTP_PROVIDERS],
   selector: 'add-player-form',
-  templateUrl: '/client/components/addPlayer/addPlayer.html',
+  templateUrl: '/js/components/addPlayer/addPlayer.html',
 })
 
 export class AddPlayerComponent {
@@ -47,7 +47,7 @@ export class AddPlayerComponent {
   }
 
   public onError(response: Response): void {
-    this.error.message =  JSON.stringify(response.json().errors);
+    this.error.message = JSON.stringify(response.json().errors);
   }
 
 }

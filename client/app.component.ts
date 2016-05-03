@@ -1,17 +1,18 @@
 import {Component} from '@angular/core';
 import {RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from '@angular/router-deprecated';
+
 import {AddPlayerComponent} from 'js/components/addPlayer/addPlayer.component';
 import {HomepageComponent} from 'js/components/homepage/homepage.component';
 import {CreateMatchPage} from 'js/components/createMatch/createMatch.component';
 import {MatchPage} from 'js/components/matchPage/matchPage.component';
 
 @Component({
-  selector: 'lopp-app',
-  templateUrl: 'js/app.html',
   directives: [ROUTER_DIRECTIVES],
   providers: [
-    ROUTER_PROVIDERS
-  ]
+    ROUTER_PROVIDERS,
+  ],
+  selector: 'lopp-app',
+  templateUrl: 'js/app.html',
 })
 
 @RouteConfig([

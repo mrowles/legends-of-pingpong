@@ -1,5 +1,5 @@
 "use strict";
-var playerStats_1 = require('./playerStats');
+var playerStats_1 = require('js/model/player/playerStats');
 var Player = (function () {
     function Player(id, name, email) {
         this.id = id;

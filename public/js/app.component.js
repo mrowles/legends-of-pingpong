@@ -20,12 +20,12 @@ var AppComponent = (function () {
     };
     AppComponent = __decorate([
         core_1.Component({
-            selector: 'lopp-app',
-            templateUrl: 'js/app.html',
             directives: [router_deprecated_1.ROUTER_DIRECTIVES],
             providers: [
-                router_deprecated_1.ROUTER_PROVIDERS
-            ]
+                router_deprecated_1.ROUTER_PROVIDERS,
+            ],
+            selector: 'lopp-app',
+            templateUrl: 'js/app.html'
         }),
         router_deprecated_1.RouteConfig([
             {

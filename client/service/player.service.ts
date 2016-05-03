@@ -1,4 +1,4 @@
-import {Player} from '../model/player/player.model';
+import {Player} from 'js/model/player/player.model';
 
 export class PlayerService {
 

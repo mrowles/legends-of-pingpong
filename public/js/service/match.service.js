@@ -1,6 +1,6 @@
 "use strict";
-var match_model_1 = require('../model/match/match.model');
-var opponent_model_1 = require('../model/match/opponent.model');
+var match_model_1 = require('js/model/match/match.model');
+var opponent_model_1 = require('js/model/match/opponent.model');
 var MatchService = (function () {
     function MatchService() {
         this.match = new match_model_1.Match([]);
