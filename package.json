@@ -5,6 +5,7 @@
   "engine": "node 4.4.0",
   "scripts": {
     "tsc": "tsc",
+    "ntsc": "./node_modules/ntypescript/bin/tsc",
     "tsc:w": "tsc -w",
     "eslint": "eslint server/**/*.js",
     "tslint": "tslint client/**/*.ts -s node_modules/tslint-stylish -t stylish",
@@ -13,8 +14,8 @@
     "move-assets": "cp -R client/assets/ public/assets",
     "move-html": "cp -R client/**/*.html public/",
     "move-js": "cp -R client/**/*.js public/",
-    "start-dev": "concurrent \"npm run watch-css\" \"npm run move-assets\" \"npm run tsc:w\" \"node app.js\"",
-    "start": "npm run tsc; node app.js"
+    "start-dev": "concurrent \"npm run watch-css\" \"npi run move-assets\" \"npm run tsc:w\" \"node app.js\"",
+    "start": "npm run ntsc; node app.js"
   },
   "license": "ISC",
   "dependencies": {
@@ -31,13 +32,14 @@
     "method-override": "^2.3.5",
     "mongoose": "^4.4.5",
     "morgan": "~1.6.1",
+    "ntsc": "^0.2.0",
+    "ntypescript": "^1.201605022209.1",
     "path": "^0.12.7",
     "phantomjs-prebuilt": "^2.1.7",
     "reflect-metadata": "0.1.2",
     "rxjs": "5.0.0-beta.2",
     "serve-favicon": "~2.3.0",
     "systemjs": "0.19.6",
-    "tsc": "^1.20150623.0",
     "underscore": "^1.8.3",
     "zone.js": "0.6.10"
   },
