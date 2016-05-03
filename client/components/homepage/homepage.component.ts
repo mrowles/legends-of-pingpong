@@ -1,11 +1,15 @@
-import {Component} from 'angular2/core';
-import {ROUTER_DIRECTIVES} from 'angular2/router';
+import {Component} from '@angular/core';
+import {ROUTER_DIRECTIVES} from '@angular/router-deprecated';
 import {LeaderboardComponent} from '../leaderboard/leaderboard.component';
 
 @Component({
   directives: [ROUTER_DIRECTIVES, LeaderboardComponent],
-  templateUrl: '/client/components/homepage/homepage.html',
+  templateUrl: 'js/components/homepage/homepage.html',
 })
 
 export class HomepageComponent {
+
+  public ngOnInit(): void {
+    console.log('HOMEPAGE COMPONENT');
+  }
 }

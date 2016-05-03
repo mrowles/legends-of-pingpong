@@ -1,12 +1,10 @@
-import {Component} from 'angular2/core';
-import {ROUTER_DIRECTIVES} from 'angular2/router';
-import {Http, HTTP_PROVIDERS, Headers} from 'angular2/http';
+import {Component} from '@angular/core';
+import {ROUTER_DIRECTIVES, Router} from '@angular/router';
+import {Http, HTTP_PROVIDERS, Headers, Response} from '@angular/http';
 import {Match} from '../../model/match/match.model';
 import {PlayerService} from '../../service/player.service';
 import {MatchService} from '../../service/match.service';
 import {MatchedPlayersComponent} from '../matchedPlayers/matchedPlayers.component';
-import {Router} from 'angular2/router';
-import {Response} from 'angular2/http';
 import 'rxjs/Rx';
 
 @Component({

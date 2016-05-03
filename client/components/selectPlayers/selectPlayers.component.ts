@@ -1,9 +1,8 @@
-import {Component, OnInit} from 'angular2/core';
-import {Http, HTTP_PROVIDERS} from 'angular2/http';
-import {ROUTER_DIRECTIVES} from 'angular2/router';
+import {Component, OnInit} from '@angular/core';
+import {Http, HTTP_PROVIDERS, Response} from '@angular/http';
+import {ROUTER_DIRECTIVES} from '@angular/router';
 import {Player} from '../../model/player/player.model';
 import {MatchService} from '../../service/match.service';
-import {Response} from 'angular2/http';
 import 'rxjs/Rx';
 
 @Component({

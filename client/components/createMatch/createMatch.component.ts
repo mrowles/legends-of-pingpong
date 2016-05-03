@@ -1,14 +1,14 @@
-import {Component, OnInit} from 'angular2/core';
+import {Component, OnInit} from '@angular/core';
 import {SelectPlayersComponent} from '../selectPlayers/selectPlayers.component';
 import {PlayerService} from '../../service/player.service';
 import {MatchService} from '../../service/match.service';
 import {Player} from '../../model/player/player.model';
-import {ROUTER_DIRECTIVES} from 'angular2/router';
+import {ROUTER_DIRECTIVES} from '@angular/router';
 import {MatchedPlayersComponent} from '../matchedPlayers/matchedPlayers.component';
 
 @Component({
   directives: [SelectPlayersComponent, MatchedPlayersComponent, ROUTER_DIRECTIVES],
-  templateUrl: '/client/components/createMatch/createMatch.html',
+  templateUrl: './createMatch.html',
 })
 export class CreateMatchPage implements OnInit {
   private lastAddedPlayer: Player;
@@ -21,6 +21,7 @@ export class CreateMatchPage implements OnInit {
   }
 
   public ngOnInit(): void {
+    console.log('CREATE MATCH');
     this.lastAddedPlayer = this.playerService.getLastAddedPlayer();
     this.playerService.clearLastAddedPlayer();
   }

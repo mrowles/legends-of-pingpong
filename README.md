@@ -47,7 +47,9 @@ run
 
 ```npm install```
 ```npm install -g tslint typescript```
+```npm install -g tslint ntypescript```
 ```npm install -g eslint```
+```npm install -g typings```
 
 ### Start App
 

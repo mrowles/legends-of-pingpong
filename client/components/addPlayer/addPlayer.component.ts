@@ -1,10 +1,10 @@
-import {Component} from 'angular2/core';
+import {Component} from '@angular/core';
 import {Error} from '../../model/error/error';
-import {Http, HTTP_PROVIDERS, Headers} from 'angular2/http';
+import {Http, HTTP_PROVIDERS, Headers} from '@angular/http';
 import {Player} from '../../model/player/player.model';
 import {PlayerService} from '../../service/player.service';
-import {Router} from 'angular2/router';
-import {Response} from 'angular2/http';
+import {Router} from '@angular/router';
+import {Response} from '@angular/http';
 import 'rxjs/Rx';
 
 @Component({

@@ -4,9 +4,9 @@
     <span *ngSwitchWhen=match.getOpponent(0)>
       <div class="player-icon unselected"></div>
     </span>
-    <span *ngSwitchDefault>
+    <span *ngSwitchDefault (click)="removeOpponent(0)">
       <div class="player-icon"></div>
-      <p class="player-name">
+      <p  class="player-name">
         {{match.getOpponent(0).getPlayer().name}}
       </p>
     </span>
@@ -22,7 +22,7 @@
     <span *ngSwitchWhen=match.getOpponent(1)>
       <div class="player-icon unselected"></div>
     </span>
-    <span *ngSwitchDefault>
+    <span *ngSwitchDefault (click)="removeOpponent(1)">
       <div class="player-icon"></div>
       <p class="player-name">
         {{match.getOpponent(1).getPlayer().name}}

@@ -1,9 +1,7 @@
-import {Injectable} from 'angular2/core';
 import {Match} from '../model/match/match.model';
 import {Player} from '../model/player/player.model';
 import {Opponent} from '../model/match/opponent.model';
 
-@Injectable()
 export class MatchService {
 
   private match: Match;

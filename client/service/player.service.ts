@@ -1,7 +1,5 @@
-import {Injectable} from 'angular2/core';
 import {Player} from '../model/player/player.model';
 
-@Injectable()
 export class PlayerService {
 
   private player: Player;
