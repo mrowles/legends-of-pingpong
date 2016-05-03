@@ -23,14 +23,19 @@
 
   <script>
     System.config({
+      defaultJSExtensions: true,
       packages: {
         client: {
+          format: 'register',
+          defaultExtension: 'js'
+        },
+        node_modules: {
           format: 'register',
           defaultExtension: 'js'
         }
       }
     });
-    System.import('/client/main')
+    System.import('client/main')
       .then(null, console.error.bind(console));
   </script>
 
