@@ -9,12 +9,15 @@ var matches = require('./server/routes/matches');
 
 var app = express();
 
-app.set('views', path.join(__dirname, '/'));
-app.set('view engine', 'ejs');
-app.engine('html', require('ejs').renderFile);
+//app.set('views', path.join(__dirname, '/'));
+//app.set('view engine', 'ejs');
+//app.engine('html', require('ejs').renderFile);
 
 
-app.use(express.static('client'));
+app.use(express.static("./node_modules/"));
+app.use(express.static("./client/"));
+
+//app.use(express.static('client'));
 app.use(express.static(path.join(__dirname, '/')));
 
 app.use(bodyParser.json());
@@ -22,7 +25,7 @@ app.use(bodyParser.json());
 app.use('/api/player', players);
 app.use('/api/match', matches);
 
-app.use('/*', index);
+//app.use('/*', index);
 
 var port = process.env.PORT || 8765;
 
