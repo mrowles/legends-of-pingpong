@@ -2613,11 +2613,14 @@ h2 {
     text-align: left;
     font-weight: bold; }
     .leaderboard .scoreboard .cell-name .name {
+      padding: 0.3125rem 0.3125rem;
       margin: 0.625rem 0;
-      padding: 0.625rem 3.125rem;
       color: #fff;
       background-color: #6D000F;
       border-radius: 1.5625rem; }
+      @media (min-width: 600px) {
+        .leaderboard .scoreboard .cell-name .name {
+          padding: 0.625rem 3.125rem; } }
   .leaderboard .scoreboard .cell {
     width: 5.625rem;
     text-align: center; }

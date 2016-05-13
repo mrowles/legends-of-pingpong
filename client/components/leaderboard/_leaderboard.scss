@@ -26,12 +26,15 @@
       font-weight: bold;
 
       .name {
+        padding: rem(5) rem(5);
         margin: rem(10) 0;
-        padding: rem(10) rem(50);
         color: color(white-1);
         background-color: color(maroon-1);
         border-radius: rem(5 + $default-font-size-text);
 
+        @media (min-width: 600px){
+          padding: rem(10) rem(50);
+        }
       }
     }
 
