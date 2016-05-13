@@ -6,15 +6,15 @@
 
     <thead>
     <tr>
-      <th class="cell"></th>
-      <th class="column-heading" align="center" colspan="2">
+      <th class="cell-name-header"></th>
+      <th class="column-heading" colspan="2">
         <table>
           <tr>
             <td colspan="2" align="center">POINTS</td>
           </tr>
           <tr>
-            <td align="center">Won</td>
-            <td align="center">Lost</td>
+            <td class="cell-games" align="center">Won</td>
+            <td class="cell-games" align="center">Lost</td>
           </tr>
         </table>
       </th>
@@ -24,75 +24,40 @@
             <td colspan="2" align="center">SETS</td>
           </tr>
           <tr>
-            <td align="center">Won</td>
-            <td align="center">Lost</td>
+            <td class="cell-games" align="center">Won</td>
+            <td class="cell-games" align="center">Lost</td>
           </tr>
         </table>
       </th>
-      <th class="column-heading" colspan="2">
+      <th colspan="2">
         <table>
           <tr>
             <td colspan="2" align="center">MATCH</td>
           </tr>
           <tr>
-            <td align="center">Won</td>
-            <td align="center">Lost</td>
+            <td class="cell-match" align="center">Won</td>
+            <td class="cell-match" align="center">Lost</td>
           </tr>
         </table>
       </th>
-      <table>
-        <tr>
-          <td align="center">&nbsp;</td>
-        </tr>
-        <tr>
-          <td align="center">%</td>
-        </tr>
-      </table>
+      <th class="cell-match">%</th>
     </tr>
     </thead>
     <tbody>
-    <tr *ngFor="#player of players; #index = index">
-      <td>
-        <div class="cell-name">
+    <tr *ngFor="#player of players; #index = index" class="player-row">
+      <td class="cell-name">
+        <div class="name">
           #{{index + 1}} {{player.name}}
         </div>
       </td>
-      <td>
-        <div class="cell-games">
-          {{player.playerStats.pointsFor}}
-        </div>
-      </td>
-      <td>
-        <div class="cell-games">
-          {{player.playerStats.pointsAgainst}}
-        </div>
-      </td>
-      <td>
-        <div class="cell-sets">
-          {{player.playerStats.setsWon}}
-        </div>
-      </td>
-      <td>
-        <div class="cell-sets">
-          {{player.playerStats.setsLost}}
-        </div>
-      </td>
-      <td>
-        <div class="cell-match">
-          {{player.playerStats.matchWon}}
-        </div>
-      </td>
-      <td>
-        <div class="cell-match">
-          {{player.playerStats.matchLost}}
-        </div>
-      </td>
-      <td>
-        <div class="cell-total">
-          {{(player.playerStats.matchWon / (player.playerStats.matchWon + player.playerStats.matchLost)) || 0 |
-          percent:'.2-2'}}
-        </div>
-      </td>
+      <td class="cell-games">{{player.playerStats.pointsFor}}</td>
+      <td class="cell-games">{{player.playerStats.pointsAgainst}}</td>
+      <td class="cell-games">{{player.playerStats.setsWon}}</td>
+      <td class="cell-games">{{player.playerStats.setsLost}}</td>
+      <td class="cell-match">{{player.playerStats.matchWon}}</td>
+      <td class="cell-match">{{player.playerStats.matchLost}}</td>
+      <td class="cell-match"><p>{{(player.playerStats.matchWon / (player.playerStats.matchWon +
+        player.playerStats.matchLost)) || 0 | percent:'.2-2'}}</p></td>
     </tr>
     </tbody>
   </table>
