@@ -12,4 +12,4 @@ System.register([], function(exports_1) {
         }
     }
 });
-//# sourceMappingURL=playerStats.js.map
+//# sourceMappingURL=playerStats.model.js.map

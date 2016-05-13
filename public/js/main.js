@@ -1,4 +1,4 @@
-System.register(['@angular/platform-browser-dynamic', 'js/app.component', '@angular/router-deprecated', 'js/service/player.service', 'js/service/match.service'], function(exports_1) {
+System.register(['@angular/platform-browser-dynamic', 'app.component', '@angular/router-deprecated', 'service/player.service', 'service/match.service'], function(exports_1) {
     var platform_browser_dynamic_1, app_component_1, router_deprecated_1, player_service_1, match_service_1;
     return {
         setters:[

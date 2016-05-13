@@ -12,7 +12,7 @@
     "watch-css": "nodemon -e scss -x \"npm run build-css\"",
     "move-scripts": "node scripts/copy-scripts",
     "move-scripts-vendor": "node scripts/copy-scripts-vendor",
-    "start": "concurrent \"npm run watch-css\" \"npm run move-assets\" \"npm run move-scripts\" \"npm run build-js\" \"node app.js\""
+    "start": "concurrently \"npm run watch-css\" \"npm run move-scripts\" \"npm run build-js\" \"node app.js\""
   },
   "license": "ISC",
   "dependencies": {

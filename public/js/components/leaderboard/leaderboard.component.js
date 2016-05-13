@@ -37,7 +37,7 @@ System.register(['@angular/core', '@angular/router-deprecated', '@angular/http']
                     core_1.Component({
                         providers: [router_deprecated_1.ROUTER_DIRECTIVES, http_1.HTTP_PROVIDERS],
                         selector: 'leaderboard',
-                        templateUrl: 'js/components/leaderboard/leaderboard.html',
+                        templateUrl: 'public/js/components/leaderboard/leaderboard.html',
                     }), 
                     __metadata('design:paramtypes', [http_1.Http])
                 ], LeaderboardComponent);

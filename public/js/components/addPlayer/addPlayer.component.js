@@ -1,4 +1,4 @@
-System.register(['@angular/core', '@angular/http', '@angular/router-deprecated', 'js/model/error/error', 'js/model/player/player.model', 'js/service/player.service', 'rxjs/Rx'], function(exports_1) {
+System.register(['@angular/core', '@angular/http', '@angular/router-deprecated', 'model/error/error', 'model/player/player.model', 'service/player.service', 'rxjs/Rx'], function(exports_1) {
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -60,7 +60,7 @@ System.register(['@angular/core', '@angular/http', '@angular/router-deprecated',
                     core_1.Component({
                         providers: [http_1.HTTP_PROVIDERS],
                         selector: 'add-player-form',
-                        templateUrl: '/js/components/addPlayer/addPlayer.html',
+                        templateUrl: 'public/js/components/addPlayer/addPlayer.html',
                     }), 
                     __metadata('design:paramtypes', [http_1.Http, router_deprecated_1.Router, (typeof (_a = typeof player_service_1.PlayerService !== 'undefined' && player_service_1.PlayerService) === 'function' && _a) || Object])
                 ], AddPlayerComponent);

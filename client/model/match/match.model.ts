@@ -1,4 +1,4 @@
-import {Opponent} from 'js/model/match/opponent.model';
+import {Opponent} from 'model/match/opponent.model';
 
 export class Match {
   private opponent: Array<Opponent>;

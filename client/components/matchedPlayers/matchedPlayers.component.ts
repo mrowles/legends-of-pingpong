@@ -1,11 +1,11 @@
 import {Component} from '@angular/core';
 
-import {Match} from 'js/model/match/match.model';
-import {MatchService} from 'js/service/match.service';
+import {Match} from 'model/match/match.model';
+import {MatchService} from 'service/match.service';
 
 @Component({
   selector: 'matched-players',
-  templateUrl: 'js/components/matchedPlayers/matchedPlayers.html',
+  templateUrl: 'public/js/components/matchedPlayers/matchedPlayers.html',
 })
 
 export class MatchedPlayersComponent {

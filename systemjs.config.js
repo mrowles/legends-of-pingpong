@@ -2,10 +2,10 @@
 
   // map tells the System loader where to look for things
   var map = {
-    'app': 'js', // 'dist',
-    'rxjs': 'node_modules/rxjs',
-    'angular2-in-memory-web-api': 'node_modules/angular2-in-memory-web-api',
-    '@angular': 'node_modules/@angular'
+    'app': '/public/js',
+    'rxjs': '/node_modules/rxjs',
+    'angular2-in-memory-web-api': '/node_modules/angular2-in-memory-web-api',
+    '@angular': '/node_modules/@angular'
   };
 
   // packages tells the System loader how to load when no filename and/or no extension
@@ -35,8 +35,9 @@
 
   var config = {
     map: map,
-    packages: packages
-  }
+    packages: packages,
+    baseURL: '/public/js'
+  };
 
   // filterSystemConfig - index.html's chance to modify config before we register it.
   if (global.filterSystemConfig) { global.filterSystemConfig(config); }

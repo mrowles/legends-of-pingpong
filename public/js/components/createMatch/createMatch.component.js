@@ -1,4 +1,4 @@
-System.register(['@angular/core', '@angular/router-deprecated', 'js/components/selectPlayers/selectPlayers.component', 'js/components/matchedPlayers/matchedPlayers.component', 'js/service/player.service', 'js/service/match.service'], function(exports_1) {
+System.register(['@angular/core', '@angular/router-deprecated', 'components/selectPlayers/selectPlayers.component', 'components/matchedPlayers/matchedPlayers.component', 'service/player.service', 'service/match.service'], function(exports_1) {
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -44,7 +44,7 @@ System.register(['@angular/core', '@angular/router-deprecated', 'js/components/s
                 CreateMatchPage = __decorate([
                     core_1.Component({
                         directives: [selectPlayers_component_1.SelectPlayersComponent, matchedPlayers_component_1.MatchedPlayersComponent, router_deprecated_1.ROUTER_DIRECTIVES],
-                        templateUrl: 'js/components/createMatch/createMatch.html',
+                        templateUrl: 'public/js/components/createMatch/createMatch.html',
                     }), 
                     __metadata('design:paramtypes', [(typeof (_a = typeof player_service_1.PlayerService !== 'undefined' && player_service_1.PlayerService) === 'function' && _a) || Object, (typeof (_b = typeof match_service_1.MatchService !== 'undefined' && match_service_1.MatchService) === 'function' && _b) || Object])
                 ], CreateMatchPage);

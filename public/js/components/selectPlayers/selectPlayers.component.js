@@ -1,4 +1,4 @@
-System.register(['@angular/core', '@angular/http', '@angular/router-deprecated', 'js/service/match.service', 'rxjs/Rx'], function(exports_1) {
+System.register(['@angular/core', '@angular/http', '@angular/router-deprecated', 'service/match.service', 'rxjs/Rx'], function(exports_1) {
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -48,7 +48,7 @@ System.register(['@angular/core', '@angular/http', '@angular/router-deprecated',
                     core_1.Component({
                         providers: [http_1.HTTP_PROVIDERS, router_deprecated_1.ROUTER_DIRECTIVES],
                         selector: 'select-players-form',
-                        templateUrl: 'js/components/selectPlayers/selectPlayers.html',
+                        templateUrl: 'public/js/components/selectPlayers/selectPlayers.html',
                     }), 
                     __metadata('design:paramtypes', [http_1.Http, (typeof (_a = typeof match_service_1.MatchService !== 'undefined' && match_service_1.MatchService) === 'function' && _a) || Object])
                 ], SelectPlayersComponent);

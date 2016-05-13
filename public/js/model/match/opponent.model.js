@@ -1,5 +1,5 @@
 "use strict";
-var set_model_1 = require('js/model/match/set.model');
+var set_model_1 = require('model/match/set.model');
 var Opponent = (function () {
     function Opponent(player) {
         this.player = player;

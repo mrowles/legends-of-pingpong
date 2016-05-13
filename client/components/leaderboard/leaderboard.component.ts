@@ -2,12 +2,12 @@ import {Component, OnInit} from '@angular/core';
 import {ROUTER_DIRECTIVES}  from '@angular/router-deprecated';
 import {Http, HTTP_PROVIDERS, Headers, Response} from '@angular/http';
 
-import {Player} from 'js/model/player/player.model';
+import {Player} from 'model/player/player.model';
 
 @Component({
   providers: [ROUTER_DIRECTIVES, HTTP_PROVIDERS],
   selector: 'leaderboard',
-  templateUrl: 'js/components/leaderboard/leaderboard.html',
+  templateUrl: 'public/js/components/leaderboard/leaderboard.html',
 })
 
 export class LeaderboardComponent implements OnInit {

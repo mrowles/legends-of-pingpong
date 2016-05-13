@@ -1,11 +1,11 @@
 import {Component} from '@angular/core';
 import {ROUTER_DIRECTIVES} from '@angular/router-deprecated';
 
-import {LeaderboardComponent} from 'js/components/leaderboard/leaderboard.component';
+import {LeaderboardComponent} from 'components/leaderboard/leaderboard.component';
 
 @Component({
   directives: [ROUTER_DIRECTIVES, LeaderboardComponent],
-  templateUrl: 'js/components/homepage/homepage.html',
+  templateUrl: 'public/js/components/homepage/homepage.html',
 })
 
 export class HomepageComponent {

@@ -1,4 +1,4 @@
-System.register(['@angular/core', '@angular/router-deprecated', 'js/components/addPlayer/addPlayer.component', 'js/components/homepage/homepage.component', 'js/components/createMatch/createMatch.component', 'js/components/matchPage/matchPage.component'], function(exports_1) {
+System.register(['@angular/core', '@angular/router-deprecated', 'components/addPlayer/addPlayer.component', 'components/homepage/homepage.component', 'components/createMatch/createMatch.component', 'components/matchPage/matchPage.component'], function(exports_1) {
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -33,11 +33,7 @@ System.register(['@angular/core', '@angular/router-deprecated', 'js/components/a
         execute: function() {
             AppComponent = (function () {
                 function AppComponent() {
-                    this.title = 'LOAD GODAMMIT';
                 }
-                AppComponent.prototype.ngOnInit = function () {
-                    console.log('TEST');
-                };
                 AppComponent = __decorate([
                     core_1.Component({
                         directives: [router_deprecated_1.ROUTER_DIRECTIVES],
@@ -45,7 +41,7 @@ System.register(['@angular/core', '@angular/router-deprecated', 'js/components/a
                             router_deprecated_1.ROUTER_PROVIDERS,
                         ],
                         selector: 'lopp-app',
-                        templateUrl: 'js/app.html',
+                        templateUrl: 'public/js/app.html',
                     }),
                     router_deprecated_1.RouteConfig([
                         {
