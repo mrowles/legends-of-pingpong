@@ -4,10 +4,10 @@ Ping Pong scoreboard managing app
 
 ## Contributors
 
-[mrowles](https://github.com/mrowles)
-jkelleher
-kchew
-esmith
+* [mrowles](https://github.com/mrowles)
+* jkelleher
+* kchew
+* esmith
 
 ## Requirements
 
