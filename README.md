@@ -1,4 +1,13 @@
-# Double Dragon (Legends of Ping Pong)
+# Legends of Ping Pong
+
+Ping Pong scoreboard managing app
+
+## Contributors
+
+* [mrowles](https://github.com/mrowles)
+* jkelleher
+* kchew
+* esmith
 
 ## Requirements
 

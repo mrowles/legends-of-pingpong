@@ -1,0 +1,2647 @@
+@font-face {
+  font-family: 'arcadeAlaPokemon';
+  src: url("/assets/fonts/04B_30__.TTF") format("ttf"); }
+
+@font-face {
+  font-family: 'arcadeClassic';
+  src: url("/assets/fonts/ARCADECLASSIC.TTF") format("ttf"); }
+
+.select-players .player .player-icon, .matched-players .player .player-icon, .leaderboard .scoreboard .player-icon {
+  width: 3.75rem;
+  height: 3.75rem;
+  display: inline-block;
+  margin: auto 0.3125rem;
+  border-radius: 50%;
+  border: 1px solid #bbb; }
+
+.add-player, .create-match, .match-page, .leaderboard {
+  padding: 1.25rem;
+  background-color: #fff;
+  box-shadow: 5px 5px 0 0 rgba(0, 0, 0, 0.5); }
+
+* {
+  box-sizing: border-box; }
+
+*:before,
+*:after {
+  box-sizing: border-box; }
+
+html {
+  font-size: 16px;
+  -webkit-tap-highlight-color: transparent;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background-color: #fff;
+  color: #000;
+  font-family: "Courier New", Arial, sans-serif;
+  font-size: 20px;
+  line-height: 1.5rem;
+  text-rendering: optimizeSpeed;
+  font-variant-ligatures: none; }
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+main,
+menu,
+nav,
+section,
+summary {
+  display: block; }
+
+audio,
+canvas,
+progress,
+video {
+  display: inline-block;
+  vertical-align: baseline; }
+
+audio:not([controls]) {
+  display: none;
+  height: 0; }
+
+[hidden],
+template {
+  display: none; }
+
+a {
+  background-color: transparent;
+  color: #cc0000;
+  text-decoration: none; }
+
+a:active {
+  text-decoration: none; }
+
+a:hover,
+a:focus {
+  color: #000;
+  text-decoration: none; }
+
+a:active,
+a:hover {
+  outline: 0; }
+
+a:focus {
+  outline: thin dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px; }
+
+abbr[title] {
+  border-bottom: 1px dotted; }
+
+b,
+strong {
+  font-weight: bold; }
+
+dfn {
+  font-style: italic; }
+
+h1 {
+  margin: 0.67em 0;
+  font-size: 2em; }
+
+mark {
+  background: #cc0000;
+  color: #cc0000; }
+
+small {
+  font-size: 80%; }
+
+sub,
+sup {
+  position: relative;
+  font-size: 75%;
+  line-height: 0;
+  vertical-align: baseline; }
+
+sup {
+  top: -0.5em; }
+
+sub {
+  bottom: -0.25em; }
+
+img {
+  border: 0;
+  vertical-align: middle; }
+
+svg:not(:root) {
+  overflow: hidden; }
+
+figure {
+  margin: 0; }
+
+hr {
+  height: 0;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 0;
+  border-top: 1px solid 1px;
+  box-sizing: content-box; }
+
+pre {
+  overflow: auto; }
+
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, monospace;
+  font-size: 1em; }
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  margin: 0;
+  color: inherit;
+  font: inherit; }
+
+button {
+  overflow: visible; }
+
+button,
+select {
+  text-transform: none; }
+
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  cursor: pointer;
+  -webkit-appearance: button; }
+
+button[disabled],
+html input[disabled] {
+  cursor: default; }
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  padding: 0;
+  border: 0; }
+
+input {
+  line-height: normal; }
+
+input[type="checkbox"],
+input[type="radio"] {
+  padding: 0;
+  box-sizing: border-box; }
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  height: auto; }
+
+input[type="search"] {
+  box-sizing: content-box;
+  -webkit-appearance: textfield; }
+
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none; }
+
+fieldset {
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+  border: 1px solid 1px; }
+
+legend {
+  padding: 0;
+  border: 0; }
+
+textarea {
+  overflow: auto; }
+
+optgroup {
+  font-weight: bold; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+td,
+th {
+  padding: 0; }
+
+input,
+button,
+select,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit; }
+
+input:focus, textarea:focus {
+  outline: 0; }
+
+[role="button"] {
+  cursor: pointer; }
+
+p {
+  margin: 0; }
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none; }
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important; }
+
+p, li, th, td {
+  font-family: "Courier New";
+  font-size: 1.25rem;
+  line-height: 1.5rem; }
+
+td {
+  color: #49484A; }
+
+h2 {
+  margin: 0;
+  font-family: "Courier New";
+  font-size: 2.625rem;
+  font-style: inherit;
+  font-weight: inherit;
+  line-height: 2.8125rem;
+  text-align: center; }
+
+.valid-text {
+  color: #7bb593; }
+
+.invalid-text {
+  color: #C8473A; }
+
+/* Responsive stepped percentages */
+/* Margin on specific edge */
+.m-top-xs {
+  margin-top: 0.17188rem; }
+  @media (min-width: 48rem) {
+    .m-top-xs {
+      margin-top: 0.22917rem; } }
+  @media (min-width: 62rem) {
+    .m-top-xs {
+      margin-top: 0.30556rem; } }
+  @media (min-width: 75rem) {
+    .m-top-xs {
+      margin-top: 0.3125rem; } }
+
+/* Rigid margin on specific edge */
+.m-rigid-top-xs {
+  margin-top: 0.3125rem; }
+
+/* Margin on all edges */
+.m-all-xs {
+  margin: 0.17188rem; }
+  @media (min-width: 48rem) {
+    .m-all-xs {
+      margin: 0.22917rem; } }
+  @media (min-width: 62rem) {
+    .m-all-xs {
+      margin: 0.30556rem; } }
+  @media (min-width: 75rem) {
+    .m-all-xs {
+      margin: 0.3125rem; } }
+
+/* Rigid margin on all edge */
+.m-all-rigid-top-xs {
+  margin: 0.3125rem; }
+
+/* Padding on soecific edge */
+.p-top-xs {
+  padding-top: 0.17188rem; }
+  @media (min-width: 48rem) {
+    .p-top-xs {
+      padding-top: 0.22917rem; } }
+  @media (min-width: 62rem) {
+    .p-top-xs {
+      padding-top: 0.30556rem; } }
+  @media (min-width: 75rem) {
+    .p-top-xs {
+      padding-top: 0.3125rem; } }
+
+/* Rigid padding on specific edge */
+.p-rigid-top-xs {
+  padding-top: 0.3125rem; }
+
+/* Padding on all edges */
+.p-all-xs {
+  padding: 0.17188rem; }
+  @media (min-width: 48rem) {
+    .p-all-xs {
+      padding: 0.22917rem; } }
+  @media (min-width: 62rem) {
+    .p-all-xs {
+      padding: 0.30556rem; } }
+  @media (min-width: 75rem) {
+    .p-all-xs {
+      padding: 0.3125rem; } }
+
+/* Rigid padding on all edges */
+.p-all-rigid-xs {
+  padding: 0.3125rem; }
+
+/* Margin on specific edge */
+.m-top-sm {
+  margin-top: 0.34375rem; }
+  @media (min-width: 48rem) {
+    .m-top-sm {
+      margin-top: 0.45833rem; } }
+  @media (min-width: 62rem) {
+    .m-top-sm {
+      margin-top: 0.61111rem; } }
+  @media (min-width: 75rem) {
+    .m-top-sm {
+      margin-top: 0.625rem; } }
+
+/* Rigid margin on specific edge */
+.m-rigid-top-sm {
+  margin-top: 0.625rem; }
+
+/* Margin on all edges */
+.m-all-sm {
+  margin: 0.34375rem; }
+  @media (min-width: 48rem) {
+    .m-all-sm {
+      margin: 0.45833rem; } }
+  @media (min-width: 62rem) {
+    .m-all-sm {
+      margin: 0.61111rem; } }
+  @media (min-width: 75rem) {
+    .m-all-sm {
+      margin: 0.625rem; } }
+
+/* Rigid margin on all edge */
+.m-all-rigid-top-sm {
+  margin: 0.625rem; }
+
+/* Padding on soecific edge */
+.p-top-sm {
+  padding-top: 0.34375rem; }
+  @media (min-width: 48rem) {
+    .p-top-sm {
+      padding-top: 0.45833rem; } }
+  @media (min-width: 62rem) {
+    .p-top-sm {
+      padding-top: 0.61111rem; } }
+  @media (min-width: 75rem) {
+    .p-top-sm {
+      padding-top: 0.625rem; } }
+
+/* Rigid padding on specific edge */
+.p-rigid-top-sm {
+  padding-top: 0.625rem; }
+
+/* Padding on all edges */
+.p-all-sm {
+  padding: 0.34375rem; }
+  @media (min-width: 48rem) {
+    .p-all-sm {
+      padding: 0.45833rem; } }
+  @media (min-width: 62rem) {
+    .p-all-sm {
+      padding: 0.61111rem; } }
+  @media (min-width: 75rem) {
+    .p-all-sm {
+      padding: 0.625rem; } }
+
+/* Rigid padding on all edges */
+.p-all-rigid-sm {
+  padding: 0.625rem; }
+
+/* Margin on specific edge */
+.m-top-md {
+  margin-top: 0.51562rem; }
+  @media (min-width: 48rem) {
+    .m-top-md {
+      margin-top: 0.6875rem; } }
+  @media (min-width: 62rem) {
+    .m-top-md {
+      margin-top: 0.91667rem; } }
+  @media (min-width: 75rem) {
+    .m-top-md {
+      margin-top: 0.9375rem; } }
+
+/* Rigid margin on specific edge */
+.m-rigid-top-md {
+  margin-top: 0.9375rem; }
+
+/* Margin on all edges */
+.m-all-md {
+  margin: 0.51562rem; }
+  @media (min-width: 48rem) {
+    .m-all-md {
+      margin: 0.6875rem; } }
+  @media (min-width: 62rem) {
+    .m-all-md {
+      margin: 0.91667rem; } }
+  @media (min-width: 75rem) {
+    .m-all-md {
+      margin: 0.9375rem; } }
+
+/* Rigid margin on all edge */
+.m-all-rigid-top-md {
+  margin: 0.9375rem; }
+
+/* Padding on soecific edge */
+.p-top-md {
+  padding-top: 0.51562rem; }
+  @media (min-width: 48rem) {
+    .p-top-md {
+      padding-top: 0.6875rem; } }
+  @media (min-width: 62rem) {
+    .p-top-md {
+      padding-top: 0.91667rem; } }
+  @media (min-width: 75rem) {
+    .p-top-md {
+      padding-top: 0.9375rem; } }
+
+/* Rigid padding on specific edge */
+.p-rigid-top-md {
+  padding-top: 0.9375rem; }
+
+/* Padding on all edges */
+.p-all-md {
+  padding: 0.51562rem; }
+  @media (min-width: 48rem) {
+    .p-all-md {
+      padding: 0.6875rem; } }
+  @media (min-width: 62rem) {
+    .p-all-md {
+      padding: 0.91667rem; } }
+  @media (min-width: 75rem) {
+    .p-all-md {
+      padding: 0.9375rem; } }
+
+/* Rigid padding on all edges */
+.p-all-rigid-md {
+  padding: 0.9375rem; }
+
+/* Margin on specific edge */
+.m-top-lg {
+  margin-top: 1.03125rem; }
+  @media (min-width: 48rem) {
+    .m-top-lg {
+      margin-top: 1.375rem; } }
+  @media (min-width: 62rem) {
+    .m-top-lg {
+      margin-top: 1.83333rem; } }
+  @media (min-width: 75rem) {
+    .m-top-lg {
+      margin-top: 1.875rem; } }
+
+/* Rigid margin on specific edge */
+.m-rigid-top-lg {
+  margin-top: 1.875rem; }
+
+/* Margin on all edges */
+.m-all-lg {
+  margin: 1.03125rem; }
+  @media (min-width: 48rem) {
+    .m-all-lg {
+      margin: 1.375rem; } }
+  @media (min-width: 62rem) {
+    .m-all-lg {
+      margin: 1.83333rem; } }
+  @media (min-width: 75rem) {
+    .m-all-lg {
+      margin: 1.875rem; } }
+
+/* Rigid margin on all edge */
+.m-all-rigid-top-lg {
+  margin: 1.875rem; }
+
+/* Padding on soecific edge */
+.p-top-lg {
+  padding-top: 1.03125rem; }
+  @media (min-width: 48rem) {
+    .p-top-lg {
+      padding-top: 1.375rem; } }
+  @media (min-width: 62rem) {
+    .p-top-lg {
+      padding-top: 1.83333rem; } }
+  @media (min-width: 75rem) {
+    .p-top-lg {
+      padding-top: 1.875rem; } }
+
+/* Rigid padding on specific edge */
+.p-rigid-top-lg {
+  padding-top: 1.875rem; }
+
+/* Padding on all edges */
+.p-all-lg {
+  padding: 1.03125rem; }
+  @media (min-width: 48rem) {
+    .p-all-lg {
+      padding: 1.375rem; } }
+  @media (min-width: 62rem) {
+    .p-all-lg {
+      padding: 1.83333rem; } }
+  @media (min-width: 75rem) {
+    .p-all-lg {
+      padding: 1.875rem; } }
+
+/* Rigid padding on all edges */
+.p-all-rigid-lg {
+  padding: 1.875rem; }
+
+/* Margin on specific edge */
+.m-top-xl {
+  margin-top: 1.54688rem; }
+  @media (min-width: 48rem) {
+    .m-top-xl {
+      margin-top: 2.0625rem; } }
+  @media (min-width: 62rem) {
+    .m-top-xl {
+      margin-top: 2.75rem; } }
+  @media (min-width: 75rem) {
+    .m-top-xl {
+      margin-top: 2.8125rem; } }
+
+/* Rigid margin on specific edge */
+.m-rigid-top-xl {
+  margin-top: 2.8125rem; }
+
+/* Margin on all edges */
+.m-all-xl {
+  margin: 1.54688rem; }
+  @media (min-width: 48rem) {
+    .m-all-xl {
+      margin: 2.0625rem; } }
+  @media (min-width: 62rem) {
+    .m-all-xl {
+      margin: 2.75rem; } }
+  @media (min-width: 75rem) {
+    .m-all-xl {
+      margin: 2.8125rem; } }
+
+/* Rigid margin on all edge */
+.m-all-rigid-top-xl {
+  margin: 2.8125rem; }
+
+/* Padding on soecific edge */
+.p-top-xl {
+  padding-top: 1.54688rem; }
+  @media (min-width: 48rem) {
+    .p-top-xl {
+      padding-top: 2.0625rem; } }
+  @media (min-width: 62rem) {
+    .p-top-xl {
+      padding-top: 2.75rem; } }
+  @media (min-width: 75rem) {
+    .p-top-xl {
+      padding-top: 2.8125rem; } }
+
+/* Rigid padding on specific edge */
+.p-rigid-top-xl {
+  padding-top: 2.8125rem; }
+
+/* Padding on all edges */
+.p-all-xl {
+  padding: 1.54688rem; }
+  @media (min-width: 48rem) {
+    .p-all-xl {
+      padding: 2.0625rem; } }
+  @media (min-width: 62rem) {
+    .p-all-xl {
+      padding: 2.75rem; } }
+  @media (min-width: 75rem) {
+    .p-all-xl {
+      padding: 2.8125rem; } }
+
+/* Rigid padding on all edges */
+.p-all-rigid-xl {
+  padding: 2.8125rem; }
+
+/* Margin on specific edge */
+.m-top-xxl {
+  margin-top: 2.0625rem; }
+  @media (min-width: 48rem) {
+    .m-top-xxl {
+      margin-top: 2.75rem; } }
+  @media (min-width: 62rem) {
+    .m-top-xxl {
+      margin-top: 3.66667rem; } }
+  @media (min-width: 75rem) {
+    .m-top-xxl {
+      margin-top: 3.75rem; } }
+
+/* Rigid margin on specific edge */
+.m-rigid-top-xxl {
+  margin-top: 3.75rem; }
+
+/* Margin on all edges */
+.m-all-xxl {
+  margin: 2.0625rem; }
+  @media (min-width: 48rem) {
+    .m-all-xxl {
+      margin: 2.75rem; } }
+  @media (min-width: 62rem) {
+    .m-all-xxl {
+      margin: 3.66667rem; } }
+  @media (min-width: 75rem) {
+    .m-all-xxl {
+      margin: 3.75rem; } }
+
+/* Rigid margin on all edge */
+.m-all-rigid-top-xxl {
+  margin: 3.75rem; }
+
+/* Padding on soecific edge */
+.p-top-xxl {
+  padding-top: 2.0625rem; }
+  @media (min-width: 48rem) {
+    .p-top-xxl {
+      padding-top: 2.75rem; } }
+  @media (min-width: 62rem) {
+    .p-top-xxl {
+      padding-top: 3.66667rem; } }
+  @media (min-width: 75rem) {
+    .p-top-xxl {
+      padding-top: 3.75rem; } }
+
+/* Rigid padding on specific edge */
+.p-rigid-top-xxl {
+  padding-top: 3.75rem; }
+
+/* Padding on all edges */
+.p-all-xxl {
+  padding: 2.0625rem; }
+  @media (min-width: 48rem) {
+    .p-all-xxl {
+      padding: 2.75rem; } }
+  @media (min-width: 62rem) {
+    .p-all-xxl {
+      padding: 3.66667rem; } }
+  @media (min-width: 75rem) {
+    .p-all-xxl {
+      padding: 3.75rem; } }
+
+/* Rigid padding on all edges */
+.p-all-rigid-xxl {
+  padding: 3.75rem; }
+
+/* Margin on specific edge */
+.m-top-xxxl {
+  margin-top: 3.09375rem; }
+  @media (min-width: 48rem) {
+    .m-top-xxxl {
+      margin-top: 4.125rem; } }
+  @media (min-width: 62rem) {
+    .m-top-xxxl {
+      margin-top: 5.5rem; } }
+  @media (min-width: 75rem) {
+    .m-top-xxxl {
+      margin-top: 5.625rem; } }
+
+/* Rigid margin on specific edge */
+.m-rigid-top-xxxl {
+  margin-top: 5.625rem; }
+
+/* Margin on all edges */
+.m-all-xxxl {
+  margin: 3.09375rem; }
+  @media (min-width: 48rem) {
+    .m-all-xxxl {
+      margin: 4.125rem; } }
+  @media (min-width: 62rem) {
+    .m-all-xxxl {
+      margin: 5.5rem; } }
+  @media (min-width: 75rem) {
+    .m-all-xxxl {
+      margin: 5.625rem; } }
+
+/* Rigid margin on all edge */
+.m-all-rigid-top-xxxl {
+  margin: 5.625rem; }
+
+/* Padding on soecific edge */
+.p-top-xxxl {
+  padding-top: 3.09375rem; }
+  @media (min-width: 48rem) {
+    .p-top-xxxl {
+      padding-top: 4.125rem; } }
+  @media (min-width: 62rem) {
+    .p-top-xxxl {
+      padding-top: 5.5rem; } }
+  @media (min-width: 75rem) {
+    .p-top-xxxl {
+      padding-top: 5.625rem; } }
+
+/* Rigid padding on specific edge */
+.p-rigid-top-xxxl {
+  padding-top: 5.625rem; }
+
+/* Padding on all edges */
+.p-all-xxxl {
+  padding: 3.09375rem; }
+  @media (min-width: 48rem) {
+    .p-all-xxxl {
+      padding: 4.125rem; } }
+  @media (min-width: 62rem) {
+    .p-all-xxxl {
+      padding: 5.5rem; } }
+  @media (min-width: 75rem) {
+    .p-all-xxxl {
+      padding: 5.625rem; } }
+
+/* Rigid padding on all edges */
+.p-all-rigid-xxxl {
+  padding: 5.625rem; }
+
+/* Margin on specific edge */
+.m-top-xxxxl {
+  margin-top: 5.15625rem; }
+  @media (min-width: 48rem) {
+    .m-top-xxxxl {
+      margin-top: 6.875rem; } }
+  @media (min-width: 62rem) {
+    .m-top-xxxxl {
+      margin-top: 9.16667rem; } }
+  @media (min-width: 75rem) {
+    .m-top-xxxxl {
+      margin-top: 9.375rem; } }
+
+/* Rigid margin on specific edge */
+.m-rigid-top-xxxxl {
+  margin-top: 9.375rem; }
+
+/* Margin on all edges */
+.m-all-xxxxl {
+  margin: 5.15625rem; }
+  @media (min-width: 48rem) {
+    .m-all-xxxxl {
+      margin: 6.875rem; } }
+  @media (min-width: 62rem) {
+    .m-all-xxxxl {
+      margin: 9.16667rem; } }
+  @media (min-width: 75rem) {
+    .m-all-xxxxl {
+      margin: 9.375rem; } }
+
+/* Rigid margin on all edge */
+.m-all-rigid-top-xxxxl {
+  margin: 9.375rem; }
+
+/* Padding on soecific edge */
+.p-top-xxxxl {
+  padding-top: 5.15625rem; }
+  @media (min-width: 48rem) {
+    .p-top-xxxxl {
+      padding-top: 6.875rem; } }
+  @media (min-width: 62rem) {
+    .p-top-xxxxl {
+      padding-top: 9.16667rem; } }
+  @media (min-width: 75rem) {
+    .p-top-xxxxl {
+      padding-top: 9.375rem; } }
+
+/* Rigid padding on specific edge */
+.p-rigid-top-xxxxl {
+  padding-top: 9.375rem; }
+
+/* Padding on all edges */
+.p-all-xxxxl {
+  padding: 5.15625rem; }
+  @media (min-width: 48rem) {
+    .p-all-xxxxl {
+      padding: 6.875rem; } }
+  @media (min-width: 62rem) {
+    .p-all-xxxxl {
+      padding: 9.16667rem; } }
+  @media (min-width: 75rem) {
+    .p-all-xxxxl {
+      padding: 9.375rem; } }
+
+/* Rigid padding on all edges */
+.p-all-rigid-xxxxl {
+  padding: 9.375rem; }
+
+/* Margin on specific edge */
+.m-right-xs {
+  margin-right: 0.17188rem; }
+  @media (min-width: 48rem) {
+    .m-right-xs {
+      margin-right: 0.22917rem; } }
+  @media (min-width: 62rem) {
+    .m-right-xs {
+      margin-right: 0.30556rem; } }
+  @media (min-width: 75rem) {
+    .m-right-xs {
+      margin-right: 0.3125rem; } }
+
+/* Rigid margin on specific edge */
+.m-rigid-right-xs {
+  margin-right: 0.3125rem; }
+
+/* Margin on all edges */
+.m-all-xs {
+  margin: 0.17188rem; }
+  @media (min-width: 48rem) {
+    .m-all-xs {
+      margin: 0.22917rem; } }
+  @media (min-width: 62rem) {
+    .m-all-xs {
+      margin: 0.30556rem; } }
+  @media (min-width: 75rem) {
+    .m-all-xs {
+      margin: 0.3125rem; } }
+
+/* Rigid margin on all edge */
+.m-all-rigid-right-xs {
+  margin: 0.3125rem; }
+
+/* Padding on soecific edge */
+.p-right-xs {
+  padding-right: 0.17188rem; }
+  @media (min-width: 48rem) {
+    .p-right-xs {
+      padding-right: 0.22917rem; } }
+  @media (min-width: 62rem) {
+    .p-right-xs {
+      padding-right: 0.30556rem; } }
+  @media (min-width: 75rem) {
+    .p-right-xs {
+      padding-right: 0.3125rem; } }
+
+/* Rigid padding on specific edge */
+.p-rigid-right-xs {
+  padding-right: 0.3125rem; }
+
+/* Padding on all edges */
+.p-all-xs {
+  padding: 0.17188rem; }
+  @media (min-width: 48rem) {
+    .p-all-xs {
+      padding: 0.22917rem; } }
+  @media (min-width: 62rem) {
+    .p-all-xs {
+      padding: 0.30556rem; } }
+  @media (min-width: 75rem) {
+    .p-all-xs {
+      padding: 0.3125rem; } }
+
+/* Rigid padding on all edges */
+.p-all-rigid-xs {
+  padding: 0.3125rem; }
+
+/* Margin on specific edge */
+.m-right-sm {
+  margin-right: 0.34375rem; }
+  @media (min-width: 48rem) {
+    .m-right-sm {
+      margin-right: 0.45833rem; } }
+  @media (min-width: 62rem) {
+    .m-right-sm {
+      margin-right: 0.61111rem; } }
+  @media (min-width: 75rem) {
+    .m-right-sm {
+      margin-right: 0.625rem; } }
+
+/* Rigid margin on specific edge */
+.m-rigid-right-sm {
+  margin-right: 0.625rem; }
+
+/* Margin on all edges */
+.m-all-sm {
+  margin: 0.34375rem; }
+  @media (min-width: 48rem) {
+    .m-all-sm {
+      margin: 0.45833rem; } }
+  @media (min-width: 62rem) {
+    .m-all-sm {
+      margin: 0.61111rem; } }
+  @media (min-width: 75rem) {
+    .m-all-sm {
+      margin: 0.625rem; } }
+
+/* Rigid margin on all edge */
+.m-all-rigid-right-sm {
+  margin: 0.625rem; }
+
+/* Padding on soecific edge */
+.p-right-sm {
+  padding-right: 0.34375rem; }
+  @media (min-width: 48rem) {
+    .p-right-sm {
+      padding-right: 0.45833rem; } }
+  @media (min-width: 62rem) {
+    .p-right-sm {
+      padding-right: 0.61111rem; } }
+  @media (min-width: 75rem) {
+    .p-right-sm {
+      padding-right: 0.625rem; } }
+
+/* Rigid padding on specific edge */
+.p-rigid-right-sm {
+  padding-right: 0.625rem; }
+
+/* Padding on all edges */
+.p-all-sm {
+  padding: 0.34375rem; }
+  @media (min-width: 48rem) {
+    .p-all-sm {
+      padding: 0.45833rem; } }
+  @media (min-width: 62rem) {
+    .p-all-sm {
+      padding: 0.61111rem; } }
+  @media (min-width: 75rem) {
+    .p-all-sm {
+      padding: 0.625rem; } }
+
+/* Rigid padding on all edges */
+.p-all-rigid-sm {
+  padding: 0.625rem; }
+
+/* Margin on specific edge */
+.m-right-md {
+  margin-right: 0.51562rem; }
+  @media (min-width: 48rem) {
+    .m-right-md {
+      margin-right: 0.6875rem; } }
+  @media (min-width: 62rem) {
+    .m-right-md {
+      margin-right: 0.91667rem; } }
+  @media (min-width: 75rem) {
+    .m-right-md {
+      margin-right: 0.9375rem; } }
+
+/* Rigid margin on specific edge */
+.m-rigid-right-md {
+  margin-right: 0.9375rem; }
+
+/* Margin on all edges */
+.m-all-md {
+  margin: 0.51562rem; }
+  @media (min-width: 48rem) {
+    .m-all-md {
+      margin: 0.6875rem; } }
+  @media (min-width: 62rem) {
+    .m-all-md {
+      margin: 0.91667rem; } }
+  @media (min-width: 75rem) {
+    .m-all-md {
+      margin: 0.9375rem; } }
+
+/* Rigid margin on all edge */
+.m-all-rigid-right-md {
+  margin: 0.9375rem; }
+
+/* Padding on soecific edge */
+.p-right-md {
+  padding-right: 0.51562rem; }
+  @media (min-width: 48rem) {
+    .p-right-md {
+      padding-right: 0.6875rem; } }
+  @media (min-width: 62rem) {
+    .p-right-md {
+      padding-right: 0.91667rem; } }
+  @media (min-width: 75rem) {
+    .p-right-md {
+      padding-right: 0.9375rem; } }
+
+/* Rigid padding on specific edge */
+.p-rigid-right-md {
+  padding-right: 0.9375rem; }
+
+/* Padding on all edges */
+.p-all-md {
+  padding: 0.51562rem; }
+  @media (min-width: 48rem) {
+    .p-all-md {
+      padding: 0.6875rem; } }
+  @media (min-width: 62rem) {
+    .p-all-md {
+      padding: 0.91667rem; } }
+  @media (min-width: 75rem) {
+    .p-all-md {
+      padding: 0.9375rem; } }
+
+/* Rigid padding on all edges */
+.p-all-rigid-md {
+  padding: 0.9375rem; }
+
+/* Margin on specific edge */
+.m-right-lg {
+  margin-right: 1.03125rem; }
+  @media (min-width: 48rem) {
+    .m-right-lg {
+      margin-right: 1.375rem; } }
+  @media (min-width: 62rem) {
+    .m-right-lg {
+      margin-right: 1.83333rem; } }
+  @media (min-width: 75rem) {
+    .m-right-lg {
+      margin-right: 1.875rem; } }
+
+/* Rigid margin on specific edge */
+.m-rigid-right-lg {
+  margin-right: 1.875rem; }
+
+/* Margin on all edges */
+.m-all-lg {
+  margin: 1.03125rem; }
+  @media (min-width: 48rem) {
+    .m-all-lg {
+      margin: 1.375rem; } }
+  @media (min-width: 62rem) {
+    .m-all-lg {
+      margin: 1.83333rem; } }
+  @media (min-width: 75rem) {
+    .m-all-lg {
+      margin: 1.875rem; } }
+
+/* Rigid margin on all edge */
+.m-all-rigid-right-lg {
+  margin: 1.875rem; }
+
+/* Padding on soecific edge */
+.p-right-lg {
+  padding-right: 1.03125rem; }
+  @media (min-width: 48rem) {
+    .p-right-lg {
+      padding-right: 1.375rem; } }
+  @media (min-width: 62rem) {
+    .p-right-lg {
+      padding-right: 1.83333rem; } }
+  @media (min-width: 75rem) {
+    .p-right-lg {
+      padding-right: 1.875rem; } }
+
+/* Rigid padding on specific edge */
+.p-rigid-right-lg {
+  padding-right: 1.875rem; }
+
+/* Padding on all edges */
+.p-all-lg {
+  padding: 1.03125rem; }
+  @media (min-width: 48rem) {
+    .p-all-lg {
+      padding: 1.375rem; } }
+  @media (min-width: 62rem) {
+    .p-all-lg {
+      padding: 1.83333rem; } }
+  @media (min-width: 75rem) {
+    .p-all-lg {
+      padding: 1.875rem; } }
+
+/* Rigid padding on all edges */
+.p-all-rigid-lg {
+  padding: 1.875rem; }
+
+/* Margin on specific edge */
+.m-right-xl {
+  margin-right: 1.54688rem; }
+  @media (min-width: 48rem) {
+    .m-right-xl {
+      margin-right: 2.0625rem; } }
+  @media (min-width: 62rem) {
+    .m-right-xl {
+      margin-right: 2.75rem; } }
+  @media (min-width: 75rem) {
+    .m-right-xl {
+      margin-right: 2.8125rem; } }
+
+/* Rigid margin on specific edge */
+.m-rigid-right-xl {
+  margin-right: 2.8125rem; }
+
+/* Margin on all edges */
+.m-all-xl {
+  margin: 1.54688rem; }
+  @media (min-width: 48rem) {
+    .m-all-xl {
+      margin: 2.0625rem; } }
+  @media (min-width: 62rem) {
+    .m-all-xl {
+      margin: 2.75rem; } }
+  @media (min-width: 75rem) {
+    .m-all-xl {
+      margin: 2.8125rem; } }
+
+/* Rigid margin on all edge */
+.m-all-rigid-right-xl {
+  margin: 2.8125rem; }
+
+/* Padding on soecific edge */
+.p-right-xl {
+  padding-right: 1.54688rem; }
+  @media (min-width: 48rem) {
+    .p-right-xl {
+      padding-right: 2.0625rem; } }
+  @media (min-width: 62rem) {
+    .p-right-xl {
+      padding-right: 2.75rem; } }
+  @media (min-width: 75rem) {
+    .p-right-xl {
+      padding-right: 2.8125rem; } }
+
+/* Rigid padding on specific edge */
+.p-rigid-right-xl {
+  padding-right: 2.8125rem; }
+
+/* Padding on all edges */
+.p-all-xl {
+  padding: 1.54688rem; }
+  @media (min-width: 48rem) {
+    .p-all-xl {
+      padding: 2.0625rem; } }
+  @media (min-width: 62rem) {
+    .p-all-xl {
+      padding: 2.75rem; } }
+  @media (min-width: 75rem) {
+    .p-all-xl {
+      padding: 2.8125rem; } }
+
+/* Rigid padding on all edges */
+.p-all-rigid-xl {
+  padding: 2.8125rem; }
+
+/* Margin on specific edge */
+.m-right-xxl {
+  margin-right: 2.0625rem; }
+  @media (min-width: 48rem) {
+    .m-right-xxl {
+      margin-right: 2.75rem; } }
+  @media (min-width: 62rem) {
+    .m-right-xxl {
+      margin-right: 3.66667rem; } }
+  @media (min-width: 75rem) {
+    .m-right-xxl {
+      margin-right: 3.75rem; } }
+
+/* Rigid margin on specific edge */
+.m-rigid-right-xxl {
+  margin-right: 3.75rem; }
+
+/* Margin on all edges */
+.m-all-xxl {
+  margin: 2.0625rem; }
+  @media (min-width: 48rem) {
+    .m-all-xxl {
+      margin: 2.75rem; } }
+  @media (min-width: 62rem) {
+    .m-all-xxl {
+      margin: 3.66667rem; } }
+  @media (min-width: 75rem) {
+    .m-all-xxl {
+      margin: 3.75rem; } }
+
+/* Rigid margin on all edge */
+.m-all-rigid-right-xxl {
+  margin: 3.75rem; }
+
+/* Padding on soecific edge */
+.p-right-xxl {
+  padding-right: 2.0625rem; }
+  @media (min-width: 48rem) {
+    .p-right-xxl {
+      padding-right: 2.75rem; } }
+  @media (min-width: 62rem) {
+    .p-right-xxl {
+      padding-right: 3.66667rem; } }
+  @media (min-width: 75rem) {
+    .p-right-xxl {
+      padding-right: 3.75rem; } }
+
+/* Rigid padding on specific edge */
+.p-rigid-right-xxl {
+  padding-right: 3.75rem; }
+
+/* Padding on all edges */
+.p-all-xxl {
+  padding: 2.0625rem; }
+  @media (min-width: 48rem) {
+    .p-all-xxl {
+      padding: 2.75rem; } }
+  @media (min-width: 62rem) {
+    .p-all-xxl {
+      padding: 3.66667rem; } }
+  @media (min-width: 75rem) {
+    .p-all-xxl {
+      padding: 3.75rem; } }
+
+/* Rigid padding on all edges */
+.p-all-rigid-xxl {
+  padding: 3.75rem; }
+
+/* Margin on specific edge */
+.m-right-xxxl {
+  margin-right: 3.09375rem; }
+  @media (min-width: 48rem) {
+    .m-right-xxxl {
+      margin-right: 4.125rem; } }
+  @media (min-width: 62rem) {
+    .m-right-xxxl {
+      margin-right: 5.5rem; } }
+  @media (min-width: 75rem) {
+    .m-right-xxxl {
+      margin-right: 5.625rem; } }
+
+/* Rigid margin on specific edge */
+.m-rigid-right-xxxl {
+  margin-right: 5.625rem; }
+
+/* Margin on all edges */
+.m-all-xxxl {
+  margin: 3.09375rem; }
+  @media (min-width: 48rem) {
+    .m-all-xxxl {
+      margin: 4.125rem; } }
+  @media (min-width: 62rem) {
+    .m-all-xxxl {
+      margin: 5.5rem; } }
+  @media (min-width: 75rem) {
+    .m-all-xxxl {
+      margin: 5.625rem; } }
+
+/* Rigid margin on all edge */
+.m-all-rigid-right-xxxl {
+  margin: 5.625rem; }
+
+/* Padding on soecific edge */
+.p-right-xxxl {
+  padding-right: 3.09375rem; }
+  @media (min-width: 48rem) {
+    .p-right-xxxl {
+      padding-right: 4.125rem; } }
+  @media (min-width: 62rem) {
+    .p-right-xxxl {
+      padding-right: 5.5rem; } }
+  @media (min-width: 75rem) {
+    .p-right-xxxl {
+      padding-right: 5.625rem; } }
+
+/* Rigid padding on specific edge */
+.p-rigid-right-xxxl {
+  padding-right: 5.625rem; }
+
+/* Padding on all edges */
+.p-all-xxxl {
+  padding: 3.09375rem; }
+  @media (min-width: 48rem) {
+    .p-all-xxxl {
+      padding: 4.125rem; } }
+  @media (min-width: 62rem) {
+    .p-all-xxxl {
+      padding: 5.5rem; } }
+  @media (min-width: 75rem) {
+    .p-all-xxxl {
+      padding: 5.625rem; } }
+
+/* Rigid padding on all edges */
+.p-all-rigid-xxxl {
+  padding: 5.625rem; }
+
+/* Margin on specific edge */
+.m-right-xxxxl {
+  margin-right: 5.15625rem; }
+  @media (min-width: 48rem) {
+    .m-right-xxxxl {
+      margin-right: 6.875rem; } }
+  @media (min-width: 62rem) {
+    .m-right-xxxxl {
+      margin-right: 9.16667rem; } }
+  @media (min-width: 75rem) {
+    .m-right-xxxxl {
+      margin-right: 9.375rem; } }
+
+/* Rigid margin on specific edge */
+.m-rigid-right-xxxxl {
+  margin-right: 9.375rem; }
+
+/* Margin on all edges */
+.m-all-xxxxl {
+  margin: 5.15625rem; }
+  @media (min-width: 48rem) {
+    .m-all-xxxxl {
+      margin: 6.875rem; } }
+  @media (min-width: 62rem) {
+    .m-all-xxxxl {
+      margin: 9.16667rem; } }
+  @media (min-width: 75rem) {
+    .m-all-xxxxl {
+      margin: 9.375rem; } }
+
+/* Rigid margin on all edge */
+.m-all-rigid-right-xxxxl {
+  margin: 9.375rem; }
+
+/* Padding on soecific edge */
+.p-right-xxxxl {
+  padding-right: 5.15625rem; }
+  @media (min-width: 48rem) {
+    .p-right-xxxxl {
+      padding-right: 6.875rem; } }
+  @media (min-width: 62rem) {
+    .p-right-xxxxl {
+      padding-right: 9.16667rem; } }
+  @media (min-width: 75rem) {
+    .p-right-xxxxl {
+      padding-right: 9.375rem; } }
+
+/* Rigid padding on specific edge */
+.p-rigid-right-xxxxl {
+  padding-right: 9.375rem; }
+
+/* Padding on all edges */
+.p-all-xxxxl {
+  padding: 5.15625rem; }
+  @media (min-width: 48rem) {
+    .p-all-xxxxl {
+      padding: 6.875rem; } }
+  @media (min-width: 62rem) {
+    .p-all-xxxxl {
+      padding: 9.16667rem; } }
+  @media (min-width: 75rem) {
+    .p-all-xxxxl {
+      padding: 9.375rem; } }
+
+/* Rigid padding on all edges */
+.p-all-rigid-xxxxl {
+  padding: 9.375rem; }
+
+/* Margin on specific edge */
+.m-bottom-xs {
+  margin-bottom: 0.17188rem; }
+  @media (min-width: 48rem) {
+    .m-bottom-xs {
+      margin-bottom: 0.22917rem; } }
+  @media (min-width: 62rem) {
+    .m-bottom-xs {
+      margin-bottom: 0.30556rem; } }
+  @media (min-width: 75rem) {
+    .m-bottom-xs {
+      margin-bottom: 0.3125rem; } }
+
+/* Rigid margin on specific edge */
+.m-rigid-bottom-xs {
+  margin-bottom: 0.3125rem; }
+
+/* Margin on all edges */
+.m-all-xs {
+  margin: 0.17188rem; }
+  @media (min-width: 48rem) {
+    .m-all-xs {
+      margin: 0.22917rem; } }
+  @media (min-width: 62rem) {
+    .m-all-xs {
+      margin: 0.30556rem; } }
+  @media (min-width: 75rem) {
+    .m-all-xs {
+      margin: 0.3125rem; } }
+
+/* Rigid margin on all edge */
+.m-all-rigid-bottom-xs {
+  margin: 0.3125rem; }
+
+/* Padding on soecific edge */
+.p-bottom-xs {
+  padding-bottom: 0.17188rem; }
+  @media (min-width: 48rem) {
+    .p-bottom-xs {
+      padding-bottom: 0.22917rem; } }
+  @media (min-width: 62rem) {
+    .p-bottom-xs {
+      padding-bottom: 0.30556rem; } }
+  @media (min-width: 75rem) {
+    .p-bottom-xs {
+      padding-bottom: 0.3125rem; } }
+
+/* Rigid padding on specific edge */
+.p-rigid-bottom-xs {
+  padding-bottom: 0.3125rem; }
+
+/* Padding on all edges */
+.p-all-xs {
+  padding: 0.17188rem; }
+  @media (min-width: 48rem) {
+    .p-all-xs {
+      padding: 0.22917rem; } }
+  @media (min-width: 62rem) {
+    .p-all-xs {
+      padding: 0.30556rem; } }
+  @media (min-width: 75rem) {
+    .p-all-xs {
+      padding: 0.3125rem; } }
+
+/* Rigid padding on all edges */
+.p-all-rigid-xs {
+  padding: 0.3125rem; }
+
+/* Margin on specific edge */
+.m-bottom-sm {
+  margin-bottom: 0.34375rem; }
+  @media (min-width: 48rem) {
+    .m-bottom-sm {
+      margin-bottom: 0.45833rem; } }
+  @media (min-width: 62rem) {
+    .m-bottom-sm {
+      margin-bottom: 0.61111rem; } }
+  @media (min-width: 75rem) {
+    .m-bottom-sm {
+      margin-bottom: 0.625rem; } }
+
+/* Rigid margin on specific edge */
+.m-rigid-bottom-sm {
+  margin-bottom: 0.625rem; }
+
+/* Margin on all edges */
+.m-all-sm {
+  margin: 0.34375rem; }
+  @media (min-width: 48rem) {
+    .m-all-sm {
+      margin: 0.45833rem; } }
+  @media (min-width: 62rem) {
+    .m-all-sm {
+      margin: 0.61111rem; } }
+  @media (min-width: 75rem) {
+    .m-all-sm {
+      margin: 0.625rem; } }
+
+/* Rigid margin on all edge */
+.m-all-rigid-bottom-sm {
+  margin: 0.625rem; }
+
+/* Padding on soecific edge */
+.p-bottom-sm {
+  padding-bottom: 0.34375rem; }
+  @media (min-width: 48rem) {
+    .p-bottom-sm {
+      padding-bottom: 0.45833rem; } }
+  @media (min-width: 62rem) {
+    .p-bottom-sm {
+      padding-bottom: 0.61111rem; } }
+  @media (min-width: 75rem) {
+    .p-bottom-sm {
+      padding-bottom: 0.625rem; } }
+
+/* Rigid padding on specific edge */
+.p-rigid-bottom-sm {
+  padding-bottom: 0.625rem; }
+
+/* Padding on all edges */
+.p-all-sm {
+  padding: 0.34375rem; }
+  @media (min-width: 48rem) {
+    .p-all-sm {
+      padding: 0.45833rem; } }
+  @media (min-width: 62rem) {
+    .p-all-sm {
+      padding: 0.61111rem; } }
+  @media (min-width: 75rem) {
+    .p-all-sm {
+      padding: 0.625rem; } }
+
+/* Rigid padding on all edges */
+.p-all-rigid-sm {
+  padding: 0.625rem; }
+
+/* Margin on specific edge */
+.m-bottom-md {
+  margin-bottom: 0.51562rem; }
+  @media (min-width: 48rem) {
+    .m-bottom-md {
+      margin-bottom: 0.6875rem; } }
+  @media (min-width: 62rem) {
+    .m-bottom-md {
+      margin-bottom: 0.91667rem; } }
+  @media (min-width: 75rem) {
+    .m-bottom-md {
+      margin-bottom: 0.9375rem; } }
+
+/* Rigid margin on specific edge */
+.m-rigid-bottom-md {
+  margin-bottom: 0.9375rem; }
+
+/* Margin on all edges */
+.m-all-md {
+  margin: 0.51562rem; }
+  @media (min-width: 48rem) {
+    .m-all-md {
+      margin: 0.6875rem; } }
+  @media (min-width: 62rem) {
+    .m-all-md {
+      margin: 0.91667rem; } }
+  @media (min-width: 75rem) {
+    .m-all-md {
+      margin: 0.9375rem; } }
+
+/* Rigid margin on all edge */
+.m-all-rigid-bottom-md {
+  margin: 0.9375rem; }
+
+/* Padding on soecific edge */
+.p-bottom-md {
+  padding-bottom: 0.51562rem; }
+  @media (min-width: 48rem) {
+    .p-bottom-md {
+      padding-bottom: 0.6875rem; } }
+  @media (min-width: 62rem) {
+    .p-bottom-md {
+      padding-bottom: 0.91667rem; } }
+  @media (min-width: 75rem) {
+    .p-bottom-md {
+      padding-bottom: 0.9375rem; } }
+
+/* Rigid padding on specific edge */
+.p-rigid-bottom-md {
+  padding-bottom: 0.9375rem; }
+
+/* Padding on all edges */
+.p-all-md {
+  padding: 0.51562rem; }
+  @media (min-width: 48rem) {
+    .p-all-md {
+      padding: 0.6875rem; } }
+  @media (min-width: 62rem) {
+    .p-all-md {
+      padding: 0.91667rem; } }
+  @media (min-width: 75rem) {
+    .p-all-md {
+      padding: 0.9375rem; } }
+
+/* Rigid padding on all edges */
+.p-all-rigid-md {
+  padding: 0.9375rem; }
+
+/* Margin on specific edge */
+.m-bottom-lg {
+  margin-bottom: 1.03125rem; }
+  @media (min-width: 48rem) {
+    .m-bottom-lg {
+      margin-bottom: 1.375rem; } }
+  @media (min-width: 62rem) {
+    .m-bottom-lg {
+      margin-bottom: 1.83333rem; } }
+  @media (min-width: 75rem) {
+    .m-bottom-lg {
+      margin-bottom: 1.875rem; } }
+
+/* Rigid margin on specific edge */
+.m-rigid-bottom-lg {
+  margin-bottom: 1.875rem; }
+
+/* Margin on all edges */
+.m-all-lg {
+  margin: 1.03125rem; }
+  @media (min-width: 48rem) {
+    .m-all-lg {
+      margin: 1.375rem; } }
+  @media (min-width: 62rem) {
+    .m-all-lg {
+      margin: 1.83333rem; } }
+  @media (min-width: 75rem) {
+    .m-all-lg {
+      margin: 1.875rem; } }
+
+/* Rigid margin on all edge */
+.m-all-rigid-bottom-lg {
+  margin: 1.875rem; }
+
+/* Padding on soecific edge */
+.p-bottom-lg {
+  padding-bottom: 1.03125rem; }
+  @media (min-width: 48rem) {
+    .p-bottom-lg {
+      padding-bottom: 1.375rem; } }
+  @media (min-width: 62rem) {
+    .p-bottom-lg {
+      padding-bottom: 1.83333rem; } }
+  @media (min-width: 75rem) {
+    .p-bottom-lg {
+      padding-bottom: 1.875rem; } }
+
+/* Rigid padding on specific edge */
+.p-rigid-bottom-lg {
+  padding-bottom: 1.875rem; }
+
+/* Padding on all edges */
+.p-all-lg {
+  padding: 1.03125rem; }
+  @media (min-width: 48rem) {
+    .p-all-lg {
+      padding: 1.375rem; } }
+  @media (min-width: 62rem) {
+    .p-all-lg {
+      padding: 1.83333rem; } }
+  @media (min-width: 75rem) {
+    .p-all-lg {
+      padding: 1.875rem; } }
+
+/* Rigid padding on all edges */
+.p-all-rigid-lg {
+  padding: 1.875rem; }
+
+/* Margin on specific edge */
+.m-bottom-xl {
+  margin-bottom: 1.54688rem; }
+  @media (min-width: 48rem) {
+    .m-bottom-xl {
+      margin-bottom: 2.0625rem; } }
+  @media (min-width: 62rem) {
+    .m-bottom-xl {
+      margin-bottom: 2.75rem; } }
+  @media (min-width: 75rem) {
+    .m-bottom-xl {
+      margin-bottom: 2.8125rem; } }
+
+/* Rigid margin on specific edge */
+.m-rigid-bottom-xl {
+  margin-bottom: 2.8125rem; }
+
+/* Margin on all edges */
+.m-all-xl {
+  margin: 1.54688rem; }
+  @media (min-width: 48rem) {
+    .m-all-xl {
+      margin: 2.0625rem; } }
+  @media (min-width: 62rem) {
+    .m-all-xl {
+      margin: 2.75rem; } }
+  @media (min-width: 75rem) {
+    .m-all-xl {
+      margin: 2.8125rem; } }
+
+/* Rigid margin on all edge */
+.m-all-rigid-bottom-xl {
+  margin: 2.8125rem; }
+
+/* Padding on soecific edge */
+.p-bottom-xl {
+  padding-bottom: 1.54688rem; }
+  @media (min-width: 48rem) {
+    .p-bottom-xl {
+      padding-bottom: 2.0625rem; } }
+  @media (min-width: 62rem) {
+    .p-bottom-xl {
+      padding-bottom: 2.75rem; } }
+  @media (min-width: 75rem) {
+    .p-bottom-xl {
+      padding-bottom: 2.8125rem; } }
+
+/* Rigid padding on specific edge */
+.p-rigid-bottom-xl {
+  padding-bottom: 2.8125rem; }
+
+/* Padding on all edges */
+.p-all-xl {
+  padding: 1.54688rem; }
+  @media (min-width: 48rem) {
+    .p-all-xl {
+      padding: 2.0625rem; } }
+  @media (min-width: 62rem) {
+    .p-all-xl {
+      padding: 2.75rem; } }
+  @media (min-width: 75rem) {
+    .p-all-xl {
+      padding: 2.8125rem; } }
+
+/* Rigid padding on all edges */
+.p-all-rigid-xl {
+  padding: 2.8125rem; }
+
+/* Margin on specific edge */
+.m-bottom-xxl {
+  margin-bottom: 2.0625rem; }
+  @media (min-width: 48rem) {
+    .m-bottom-xxl {
+      margin-bottom: 2.75rem; } }
+  @media (min-width: 62rem) {
+    .m-bottom-xxl {
+      margin-bottom: 3.66667rem; } }
+  @media (min-width: 75rem) {
+    .m-bottom-xxl {
+      margin-bottom: 3.75rem; } }
+
+/* Rigid margin on specific edge */
+.m-rigid-bottom-xxl {
+  margin-bottom: 3.75rem; }
+
+/* Margin on all edges */
+.m-all-xxl {
+  margin: 2.0625rem; }
+  @media (min-width: 48rem) {
+    .m-all-xxl {
+      margin: 2.75rem; } }
+  @media (min-width: 62rem) {
+    .m-all-xxl {
+      margin: 3.66667rem; } }
+  @media (min-width: 75rem) {
+    .m-all-xxl {
+      margin: 3.75rem; } }
+
+/* Rigid margin on all edge */
+.m-all-rigid-bottom-xxl {
+  margin: 3.75rem; }
+
+/* Padding on soecific edge */
+.p-bottom-xxl {
+  padding-bottom: 2.0625rem; }
+  @media (min-width: 48rem) {
+    .p-bottom-xxl {
+      padding-bottom: 2.75rem; } }
+  @media (min-width: 62rem) {
+    .p-bottom-xxl {
+      padding-bottom: 3.66667rem; } }
+  @media (min-width: 75rem) {
+    .p-bottom-xxl {
+      padding-bottom: 3.75rem; } }
+
+/* Rigid padding on specific edge */
+.p-rigid-bottom-xxl {
+  padding-bottom: 3.75rem; }
+
+/* Padding on all edges */
+.p-all-xxl {
+  padding: 2.0625rem; }
+  @media (min-width: 48rem) {
+    .p-all-xxl {
+      padding: 2.75rem; } }
+  @media (min-width: 62rem) {
+    .p-all-xxl {
+      padding: 3.66667rem; } }
+  @media (min-width: 75rem) {
+    .p-all-xxl {
+      padding: 3.75rem; } }
+
+/* Rigid padding on all edges */
+.p-all-rigid-xxl {
+  padding: 3.75rem; }
+
+/* Margin on specific edge */
+.m-bottom-xxxl {
+  margin-bottom: 3.09375rem; }
+  @media (min-width: 48rem) {
+    .m-bottom-xxxl {
+      margin-bottom: 4.125rem; } }
+  @media (min-width: 62rem) {
+    .m-bottom-xxxl {
+      margin-bottom: 5.5rem; } }
+  @media (min-width: 75rem) {
+    .m-bottom-xxxl {
+      margin-bottom: 5.625rem; } }
+
+/* Rigid margin on specific edge */
+.m-rigid-bottom-xxxl {
+  margin-bottom: 5.625rem; }
+
+/* Margin on all edges */
+.m-all-xxxl {
+  margin: 3.09375rem; }
+  @media (min-width: 48rem) {
+    .m-all-xxxl {
+      margin: 4.125rem; } }
+  @media (min-width: 62rem) {
+    .m-all-xxxl {
+      margin: 5.5rem; } }
+  @media (min-width: 75rem) {
+    .m-all-xxxl {
+      margin: 5.625rem; } }
+
+/* Rigid margin on all edge */
+.m-all-rigid-bottom-xxxl {
+  margin: 5.625rem; }
+
+/* Padding on soecific edge */
+.p-bottom-xxxl {
+  padding-bottom: 3.09375rem; }
+  @media (min-width: 48rem) {
+    .p-bottom-xxxl {
+      padding-bottom: 4.125rem; } }
+  @media (min-width: 62rem) {
+    .p-bottom-xxxl {
+      padding-bottom: 5.5rem; } }
+  @media (min-width: 75rem) {
+    .p-bottom-xxxl {
+      padding-bottom: 5.625rem; } }
+
+/* Rigid padding on specific edge */
+.p-rigid-bottom-xxxl {
+  padding-bottom: 5.625rem; }
+
+/* Padding on all edges */
+.p-all-xxxl {
+  padding: 3.09375rem; }
+  @media (min-width: 48rem) {
+    .p-all-xxxl {
+      padding: 4.125rem; } }
+  @media (min-width: 62rem) {
+    .p-all-xxxl {
+      padding: 5.5rem; } }
+  @media (min-width: 75rem) {
+    .p-all-xxxl {
+      padding: 5.625rem; } }
+
+/* Rigid padding on all edges */
+.p-all-rigid-xxxl {
+  padding: 5.625rem; }
+
+/* Margin on specific edge */
+.m-bottom-xxxxl {
+  margin-bottom: 5.15625rem; }
+  @media (min-width: 48rem) {
+    .m-bottom-xxxxl {
+      margin-bottom: 6.875rem; } }
+  @media (min-width: 62rem) {
+    .m-bottom-xxxxl {
+      margin-bottom: 9.16667rem; } }
+  @media (min-width: 75rem) {
+    .m-bottom-xxxxl {
+      margin-bottom: 9.375rem; } }
+
+/* Rigid margin on specific edge */
+.m-rigid-bottom-xxxxl {
+  margin-bottom: 9.375rem; }
+
+/* Margin on all edges */
+.m-all-xxxxl {
+  margin: 5.15625rem; }
+  @media (min-width: 48rem) {
+    .m-all-xxxxl {
+      margin: 6.875rem; } }
+  @media (min-width: 62rem) {
+    .m-all-xxxxl {
+      margin: 9.16667rem; } }
+  @media (min-width: 75rem) {
+    .m-all-xxxxl {
+      margin: 9.375rem; } }
+
+/* Rigid margin on all edge */
+.m-all-rigid-bottom-xxxxl {
+  margin: 9.375rem; }
+
+/* Padding on soecific edge */
+.p-bottom-xxxxl {
+  padding-bottom: 5.15625rem; }
+  @media (min-width: 48rem) {
+    .p-bottom-xxxxl {
+      padding-bottom: 6.875rem; } }
+  @media (min-width: 62rem) {
+    .p-bottom-xxxxl {
+      padding-bottom: 9.16667rem; } }
+  @media (min-width: 75rem) {
+    .p-bottom-xxxxl {
+      padding-bottom: 9.375rem; } }
+
+/* Rigid padding on specific edge */
+.p-rigid-bottom-xxxxl {
+  padding-bottom: 9.375rem; }
+
+/* Padding on all edges */
+.p-all-xxxxl {
+  padding: 5.15625rem; }
+  @media (min-width: 48rem) {
+    .p-all-xxxxl {
+      padding: 6.875rem; } }
+  @media (min-width: 62rem) {
+    .p-all-xxxxl {
+      padding: 9.16667rem; } }
+  @media (min-width: 75rem) {
+    .p-all-xxxxl {
+      padding: 9.375rem; } }
+
+/* Rigid padding on all edges */
+.p-all-rigid-xxxxl {
+  padding: 9.375rem; }
+
+/* Margin on specific edge */
+.m-left-xs {
+  margin-left: 0.17188rem; }
+  @media (min-width: 48rem) {
+    .m-left-xs {
+      margin-left: 0.22917rem; } }
+  @media (min-width: 62rem) {
+    .m-left-xs {
+      margin-left: 0.30556rem; } }
+  @media (min-width: 75rem) {
+    .m-left-xs {
+      margin-left: 0.3125rem; } }
+
+/* Rigid margin on specific edge */
+.m-rigid-left-xs {
+  margin-left: 0.3125rem; }
+
+/* Margin on all edges */
+.m-all-xs {
+  margin: 0.17188rem; }
+  @media (min-width: 48rem) {
+    .m-all-xs {
+      margin: 0.22917rem; } }
+  @media (min-width: 62rem) {
+    .m-all-xs {
+      margin: 0.30556rem; } }
+  @media (min-width: 75rem) {
+    .m-all-xs {
+      margin: 0.3125rem; } }
+
+/* Rigid margin on all edge */
+.m-all-rigid-left-xs {
+  margin: 0.3125rem; }
+
+/* Padding on soecific edge */
+.p-left-xs {
+  padding-left: 0.17188rem; }
+  @media (min-width: 48rem) {
+    .p-left-xs {
+      padding-left: 0.22917rem; } }
+  @media (min-width: 62rem) {
+    .p-left-xs {
+      padding-left: 0.30556rem; } }
+  @media (min-width: 75rem) {
+    .p-left-xs {
+      padding-left: 0.3125rem; } }
+
+/* Rigid padding on specific edge */
+.p-rigid-left-xs {
+  padding-left: 0.3125rem; }
+
+/* Padding on all edges */
+.p-all-xs {
+  padding: 0.17188rem; }
+  @media (min-width: 48rem) {
+    .p-all-xs {
+      padding: 0.22917rem; } }
+  @media (min-width: 62rem) {
+    .p-all-xs {
+      padding: 0.30556rem; } }
+  @media (min-width: 75rem) {
+    .p-all-xs {
+      padding: 0.3125rem; } }
+
+/* Rigid padding on all edges */
+.p-all-rigid-xs {
+  padding: 0.3125rem; }
+
+/* Margin on specific edge */
+.m-left-sm {
+  margin-left: 0.34375rem; }
+  @media (min-width: 48rem) {
+    .m-left-sm {
+      margin-left: 0.45833rem; } }
+  @media (min-width: 62rem) {
+    .m-left-sm {
+      margin-left: 0.61111rem; } }
+  @media (min-width: 75rem) {
+    .m-left-sm {
+      margin-left: 0.625rem; } }
+
+/* Rigid margin on specific edge */
+.m-rigid-left-sm {
+  margin-left: 0.625rem; }
+
+/* Margin on all edges */
+.m-all-sm {
+  margin: 0.34375rem; }
+  @media (min-width: 48rem) {
+    .m-all-sm {
+      margin: 0.45833rem; } }
+  @media (min-width: 62rem) {
+    .m-all-sm {
+      margin: 0.61111rem; } }
+  @media (min-width: 75rem) {
+    .m-all-sm {
+      margin: 0.625rem; } }
+
+/* Rigid margin on all edge */
+.m-all-rigid-left-sm {
+  margin: 0.625rem; }
+
+/* Padding on soecific edge */
+.p-left-sm {
+  padding-left: 0.34375rem; }
+  @media (min-width: 48rem) {
+    .p-left-sm {
+      padding-left: 0.45833rem; } }
+  @media (min-width: 62rem) {
+    .p-left-sm {
+      padding-left: 0.61111rem; } }
+  @media (min-width: 75rem) {
+    .p-left-sm {
+      padding-left: 0.625rem; } }
+
+/* Rigid padding on specific edge */
+.p-rigid-left-sm {
+  padding-left: 0.625rem; }
+
+/* Padding on all edges */
+.p-all-sm {
+  padding: 0.34375rem; }
+  @media (min-width: 48rem) {
+    .p-all-sm {
+      padding: 0.45833rem; } }
+  @media (min-width: 62rem) {
+    .p-all-sm {
+      padding: 0.61111rem; } }
+  @media (min-width: 75rem) {
+    .p-all-sm {
+      padding: 0.625rem; } }
+
+/* Rigid padding on all edges */
+.p-all-rigid-sm {
+  padding: 0.625rem; }
+
+/* Margin on specific edge */
+.m-left-md {
+  margin-left: 0.51562rem; }
+  @media (min-width: 48rem) {
+    .m-left-md {
+      margin-left: 0.6875rem; } }
+  @media (min-width: 62rem) {
+    .m-left-md {
+      margin-left: 0.91667rem; } }
+  @media (min-width: 75rem) {
+    .m-left-md {
+      margin-left: 0.9375rem; } }
+
+/* Rigid margin on specific edge */
+.m-rigid-left-md {
+  margin-left: 0.9375rem; }
+
+/* Margin on all edges */
+.m-all-md {
+  margin: 0.51562rem; }
+  @media (min-width: 48rem) {
+    .m-all-md {
+      margin: 0.6875rem; } }
+  @media (min-width: 62rem) {
+    .m-all-md {
+      margin: 0.91667rem; } }
+  @media (min-width: 75rem) {
+    .m-all-md {
+      margin: 0.9375rem; } }
+
+/* Rigid margin on all edge */
+.m-all-rigid-left-md {
+  margin: 0.9375rem; }
+
+/* Padding on soecific edge */
+.p-left-md {
+  padding-left: 0.51562rem; }
+  @media (min-width: 48rem) {
+    .p-left-md {
+      padding-left: 0.6875rem; } }
+  @media (min-width: 62rem) {
+    .p-left-md {
+      padding-left: 0.91667rem; } }
+  @media (min-width: 75rem) {
+    .p-left-md {
+      padding-left: 0.9375rem; } }
+
+/* Rigid padding on specific edge */
+.p-rigid-left-md {
+  padding-left: 0.9375rem; }
+
+/* Padding on all edges */
+.p-all-md {
+  padding: 0.51562rem; }
+  @media (min-width: 48rem) {
+    .p-all-md {
+      padding: 0.6875rem; } }
+  @media (min-width: 62rem) {
+    .p-all-md {
+      padding: 0.91667rem; } }
+  @media (min-width: 75rem) {
+    .p-all-md {
+      padding: 0.9375rem; } }
+
+/* Rigid padding on all edges */
+.p-all-rigid-md {
+  padding: 0.9375rem; }
+
+/* Margin on specific edge */
+.m-left-lg {
+  margin-left: 1.03125rem; }
+  @media (min-width: 48rem) {
+    .m-left-lg {
+      margin-left: 1.375rem; } }
+  @media (min-width: 62rem) {
+    .m-left-lg {
+      margin-left: 1.83333rem; } }
+  @media (min-width: 75rem) {
+    .m-left-lg {
+      margin-left: 1.875rem; } }
+
+/* Rigid margin on specific edge */
+.m-rigid-left-lg {
+  margin-left: 1.875rem; }
+
+/* Margin on all edges */
+.m-all-lg {
+  margin: 1.03125rem; }
+  @media (min-width: 48rem) {
+    .m-all-lg {
+      margin: 1.375rem; } }
+  @media (min-width: 62rem) {
+    .m-all-lg {
+      margin: 1.83333rem; } }
+  @media (min-width: 75rem) {
+    .m-all-lg {
+      margin: 1.875rem; } }
+
+/* Rigid margin on all edge */
+.m-all-rigid-left-lg {
+  margin: 1.875rem; }
+
+/* Padding on soecific edge */
+.p-left-lg {
+  padding-left: 1.03125rem; }
+  @media (min-width: 48rem) {
+    .p-left-lg {
+      padding-left: 1.375rem; } }
+  @media (min-width: 62rem) {
+    .p-left-lg {
+      padding-left: 1.83333rem; } }
+  @media (min-width: 75rem) {
+    .p-left-lg {
+      padding-left: 1.875rem; } }
+
+/* Rigid padding on specific edge */
+.p-rigid-left-lg {
+  padding-left: 1.875rem; }
+
+/* Padding on all edges */
+.p-all-lg {
+  padding: 1.03125rem; }
+  @media (min-width: 48rem) {
+    .p-all-lg {
+      padding: 1.375rem; } }
+  @media (min-width: 62rem) {
+    .p-all-lg {
+      padding: 1.83333rem; } }
+  @media (min-width: 75rem) {
+    .p-all-lg {
+      padding: 1.875rem; } }
+
+/* Rigid padding on all edges */
+.p-all-rigid-lg {
+  padding: 1.875rem; }
+
+/* Margin on specific edge */
+.m-left-xl {
+  margin-left: 1.54688rem; }
+  @media (min-width: 48rem) {
+    .m-left-xl {
+      margin-left: 2.0625rem; } }
+  @media (min-width: 62rem) {
+    .m-left-xl {
+      margin-left: 2.75rem; } }
+  @media (min-width: 75rem) {
+    .m-left-xl {
+      margin-left: 2.8125rem; } }
+
+/* Rigid margin on specific edge */
+.m-rigid-left-xl {
+  margin-left: 2.8125rem; }
+
+/* Margin on all edges */
+.m-all-xl {
+  margin: 1.54688rem; }
+  @media (min-width: 48rem) {
+    .m-all-xl {
+      margin: 2.0625rem; } }
+  @media (min-width: 62rem) {
+    .m-all-xl {
+      margin: 2.75rem; } }
+  @media (min-width: 75rem) {
+    .m-all-xl {
+      margin: 2.8125rem; } }
+
+/* Rigid margin on all edge */
+.m-all-rigid-left-xl {
+  margin: 2.8125rem; }
+
+/* Padding on soecific edge */
+.p-left-xl {
+  padding-left: 1.54688rem; }
+  @media (min-width: 48rem) {
+    .p-left-xl {
+      padding-left: 2.0625rem; } }
+  @media (min-width: 62rem) {
+    .p-left-xl {
+      padding-left: 2.75rem; } }
+  @media (min-width: 75rem) {
+    .p-left-xl {
+      padding-left: 2.8125rem; } }
+
+/* Rigid padding on specific edge */
+.p-rigid-left-xl {
+  padding-left: 2.8125rem; }
+
+/* Padding on all edges */
+.p-all-xl {
+  padding: 1.54688rem; }
+  @media (min-width: 48rem) {
+    .p-all-xl {
+      padding: 2.0625rem; } }
+  @media (min-width: 62rem) {
+    .p-all-xl {
+      padding: 2.75rem; } }
+  @media (min-width: 75rem) {
+    .p-all-xl {
+      padding: 2.8125rem; } }
+
+/* Rigid padding on all edges */
+.p-all-rigid-xl {
+  padding: 2.8125rem; }
+
+/* Margin on specific edge */
+.m-left-xxl {
+  margin-left: 2.0625rem; }
+  @media (min-width: 48rem) {
+    .m-left-xxl {
+      margin-left: 2.75rem; } }
+  @media (min-width: 62rem) {
+    .m-left-xxl {
+      margin-left: 3.66667rem; } }
+  @media (min-width: 75rem) {
+    .m-left-xxl {
+      margin-left: 3.75rem; } }
+
+/* Rigid margin on specific edge */
+.m-rigid-left-xxl {
+  margin-left: 3.75rem; }
+
+/* Margin on all edges */
+.m-all-xxl {
+  margin: 2.0625rem; }
+  @media (min-width: 48rem) {
+    .m-all-xxl {
+      margin: 2.75rem; } }
+  @media (min-width: 62rem) {
+    .m-all-xxl {
+      margin: 3.66667rem; } }
+  @media (min-width: 75rem) {
+    .m-all-xxl {
+      margin: 3.75rem; } }
+
+/* Rigid margin on all edge */
+.m-all-rigid-left-xxl {
+  margin: 3.75rem; }
+
+/* Padding on soecific edge */
+.p-left-xxl {
+  padding-left: 2.0625rem; }
+  @media (min-width: 48rem) {
+    .p-left-xxl {
+      padding-left: 2.75rem; } }
+  @media (min-width: 62rem) {
+    .p-left-xxl {
+      padding-left: 3.66667rem; } }
+  @media (min-width: 75rem) {
+    .p-left-xxl {
+      padding-left: 3.75rem; } }
+
+/* Rigid padding on specific edge */
+.p-rigid-left-xxl {
+  padding-left: 3.75rem; }
+
+/* Padding on all edges */
+.p-all-xxl {
+  padding: 2.0625rem; }
+  @media (min-width: 48rem) {
+    .p-all-xxl {
+      padding: 2.75rem; } }
+  @media (min-width: 62rem) {
+    .p-all-xxl {
+      padding: 3.66667rem; } }
+  @media (min-width: 75rem) {
+    .p-all-xxl {
+      padding: 3.75rem; } }
+
+/* Rigid padding on all edges */
+.p-all-rigid-xxl {
+  padding: 3.75rem; }
+
+/* Margin on specific edge */
+.m-left-xxxl {
+  margin-left: 3.09375rem; }
+  @media (min-width: 48rem) {
+    .m-left-xxxl {
+      margin-left: 4.125rem; } }
+  @media (min-width: 62rem) {
+    .m-left-xxxl {
+      margin-left: 5.5rem; } }
+  @media (min-width: 75rem) {
+    .m-left-xxxl {
+      margin-left: 5.625rem; } }
+
+/* Rigid margin on specific edge */
+.m-rigid-left-xxxl {
+  margin-left: 5.625rem; }
+
+/* Margin on all edges */
+.m-all-xxxl {
+  margin: 3.09375rem; }
+  @media (min-width: 48rem) {
+    .m-all-xxxl {
+      margin: 4.125rem; } }
+  @media (min-width: 62rem) {
+    .m-all-xxxl {
+      margin: 5.5rem; } }
+  @media (min-width: 75rem) {
+    .m-all-xxxl {
+      margin: 5.625rem; } }
+
+/* Rigid margin on all edge */
+.m-all-rigid-left-xxxl {
+  margin: 5.625rem; }
+
+/* Padding on soecific edge */
+.p-left-xxxl {
+  padding-left: 3.09375rem; }
+  @media (min-width: 48rem) {
+    .p-left-xxxl {
+      padding-left: 4.125rem; } }
+  @media (min-width: 62rem) {
+    .p-left-xxxl {
+      padding-left: 5.5rem; } }
+  @media (min-width: 75rem) {
+    .p-left-xxxl {
+      padding-left: 5.625rem; } }
+
+/* Rigid padding on specific edge */
+.p-rigid-left-xxxl {
+  padding-left: 5.625rem; }
+
+/* Padding on all edges */
+.p-all-xxxl {
+  padding: 3.09375rem; }
+  @media (min-width: 48rem) {
+    .p-all-xxxl {
+      padding: 4.125rem; } }
+  @media (min-width: 62rem) {
+    .p-all-xxxl {
+      padding: 5.5rem; } }
+  @media (min-width: 75rem) {
+    .p-all-xxxl {
+      padding: 5.625rem; } }
+
+/* Rigid padding on all edges */
+.p-all-rigid-xxxl {
+  padding: 5.625rem; }
+
+/* Margin on specific edge */
+.m-left-xxxxl {
+  margin-left: 5.15625rem; }
+  @media (min-width: 48rem) {
+    .m-left-xxxxl {
+      margin-left: 6.875rem; } }
+  @media (min-width: 62rem) {
+    .m-left-xxxxl {
+      margin-left: 9.16667rem; } }
+  @media (min-width: 75rem) {
+    .m-left-xxxxl {
+      margin-left: 9.375rem; } }
+
+/* Rigid margin on specific edge */
+.m-rigid-left-xxxxl {
+  margin-left: 9.375rem; }
+
+/* Margin on all edges */
+.m-all-xxxxl {
+  margin: 5.15625rem; }
+  @media (min-width: 48rem) {
+    .m-all-xxxxl {
+      margin: 6.875rem; } }
+  @media (min-width: 62rem) {
+    .m-all-xxxxl {
+      margin: 9.16667rem; } }
+  @media (min-width: 75rem) {
+    .m-all-xxxxl {
+      margin: 9.375rem; } }
+
+/* Rigid margin on all edge */
+.m-all-rigid-left-xxxxl {
+  margin: 9.375rem; }
+
+/* Padding on soecific edge */
+.p-left-xxxxl {
+  padding-left: 5.15625rem; }
+  @media (min-width: 48rem) {
+    .p-left-xxxxl {
+      padding-left: 6.875rem; } }
+  @media (min-width: 62rem) {
+    .p-left-xxxxl {
+      padding-left: 9.16667rem; } }
+  @media (min-width: 75rem) {
+    .p-left-xxxxl {
+      padding-left: 9.375rem; } }
+
+/* Rigid padding on specific edge */
+.p-rigid-left-xxxxl {
+  padding-left: 9.375rem; }
+
+/* Padding on all edges */
+.p-all-xxxxl {
+  padding: 5.15625rem; }
+  @media (min-width: 48rem) {
+    .p-all-xxxxl {
+      padding: 6.875rem; } }
+  @media (min-width: 62rem) {
+    .p-all-xxxxl {
+      padding: 9.16667rem; } }
+  @media (min-width: 75rem) {
+    .p-all-xxxxl {
+      padding: 9.375rem; } }
+
+/* Rigid padding on all edges */
+.p-all-rigid-xxxxl {
+  padding: 9.375rem; }
+
+.button {
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  background-color: #C8473A;
+  color: #fff;
+  max-width: 100%;
+  width: 35.625rem;
+  height: 4.375rem;
+  text-transform: uppercase;
+  text-align: center;
+  box-shadow: 4px 4px 0 0 #6D000F;
+  justify-content: center; }
+  .button:hover {
+    color: #fff;
+    background-color: #6D000F;
+    cursor: pointer; }
+
+.bg {
+  height: 100vh;
+  background-image: url("../assets/images/bg.jpg");
+  background-position: center; }
+
+.logo {
+  padding-top: 0.625rem;
+  cursor: pointer;
+  text-align: center; }
+
+.ng-valid[required] {
+  border-left: 5px solid #42A948; }
+
+.ng-invalid {
+  border-left: 5px solid #a94442; }
+
+.banner {
+  width: 18.75rem;
+  height: 6.25rem;
+  background-color: #000;
+  color: #fff;
+  text-transform: uppercase;
+  text-align: center;
+  margin: 1.25rem auto;
+  padding: 1.25rem; }
+  .banner h1 {
+    margin: 0; }
+    .banner h1 .upper,
+    .banner h1 .lower {
+      display: block; }
+    .banner h1 .upper {
+      font-size: 1rem; }
+    .banner h1 .lower {
+      font-size: 3rem; }
+
+.add-player .ng-valid[required] {
+  border-left: 5px solid #7bb593; }
+
+.add-player .ng-invalid {
+  border-left: 5px solid #a94442; }
+
+.select-players .player {
+  width: 7.5rem;
+  margin: 0 auto;
+  text-align: center;
+  cursor: pointer; }
+  .select-players .player .player-name {
+    font-size: 1rem;
+    margin: 0.625rem 0;
+    text-transform: uppercase; }
+
+.matched-players {
+  display: flex;
+  align-items: baseline;
+  justify-content: center; }
+  .matched-players .player {
+    text-align: center; }
+    .matched-players .player .player-icon {
+      width: 8.125rem;
+      height: 8.125rem; }
+      .matched-players .player .player-icon.unselected {
+        border-style: dashed; }
+    .matched-players .player .player-name {
+      margin-top: 1.25rem;
+      font-size: 2.5rem;
+      text-transform: uppercase;
+      font-family: "fonyyographer 4.1J 04b 30"; }
+  .matched-players .versus {
+    font-size: 6.25rem; }
+
+.create-match .added-player {
+  width: 100%;
+  height: 6.25rem;
+  margin: 0 auto;
+  border: 1px solid #7bb593;
+  color: #7bb593;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+
+.create-match .add-player-button {
+  margin: 0 auto; }
+
+.match-page {
+  font-size: 36px; }
+  .match-page .enter-score {
+    padding-top: 1.25rem; }
+  .match-page .score-enter-row {
+    padding-top: 1.25rem; }
+  .match-page .set-number-display {
+    z-index: 1; }
+    .match-page .set-number-display .set-number-background {
+      background-color: #FF9A00;
+      width: 5rem;
+      height: 5rem;
+      transform: rotate(45deg);
+      margin: auto;
+      justify-content: center; }
+      .match-page .set-number-display .set-number-background .set-number {
+        color: #fff;
+        text-align: center;
+        font-family: "fonyyographer 4.1J 04b 30";
+        transform: rotate(-45deg);
+        padding: 1.5rem 1.4375rem 0 0; }
+    .match-page .set-number-display .set-number-background:after {
+      display: block; }
+  .match-page .form-control {
+    width: 100%;
+    height: 70px;
+    margin-top: -13px; }
+  .match-page .form-group {
+    margin: auto;
+    text-align: center; }
+  .match-page .button {
+    font-size: 20px; }
+  .match-page input {
+    font-size: 36px;
+    text-align: center;
+    background: #e5e5e5; }
+  .match-page .wins-alignment {
+    text-align: center; }
+
+.leaderboard h1 {
+  text-align: center; }
+
+.leaderboard .column-heading {
+  width: 12.5rem; }
+  .leaderboard .column-heading table {
+    width: 100%; }
+  .leaderboard .column-heading td {
+    width: 50%; }
+
+.leaderboard td {
+  width: 6.25rem;
+  text-align: center; }
+
+.leaderboard .scoreboard {
+  width: 69.375rem;
+  justify-content: space-between;
+  text-align: center;
+  margin: 0 auto; }
+  .leaderboard .scoreboard .cell-name {
+    width: 12.5rem;
+    margin: 0.625rem 0;
+    padding: 0.625rem 3.125rem;
+    text-align: left;
+    border-radius: 1.5625rem;
+    font-weight: bold;
+    color: #fff;
+    background-color: #6D000F; }
+  .leaderboard .scoreboard .cell {
+    text-align: center; }
+  .leaderboard .scoreboard .cell-games,
+  .leaderboard .scoreboard .cell-sets,
+  .leaderboard .scoreboard .cell-match {
+    margin: 0 0;
+    padding: 1.25rem 0;
+    text-align: center; }
+    .leaderboard .scoreboard .cell-games:last-child,
+    .leaderboard .scoreboard .cell-sets:last-child,
+    .leaderboard .scoreboard .cell-match:last-child {
+      border-right: 5px solid #e5e5e5; }
+  .leaderboard .scoreboard .cell-icon {
+    text-align: center; }
+
+@media (max-width: 600px) {
+  .cell, .cell-games, .column-heading {
+    width: 0;
+    display: none;
+    height: 0;
+    opacity: 0;
+    visbility: collapse; } }

@@ -1,9 +1,14 @@
-$font-family-arcade-ala-pokemon: 'arcadeAlaPokemon';
-$font-family-arcade-classic: 'arcadeClassic';
+$font-family-fonyyographer: 'fonyyographer 4.1J 04b 30';
+$font-family-arcade-classic: 'fonyyographer 4.1J 04b 30';
 
-p, li, td {
+p, li, th, td {
+  font-family: $default-font-family;
   font-size: rem($default-font-size-text);
   line-height: rem($default-line-height);
+}
+
+td {
+  color: $color-text-body-secondary;
 }
 
 h2 {

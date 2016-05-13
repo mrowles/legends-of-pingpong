@@ -5,12 +5,25 @@
     text-align: center;
   }
 
+  .column-heading {
+    width: rem(200);
+
+    table{
+      width: 100%;
+    }
+
+    td {
+      width: 50%;
+    }
+  }
+
   td {
     width: rem(100);
     text-align: center;
   }
 
   .scoreboard {
+    width: rem(1110);
     justify-content: space-between;
     text-align: center;
     margin: 0 auto;
@@ -20,22 +33,33 @@
     }
 
     .cell-name {
-      width: rem(1000);
-      text-align: center;
+      width: rem(200);
+      margin: rem(10) 0;
+      padding: rem(10) rem(50);
+      text-align: left;
+      border-radius: rem(5 + $default-font-size-text);
+      font-weight: bold;
+      color: color(white-1);
+      background-color: color(maroon-1);
     }
 
     .cell {
-      width: rem(90);
       text-align: center;
     }
 
-    .cell-games, .cell-match {
-      width: rem(150);
+    .cell-games,
+    .cell-sets,
+    .cell-match {
+      margin: 0 0;
+      padding: rem(20) 0;
       text-align: center;
+
+      &:last-child {
+        border-right: 5px solid color(grey-2);
+      }
     }
 
     .cell-icon {
-      width: rem(65);
       text-align: center;
     }
 
@@ -43,7 +67,7 @@
 }
 
 @media (max-width: 600px) {
-  .cell, .cell-games, .column-heading  {
+  .cell, .cell-games, .column-heading {
     width: 0;
     display: none;
     height: 0;

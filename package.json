@@ -7,12 +7,13 @@
   "scripts": {
     "eslint": "eslint server/**/*.js",
     "tslint": "tslint client/**/*.ts -s node_modules/tslint-stylish -t stylish",
-    "build-js": "ntsc -w client/**/*.ts",
+    "build-js": "ntsc client/**/*.ts",
     "build-css": "node-sass --include-path scss client/index.scss public/css/styles.css",
     "watch-css": "nodemon -e scss -x \"npm run build-css\"",
     "move-scripts": "node scripts/copy-scripts",
     "move-scripts-vendor": "node scripts/copy-scripts-vendor",
-    "start": "concurrently \"npm run watch-css\" \"npm run move-scripts\" \"npm run build-js\" \"node app.js\""
+    "start-dev": "concurrently \"npm run watch-css\" \"npm run move-scripts\" \"npm run build-js\" \"node app.js\"",
+    "start": "node app.js"
   },
   "license": "ISC",
   "dependencies": {
