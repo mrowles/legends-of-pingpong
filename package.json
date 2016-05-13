@@ -5,8 +5,9 @@
   "engine": "node 4.4.0",
   "scripts": {
     "tsc": "tsc",
-    "ntsc": "./node_modules/ntypescript/bin/tsc",
     "tsc:w": "tsc -w",
+    "ntsc": "ntsc",
+    "ntsc:w": "ntsc -w",
     "eslint": "eslint server/**/*.js",
     "tslint": "tslint client/**/*.ts -s node_modules/tslint-stylish -t stylish",
     "build-css": "node-sass --include-path scss client/index.scss public/css/styles.css",
@@ -14,7 +15,7 @@
     "move-assets": "cp -R client/assets/ public/assets",
     "move-html": "cp -R client/**/*.html public/",
     "move-js": "cp -R client/**/*.js public/",
-    "start-dev": "concurrent \"npm run watch-css\" \"npi run move-assets\" \"npm run tsc:w\" \"node app.js\"",
+    "start-dev": "concurrent \"npm run watch-css\" \"npm run move-assets\" \"npm run tsc:w\" \"node app.js\"",
     "start": "npm run ntsc; node app.js"
   },
   "license": "ISC",

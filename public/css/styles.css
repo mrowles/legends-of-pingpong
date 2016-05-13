@@ -2599,48 +2599,38 @@ h2 {
 .leaderboard h1 {
   text-align: center; }
 
-.leaderboard .column-heading {
-  width: 12.5rem; }
-  .leaderboard .column-heading table {
-    width: 100%; }
-  .leaderboard .column-heading td {
-    width: 50%; }
-
 .leaderboard td {
   width: 6.25rem;
   text-align: center; }
 
 .leaderboard .scoreboard {
-  width: 69.375rem;
   justify-content: space-between;
   text-align: center;
+  font-weight: bold;
   margin: 0 auto; }
   .leaderboard .scoreboard .cell-name {
     width: 12.5rem;
-    margin: 0.625rem 0;
-    padding: 0.625rem 3.125rem;
     text-align: left;
-    border-radius: 1.5625rem;
-    font-weight: bold;
-    color: #fff;
-    background-color: #6D000F; }
+    font-weight: bold; }
+    .leaderboard .scoreboard .cell-name .name {
+      margin: 0.625rem 0;
+      padding: 0.625rem 3.125rem;
+      color: #fff;
+      background-color: #6D000F;
+      border-radius: 1.5625rem; }
   .leaderboard .scoreboard .cell {
+    width: 5.625rem;
     text-align: center; }
-  .leaderboard .scoreboard .cell-games,
-  .leaderboard .scoreboard .cell-sets,
-  .leaderboard .scoreboard .cell-match {
-    margin: 0 0;
-    padding: 1.25rem 0;
+  .leaderboard .scoreboard .cell-games, .leaderboard .scoreboard .cell-match {
+    width: 9.375rem;
     text-align: center; }
-    .leaderboard .scoreboard .cell-games:last-child,
-    .leaderboard .scoreboard .cell-sets:last-child,
-    .leaderboard .scoreboard .cell-match:last-child {
-      border-right: 5px solid #e5e5e5; }
   .leaderboard .scoreboard .cell-icon {
+    width: 4.0625rem;
     text-align: center; }
 
 @media (max-width: 600px) {
   .cell, .cell-games, .column-heading {
+    margin: 0;
     width: 0;
     display: none;
     height: 0;
