@@ -44,3 +44,4 @@ client/**/*.js
 
 legends-of-pingpong.iml
 double-dragon.iml
+.env

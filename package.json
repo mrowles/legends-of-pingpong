@@ -3,6 +3,7 @@
   "version": "1.0.0-alpha.1",
   "repository": "https://github.com/project-vrum/legends-of-pingpong",
   "engine": "node 4.4.0",
+  "main": "app.js",
   "scripts": {
     "eslint": "eslint server/**/*.js",
     "tslint": "tslint client/**/*.ts -s node_modules/tslint-stylish -t stylish",
