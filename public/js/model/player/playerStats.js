@@ -1,15 +1,7 @@
-System.register([], function(exports_1) {
-    var PlayerStats;
-    return {
-        setters:[],
-        execute: function() {
-            PlayerStats = (function () {
-                function PlayerStats() {
-                }
-                return PlayerStats;
-            })();
-            exports_1("PlayerStats", PlayerStats);
-        }
+"use strict";
+var PlayerStats = (function () {
+    function PlayerStats() {
     }
-});
-//# sourceMappingURL=playerStats.js.map
+    return PlayerStats;
+}());
+exports.PlayerStats = PlayerStats;
