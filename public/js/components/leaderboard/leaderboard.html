@@ -6,8 +6,7 @@
 
     <thead>
     <tr>
-      <th class="cell">Rank</th>
-      <th class="cell-name">Name</th>
+      <th class="cell-name-header"></th>
       <th class="column-heading" colspan="2">
         <table>
           <tr>
@@ -45,9 +44,12 @@
     </tr>
     </thead>
     <tbody>
-    <tr *ngFor="#player of players; #index = index">
-      <td class="cell">{{index + 1}}</td>
-      <td class="cell-name">{{player.name}}</td>
+    <tr *ngFor="#player of players; #index = index" class="player-row">
+      <td class="cell-name">
+        <div class="name">
+          #{{index + 1}} {{player.name}}
+        </div>
+      </td>
       <td class="cell-games">{{player.playerStats.pointsFor}}</td>
       <td class="cell-games">{{player.playerStats.pointsAgainst}}</td>
       <td class="cell-games">{{player.playerStats.setsWon}}</td>

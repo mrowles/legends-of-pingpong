@@ -13,7 +13,7 @@
     "move-scripts": "node scripts/copy-scripts",
     "move-scripts-vendor": "node scripts/copy-scripts-vendor",
     "start-dev": "concurrently \"npm run watch-css\" \"npm run move-scripts\" \"npm run build-js\" \"node app.js\"",
-    "start": "node app.js"
+    "start": "ntsc client/**/*.ts; npm run copy-scripts; node app.js"
   },
   "license": "ISC",
   "dependencies": {
