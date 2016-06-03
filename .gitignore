@@ -47,4 +47,4 @@ double-dragon.iml
 .env
 
 # Auto generated distribution files
-public/js/*
+/public/js/
