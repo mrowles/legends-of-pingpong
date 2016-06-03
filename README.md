@@ -1,4 +1,4 @@
-# Legends of Ping Pong
+# Legends of Ping Pong [![Build Status](https://travis-ci.org/mrowles/legends-of-pingpong.svg?branch=master)](https://travis-ci.org/mrowles/legends-of-pingpong)
 
 Ping Pong scoreboard managing app
 
