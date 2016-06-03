@@ -13,7 +13,7 @@ Ping Pong scoreboard managing app
 
 * brew
 * mongo
-* node 4.4.0
+* node 4.4.5
 * heroku toolkit
 
 ## Setup
@@ -55,33 +55,34 @@ run
 ### Setup App Dependencies
 
 ```npm install```
-```npm install -g tslint typescript ntypescript```
-```npm install -g eslint```
-```npm install -g typings```
 
 ### Start App
 
+This will start the application on [http://localhost:8765/](http://localhost:8765/)
+
 ```npm start```
 
-This will start the application on [http://localhost:8765/](http://localhost:8765/)
+This will start the application on [http://localhost:5000/](http://localhost:5000/)
+
+```heroku local web```
 
 ### Run Tasks
 
 ```npm run [command]```
 
-i.e., ```npm run build-css```
+i.e., ```npm run css-build```
+
+To see a list of all tasks:
+
+```npm run```
 
 #### Linting
 
 Client: 
 
-```tslint client/**/*.ts -s node_modules/tslint-stylish -t stylish```
+```npm run tslint```
 
 Server:
 
-```eslint server/**/*.js```
-
-## Prod release
-
-`git push heroku master`
+```npm run eslint```
  
