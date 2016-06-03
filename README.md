@@ -7,7 +7,7 @@ Ping Pong scoreboard managing app
 * [mrowles](https://github.com/mrowles)
 * jkelleher
 * kchew
-* esmith
+* [elliot-smith](https://github.com/elliot-smith)
 
 ## Requirements
 
