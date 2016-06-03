@@ -39,9 +39,12 @@ public/node_modules
 
 # Ignore CSS & Map File
 *.css
-*.map
+client/**/*.js.map
 client/**/*.js
 
 legends-of-pingpong.iml
 double-dragon.iml
 .env
+
+# Auto generated distribution files
+public/js/*

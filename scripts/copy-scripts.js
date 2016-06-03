@@ -7,7 +7,7 @@ var options = {
   junk: true,
   filter: [
     '**/*.js',
-    '**/*.map',
+    '**/*.js.map',
     '**/*.html'
   ]
 };
