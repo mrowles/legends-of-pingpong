@@ -1,7 +1,25 @@
-"use strict";
-var platform_browser_dynamic_1 = require('@angular/platform-browser-dynamic');
-var app_component_1 = require('app.component');
-var router_deprecated_1 = require('@angular/router-deprecated');
-var player_service_1 = require('service/player.service');
-var match_service_1 = require('service/match.service');
-platform_browser_dynamic_1.bootstrap(app_component_1.AppComponent, [player_service_1.PlayerService, match_service_1.MatchService, router_deprecated_1.ROUTER_PROVIDERS]);
+System.register(['@angular/platform-browser-dynamic', 'app.component', '@angular/router-deprecated', 'service/player.service', 'service/match.service'], function(exports_1) {
+    var platform_browser_dynamic_1, app_component_1, router_deprecated_1, player_service_1, match_service_1;
+    return {
+        setters:[
+            function (platform_browser_dynamic_1_1) {
+                platform_browser_dynamic_1 = platform_browser_dynamic_1_1;
+            },
+            function (app_component_1_1) {
+                app_component_1 = app_component_1_1;
+            },
+            function (router_deprecated_1_1) {
+                router_deprecated_1 = router_deprecated_1_1;
+            },
+            function (player_service_1_1) {
+                player_service_1 = player_service_1_1;
+            },
+            function (match_service_1_1) {
+                match_service_1 = match_service_1_1;
+            }],
+        execute: function() {
+            platform_browser_dynamic_1.bootstrap(app_component_1.AppComponent, [player_service_1.PlayerService, match_service_1.MatchService, router_deprecated_1.ROUTER_PROVIDERS]);
+        }
+    }
+});
+//# sourceMappingURL=main.js.map
