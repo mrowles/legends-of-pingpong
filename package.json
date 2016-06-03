@@ -5,6 +5,7 @@
   "engine": "node 4.4.0",
   "main": "app.js",
   "scripts": {
+    "test": "",
     "eslint": "eslint server/**/*.js",
     "tslint": "tslint client/**/*.ts -s node_modules/tslint-stylish -t stylish",
     "build-js": "ntsc client/**/*.ts",
