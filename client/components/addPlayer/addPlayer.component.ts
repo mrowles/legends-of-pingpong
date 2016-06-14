@@ -2,15 +2,16 @@ import {Component} from '@angular/core';
 import {Http, HTTP_PROVIDERS, Headers, Response} from '@angular/http';
 import {Router}  from '@angular/router-deprecated';
 
-import {Error} from 'model/error/error';
-import {Player} from 'model/player/player.model';
-import {PlayerService} from 'service/player.service';
+import {Error} from '../../model/error/error';
+import {Player} from '../../model/player/player.model';
+import {PlayerService} from '../../service/player.service';
+
 import 'rxjs/Rx';
 
 @Component({
-  providers: [HTTP_PROVIDERS],
+  providers: [HTTP_PROVIDERS, PlayerService],
   selector: 'add-player-form',
-  templateUrl: 'public/js/components/addPlayer/addPlayer.html',
+  template: require('./addPlayer.html'),
 })
 
 export class AddPlayerComponent {

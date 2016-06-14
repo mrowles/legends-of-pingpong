@@ -1,18 +1,25 @@
 import {Component} from '@angular/core';
 import {RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from '@angular/router-deprecated';
 
-import {AddPlayerComponent} from 'components/addPlayer/addPlayer.component';
-import {HomepageComponent} from 'components/homepage/homepage.component';
-import {CreateMatchPage} from 'components/createMatch/createMatch.component';
-import {MatchPage} from 'components/matchPage/matchPage.component';
+import {AddPlayerComponent} from './components/addPlayer/addPlayer.component';
+import {HomepageComponent} from './components/homepage/homepage.component';
+import {CreateMatchPage} from './components/createMatch/createMatch.component';
+import {MatchPage} from './components/matchPage/matchPage.component';
+import {PlayerService} from "./service/player.service";
+import {MatchService} from "./service/match.service";
+
+// Stylesheets
+require('./index.scss');
 
 @Component({
   directives: [ROUTER_DIRECTIVES],
   providers: [
     ROUTER_PROVIDERS,
+    PlayerService,
+    MatchService
   ],
   selector: 'lopp-app',
-  templateUrl: 'public/js/app.html',
+  template: require('./app.html'),
 })
 
 @RouteConfig([
@@ -37,5 +44,13 @@ import {MatchPage} from 'components/matchPage/matchPage.component';
 ])
 
 export class AppComponent {
+  private playerService: PlayerService;
+  private matchService: MatchService;
 
+
+  //REVISIT
+  constructor(playerService: PlayerService, matchService: MatchService) {
+    this.playerService = playerService;
+    this.matchService = matchService;
+  }
 }

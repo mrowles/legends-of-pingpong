@@ -1,7 +1,10 @@
 import {bootstrap}    from '@angular/platform-browser-dynamic';
-import {AppComponent} from 'app.component';
-import {ROUTER_PROVIDERS}  from '@angular/router-deprecated';
-import {PlayerService} from 'service/player.service';
-import {MatchService} from 'service/match.service';
+import {enableProdMode} from '@angular/core';
 
-bootstrap(AppComponent, [PlayerService, MatchService, ROUTER_PROVIDERS]);
+import {AppComponent} from './app.component';
+
+if (process.env.ENV === 'production') {
+  enableProdMode();
+}
+
+bootstrap(AppComponent, []);

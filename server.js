@@ -8,7 +8,7 @@ var players = require('./server/routes/players');
 var matches = require('./server/routes/matches');
 
 var app = express();
-app.use(express.static(__dirname + "/"));
+app.use(express.static(__dirname + "/public"));
 
 app.use(bodyParser.json());
 

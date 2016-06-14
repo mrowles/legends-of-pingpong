@@ -1,4 +1,4 @@
-import {PlayerStats} from 'model/player/playerStats.model';
+import {PlayerStats} from './playerStats.model';
 
 export class Player {
   private id: number;

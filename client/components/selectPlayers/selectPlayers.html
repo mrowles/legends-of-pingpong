@@ -1,7 +1,7 @@
 <div class="select-players container">
 
   <div class="row">
-    <div class="col-xs-6 col-lg-3" *ngFor="#player of playerList">
+    <div class="col-xs-6 col-lg-3" *ngFor="let player of playerList">
       <div class="player" (click)="addPlayerToMatch(player)">
         <div class="player-icon"></div>
         <p class="player-name">

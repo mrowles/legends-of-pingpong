@@ -44,7 +44,7 @@
     </tr>
     </thead>
     <tbody>
-    <tr *ngFor="#player of players; #index = index" class="player-row">
+    <tr *ngFor="let player of players; let index = index" class="player-row">
       <td class="cell-name">
         <div class="name">
           #{{index + 1}} {{player.name}}

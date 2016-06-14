@@ -1,6 +1,6 @@
-import {Match} from 'model/match/match.model';
-import {Player} from 'model/player/player.model';
-import {Opponent} from 'model/match/opponent.model';
+import {Match} from '../model/match/match.model';
+import {Player} from '../model/player/player.model';
+import {Opponent} from '../model/match/opponent.model';
 
 export class MatchService {
 

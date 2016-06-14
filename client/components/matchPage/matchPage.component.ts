@@ -2,16 +2,16 @@ import {Component} from '@angular/core';
 import {ROUTER_DIRECTIVES, Router}  from '@angular/router-deprecated';
 import {Http, HTTP_PROVIDERS, Headers, Response} from '@angular/http';
 
-import {Match} from 'model/match/match.model';
-import {PlayerService} from 'service/player.service';
-import {MatchService} from 'service/match.service';
-import {MatchedPlayersComponent} from 'components/matchedPlayers/matchedPlayers.component';
-import 'rxjs/Rx';
+import {Match} from '../../model/match/match.model';
+import {PlayerService} from '../../service/player.service';
+import {MatchService} from '../../service/match.service';
+import {MatchedPlayersComponent} from '../matchedPlayers/matchedPlayers.component';
+
 
 @Component({
   directives: [MatchedPlayersComponent, ROUTER_DIRECTIVES],
   providers: [HTTP_PROVIDERS],
-  templateUrl: 'public/js/components/matchPage/matchPage.html',
+  template: require('./matchPage.html'),
 })
 
 export class MatchPage {

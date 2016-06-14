@@ -1,11 +1,12 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
-import {Match} from 'model/match/match.model';
-import {MatchService} from 'service/match.service';
+import {Match} from '../../model/match/match.model';
+import {MatchService} from '../../service/match.service';
+
 
 @Component({
   selector: 'matched-players',
-  templateUrl: 'public/js/components/matchedPlayers/matchedPlayers.html',
+  template: require('./matchedPlayers.html'),
 })
 
 export class MatchedPlayersComponent {
@@ -19,5 +20,9 @@ export class MatchedPlayersComponent {
 
   public removeOpponent(opponentNumber: number): void {
     this.match.removeOpponent(opponentNumber);
+  }
+
+  public ngOnInit(): void {
+    this.match = this.matchService.getMatch();
   }
 }
