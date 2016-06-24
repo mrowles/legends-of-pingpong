@@ -5,8 +5,8 @@ import {AddPlayerComponent} from './components/addPlayer/addPlayer.component';
 import {HomepageComponent} from './components/homepage/homepage.component';
 import {CreateMatchPage} from './components/createMatch/createMatch.component';
 import {MatchPage} from './components/matchPage/matchPage.component';
-import {PlayerService} from "./service/player.service";
-import {MatchService} from "./service/match.service";
+import {PlayerService} from './service/player.service';
+import {MatchService} from './service/match.service';
 
 // Stylesheets
 require('./index.scss');
@@ -16,7 +16,7 @@ require('./index.scss');
   providers: [
     ROUTER_PROVIDERS,
     PlayerService,
-    MatchService
+    MatchService,
   ],
   selector: 'lopp-app',
   template: require('./app.html'),
@@ -47,8 +47,7 @@ export class AppComponent {
   private playerService: PlayerService;
   private matchService: MatchService;
 
-
-  //REVISIT
+  // REVISIT
   constructor(playerService: PlayerService, matchService: MatchService) {
     this.playerService = playerService;
     this.matchService = matchService;
