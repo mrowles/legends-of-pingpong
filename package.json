@@ -5,7 +5,7 @@
   "engine": "node 4.4.5",
   "main": "app.js",
   "scripts": {
-    "preinstall": "npm install -g webpack typings rimraf typescript",
+    "preinstall": "npm install -g webpack typings rimraf",
     "postinstall": "typings install",
     "test": "karma start",
     "start-dev": "rimraf public && webpack --config config/webpack.dev.js --progress --profile --bail; node --optimize_for_size --max_old_space_size=460 --gc_interval=100 server.js",
@@ -65,6 +65,7 @@
     "rimraf": "^2.5.2",
     "tslint": "3.8.1",
     "tslint-stylish": "2.1.0-beta",
-    "typings": "^1.0.4"
+    "typings": "^1.0.4",
+    "typescript": "^1.8.9"
   }
 }
