@@ -47,6 +47,7 @@
     "serve-favicon": "2.3.0",
     "style-loader": "^0.13.1",
     "ts-loader": "^0.8.1",
+    "typescript": "^1.8.9",
     "underscore": "1.8.3",
     "webpack": "^1.12.14",
     "webpack-merge": "^0.9.0",
@@ -65,7 +66,6 @@
     "rimraf": "^2.5.2",
     "tslint": "3.8.1",
     "tslint-stylish": "2.1.0-beta",
-    "typings": "^1.0.4",
-    "typescript": "^1.8.9"
+    "typings": "^1.0.4"
   }
 }
