@@ -5,7 +5,7 @@
   "engine": "node 4.4.5",
   "main": "app.js",
   "scripts": {
-    "preinstall": "npm install -g webpack typings rimraf",
+    "preinstall": "npm install -g webpack typings rimraf typescript",
     "postinstall": "typings install",
     "test": "karma start",
     "start-dev": "rimraf public && webpack --config config/webpack.dev.js --progress --profile --bail; node --optimize_for_size --max_old_space_size=460 --gc_interval=100 server.js",
@@ -50,7 +50,6 @@
     "underscore": "1.8.3",
     "webpack": "^1.12.14",
     "webpack-merge": "^0.9.0",
-    "typescript": "^1.8.9",
     "zone.js": "0.6.12"
   },
   "devDependencies": {
