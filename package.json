@@ -9,7 +9,7 @@
     "postinstall": "typings install",
     "test": "karma start",
     "start-dev": "rimraf public && webpack --config config/webpack.dev.js --progress --profile --bail; node --optimize_for_size --max_old_space_size=460 --gc_interval=100 server.js",
-    "start": "rimraf public && webpack --config config/webpack.prod.js --progress --profile --bail; node server.js;"
+    "start": "node server.js; rimraf public && webpack --config config/webpack.prod.js --progress --profile --bail;"
   },
   "license": "ISC",
   "dependencies": {
