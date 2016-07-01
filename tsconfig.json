@@ -2,7 +2,7 @@
   "compilerOptions": {
     "target": "es5",
     "module": "commonjs",
-    "moduleResolution": "node",
+    "moduleResolution": "classic",
     "sourceMap": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
@@ -12,6 +12,7 @@
   },
   "exclude": [
     "node_modules",
-    "typings"
+    "typings/main",
+    "typings/main.d.ts"
   ]
 }

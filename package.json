@@ -9,7 +9,7 @@
     "postinstall": "typings install",
     "test": "karma start",
     "start-dev": "rimraf public && webpack --config config/webpack.dev.js --progress --profile --bail; node --optimize_for_size --max_old_space_size=460 --gc_interval=100 server.js",
-    "start": "concurrently \"rimraf public && webpack --config config/webpack.prod.js --progress --profile --bail\" \"node server.js\""
+    "start": "rimraf public && webpack --config config/webpack.prod.js --progress --profile --bail; node server.js;"
   },
   "license": "ISC",
   "dependencies": {
@@ -23,7 +23,6 @@
     "@angular/router-deprecated": "2.0.0-rc.1",
     "body-parser": "1.14.2",
     "bootstrap": "^4.0.0-alpha.2",
-    "concurrently": "^2.1.0",
     "cookie-parser": "1.3.5",
     "core-js": "^2.4.0",
     "css-loader": "^0.23.1",

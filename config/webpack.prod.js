@@ -6,7 +6,6 @@ var helpers = require('./helpers');
 
 const ENV = process.env.NODE_ENV = process.env.ENV = 'production';
 
-
 module.exports = webpackMerge(commonConfig, {
   devtool: 'source-map',
 
@@ -22,7 +21,7 @@ module.exports = webpackMerge(commonConfig, {
   },
 
   plugins: [
-    new webpack.NoErrorsPlugin(),
+    //new webpack.NoErrorsPlugin(),
     new webpack.optimize.DedupePlugin(),
     new webpack.optimize.UglifyJsPlugin(),
     new ExtractTextPlugin('[name].[hash].css'),
