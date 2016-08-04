@@ -1,6 +1,7 @@
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var helpers = require('./helpers');
+var path = require('path');
 
 module.exports = {
   entry: {
@@ -10,6 +11,12 @@ module.exports = {
   },
 
   resolve: {
+    root: [
+      path.resolve('./client')
+    ],
+    modulesDirectories: [
+      'node_modules'
+    ],
     extensions: ['', '.js', '.ts']
   },
 
