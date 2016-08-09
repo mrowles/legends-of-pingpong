@@ -36,7 +36,7 @@ module.exports = {
         loader: 'file?name=assets/images/[name].[hash].[ext]'
       }, {
         test: /\.scss$/,
-        loaders: ["style", "css", "sass"]
+        loaders: ['style', 'css', 'sass']
       }
     ]
   },
