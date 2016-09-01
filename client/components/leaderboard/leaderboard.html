@@ -44,10 +44,10 @@
     </tr>
     </thead>
     <tbody>
-    <tr *ngFor="let player of players; let index = index" class="player-row">
+    <tr *ngFor="let player of players; let i=index" class="player-row">
       <td class="cell-name">
         <div class="name">
-          #{{index + 1}} {{player.name}}
+          #{{i + 1}} {{player.name}}
         </div>
       </td>
       <td class="cell-games">{{player.playerStats.pointsFor}}</td>
@@ -56,8 +56,9 @@
       <td class="cell-games">{{player.playerStats.setsLost}}</td>
       <td class="cell-match">{{player.playerStats.matchWon}}</td>
       <td class="cell-match">{{player.playerStats.matchLost}}</td>
-      <td class="cell-match"><p>{{(player.playerStats.matchWon / (player.playerStats.matchWon +
-        player.playerStats.matchLost)) || 0 | percent:'.2-2'}}</p></td>
+      <td class="cell-match">
+        <p>{{calculatePercent(player) | percent:'.2'}}</p>
+      </td>
     </tr>
     </tbody>
   </table>

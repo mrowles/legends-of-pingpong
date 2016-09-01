@@ -19,13 +19,26 @@ export class LeaderboardComponent implements OnInit {
   }
 
   public ngOnInit(): void {
-    let headers: Headers = new Headers();
+    this.getPlayers();
+  }
 
-    headers.append('Content-Type', 'application/json');
+  getPlayers(): void {
     this.http.get('/api/player/leaderboard')
       .subscribe(
         (response: Response) => this.players = response.json(),
         (response: Response) => this.getResponse = response.json()
       );
+  }
+
+  calculatePercent(player: Player): number {
+    let matchWon: number = player.playerStats.matchWon;
+    let matchLost: number = player.playerStats.matchLost;
+    let matchTotal: number = matchWon + matchLost;
+
+    if (matchWon === 0) {
+      return 0.0;
+    }
+
+    return matchWon / matchTotal;
   }
 }

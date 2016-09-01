@@ -37,6 +37,7 @@
     "file-loader": "^0.8.5",
     "html-loader": "^0.4.3",
     "html-webpack-plugin": "^2.15.0",
+    "intl": "^1.2.4",
     "method-override": "2.3.5",
     "mongoose": "4.4.5",
     "morgan": "1.6.1",
